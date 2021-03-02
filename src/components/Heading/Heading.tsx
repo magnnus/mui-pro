@@ -1,20 +1,16 @@
 import React from 'react';
 import cx from 'classnames';
-import PropTypes from 'prop-types';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
 
-import headingStyle from 'assets/jss/material-dashboard-pro-react/components/headingStyle';
+import headingStyle from '@/assets/jss/material-dashboard-pro-react/components/headingStyle';
 
 function Heading({ ...props }) {
   const { textAlign, category, title, classes } = props;
-  const heading =
-    classes.heading +
-    ' ' +
-    cx({
-      [classes[textAlign + 'TextAlign']]: textAlign !== undefined,
-    });
+  const heading = `${classes.heading} ${cx({
+    [classes[`${textAlign}TextAlign`]]: textAlign !== undefined,
+  })}`;
   if (title !== undefined || category !== undefined) {
     return (
       <div className={heading}>

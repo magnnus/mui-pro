@@ -1,7 +1,7 @@
 import {
   primaryColor,
   grayColor,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const accordionStyle = theme => ({
   root: {
@@ -20,7 +20,7 @@ const accordionStyle = theme => ({
   expansionPanelSummary: {
     minHeight: 'auto !important',
     backgroundColor: 'transparent',
-    borderBottom: '1px solid ' + grayColor[5],
+    borderBottom: `1px solid ${grayColor[5]}`,
     padding: '25px 10px 5px 0px',
     borderTopLeftRadius: '3px',
     borderTopRightRadius: '3px',

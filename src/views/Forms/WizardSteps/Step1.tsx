@@ -10,10 +10,10 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import PictureUpload from 'components/CustomUpload/PictureUpload';
-import CustomInput from 'components/CustomInput/CustomInput';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import PictureUpload from '@/components/CustomUpload/PictureUpload';
+import CustomInput from '@/components/CustomInput/CustomInput';
 
 const style = {
   infoText: {
@@ -41,17 +41,20 @@ class Step1 extends React.Component {
       emailState: '',
     };
   }
+
   sendState() {
     return this.state;
   }
+
   // function that returns true if value is email, false otherwise
   verifyEmail(value) {
-    var emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (emailRex.test(value)) {
       return true;
     }
     return false;
   }
+
   // function that verifies if a string has a given length or not
   verifyLength(value, length) {
     if (value.length >= length) {
@@ -59,20 +62,21 @@ class Step1 extends React.Component {
     }
     return false;
   }
+
   change(event, stateName, type, stateNameEqualTo) {
     switch (type) {
       case 'email':
         if (this.verifyEmail(event.target.value)) {
-          this.setState({ [stateName + 'State']: 'success' });
+          this.setState({ [`${stateName}State`]: 'success' });
         } else {
-          this.setState({ [stateName + 'State']: 'error' });
+          this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       case 'length':
         if (this.verifyLength(event.target.value, stateNameEqualTo)) {
-          this.setState({ [stateName + 'State']: 'success' });
+          this.setState({ [`${stateName}State`]: 'success' });
         } else {
-          this.setState({ [stateName + 'State']: 'error' });
+          this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       default:
@@ -80,6 +84,7 @@ class Step1 extends React.Component {
     }
     this.setState({ [stateName]: event.target.value });
   }
+
   isValidated() {
     if (
       this.state.firstnameState === 'success' &&
@@ -87,19 +92,20 @@ class Step1 extends React.Component {
       this.state.emailState === 'success'
     ) {
       return true;
-    } else {
-      if (this.state.firstnameState !== 'success') {
-        this.setState({ firstnameState: 'error' });
-      }
-      if (this.state.lastnameState !== 'success') {
-        this.setState({ lastnameState: 'error' });
-      }
-      if (this.state.emailState !== 'success') {
-        this.setState({ emailState: 'error' });
-      }
     }
+    if (this.state.firstnameState !== 'success') {
+      this.setState({ firstnameState: 'error' });
+    }
+    if (this.state.lastnameState !== 'success') {
+      this.setState({ lastnameState: 'error' });
+    }
+    if (this.state.emailState !== 'success') {
+      this.setState({ emailState: 'error' });
+    }
+
     return false;
   }
+
   render() {
     const { classes } = this.props;
     return (

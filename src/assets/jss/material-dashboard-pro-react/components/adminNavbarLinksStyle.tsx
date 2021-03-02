@@ -2,9 +2,9 @@ import {
   defaultFont,
   dangerColor,
   whiteColor,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
-import customDropdownStyle from 'assets/jss/material-dashboard-pro-react/components/customDropdownStyle';
+import customDropdownStyle from '@/assets/jss/material-dashboard-pro-react/components/customDropdownStyle';
 
 const adminNavbarLinksStyle = theme => ({
   ...customDropdownStyle(theme),
@@ -93,7 +93,7 @@ const adminNavbarLinksStyle = theme => ({
     [theme.breakpoints.up('md')]: {
       position: 'absolute',
       top: '5px',
-      border: '1px solid ' + whiteColor,
+      border: `1px solid ${whiteColor}`,
       right: '5px',
       fontSize: '9px',
       background: dangerColor[0],

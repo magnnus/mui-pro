@@ -6,14 +6,14 @@ import SweetAlert from 'react-bootstrap-sweetalert';
 import withStyles from '@material-ui/core/styles/withStyles';
 
 // core components
-import Heading from 'components/Heading/Heading';
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import Button from 'components/CustomButtons/Button';
-import Card from 'components/Card/Card';
-import CardBody from 'components/Card/CardBody';
+import Heading from '@/components/Heading/Heading';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import Button from '@/components/CustomButtons/Button';
+import Card from '@/components/Card/Card';
+import CardBody from '@/components/Card/CardBody';
 
-import sweetAlertStyle from 'assets/jss/material-dashboard-pro-react/views/sweetAlertStyle';
+import sweetAlertStyle from '@/assets/jss/material-dashboard-pro-react/views/sweetAlertStyle';
 
 class SweetAlertPage extends React.Component {
   constructor(props) {
@@ -28,6 +28,7 @@ class SweetAlertPage extends React.Component {
     this.inputConfirmAlert = this.inputConfirmAlert.bind(this);
     this.inputConfirmAlertNext = this.inputConfirmAlertNext.bind(this);
   }
+
   basicAlert() {
     this.setState({
       alert: (
@@ -36,13 +37,12 @@ class SweetAlertPage extends React.Component {
           title="Here's a message!"
           onConfirm={() => this.hideAlert()}
           onCancel={() => this.hideAlert()}
-          confirmBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.success
-          }
+          confirmBtnCssClass={`${this.props.classes.button} ${this.props.classes.success}`}
         />
       ),
     });
   }
+
   titleAndTextAlert() {
     this.setState({
       alert: (
@@ -51,15 +51,14 @@ class SweetAlertPage extends React.Component {
           title="Here's a message!"
           onConfirm={() => this.hideAlert()}
           onCancel={() => this.hideAlert()}
-          confirmBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.info
-          }
+          confirmBtnCssClass={`${this.props.classes.button} ${this.props.classes.info}`}
         >
           It's pretty, isn't it?
         </SweetAlert>
       ),
     });
   }
+
   successAlert() {
     this.setState({
       alert: (
@@ -69,15 +68,14 @@ class SweetAlertPage extends React.Component {
           title="Good job!"
           onConfirm={() => this.hideAlert()}
           onCancel={() => this.hideAlert()}
-          confirmBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.success
-          }
+          confirmBtnCssClass={`${this.props.classes.button} ${this.props.classes.success}`}
         >
           You clicked the button!
         </SweetAlert>
       ),
     });
   }
+
   htmlAlert() {
     this.setState({
       alert: (
@@ -86,16 +84,19 @@ class SweetAlertPage extends React.Component {
           title="HTML example"
           onConfirm={() => this.hideAlert()}
           onCancel={() => this.hideAlert()}
-          confirmBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.success
-          }
+          confirmBtnCssClass={`${this.props.classes.button} ${this.props.classes.success}`}
         >
-          You can use <b>bold</b> text,{' '}
-          <a href="/">links</a> and other HTML tags
+          You can use 
+{' '}
+<b>bold</b> text, 
+{' '}
+<a href="/">links</a> and other HTML
+          tags
         </SweetAlert>
       ),
     });
   }
+
   warningWithConfirmMessage() {
     this.setState({
       alert: (
@@ -105,12 +106,8 @@ class SweetAlertPage extends React.Component {
           title="Are you sure?"
           onConfirm={() => this.successDelete()}
           onCancel={() => this.hideAlert()}
-          confirmBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.success
-          }
-          cancelBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.danger
-          }
+          confirmBtnCssClass={`${this.props.classes.button} ${this.props.classes.success}`}
+          cancelBtnCssClass={`${this.props.classes.button} ${this.props.classes.danger}`}
           confirmBtnText="Yes, delete it!"
           cancelBtnText="Cancel"
           showCancel
@@ -120,6 +117,7 @@ class SweetAlertPage extends React.Component {
       ),
     });
   }
+
   warningWithConfirmAndCancelMessage() {
     this.setState({
       alert: (
@@ -129,12 +127,8 @@ class SweetAlertPage extends React.Component {
           title="Are you sure?"
           onConfirm={() => this.successDelete()}
           onCancel={() => this.cancelDetele()}
-          confirmBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.success
-          }
-          cancelBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.danger
-          }
+          confirmBtnCssClass={`${this.props.classes.button} ${this.props.classes.success}`}
+          cancelBtnCssClass={`${this.props.classes.button} ${this.props.classes.danger}`}
           confirmBtnText="Yes, delete it!"
           cancelBtnText="Cancel"
           showCancel
@@ -144,6 +138,7 @@ class SweetAlertPage extends React.Component {
       ),
     });
   }
+
   autoCloseAlert() {
     this.setState({
       alert: (
@@ -159,6 +154,7 @@ class SweetAlertPage extends React.Component {
     });
     setTimeout(this.hideAlert, 2000);
   }
+
   inputAlert() {
     this.setState({
       alert: (
@@ -169,20 +165,18 @@ class SweetAlertPage extends React.Component {
           title="Input something"
           onConfirm={e => this.inputConfirmAlert(e)}
           onCancel={() => this.hideAlert()}
-          confirmBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.info
-          }
-          cancelBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.danger
-          }
+          confirmBtnCssClass={`${this.props.classes.button} ${this.props.classes.info}`}
+          cancelBtnCssClass={`${this.props.classes.button} ${this.props.classes.danger}`}
         />
       ),
     });
   }
+
   inputConfirmAlert(e) {
     this.setState({ alert: e });
     setTimeout(this.inputConfirmAlertNext, 200);
   }
+
   inputConfirmAlertNext() {
     const inputValue = this.state.alert;
     this.setState({
@@ -191,18 +185,19 @@ class SweetAlertPage extends React.Component {
           style={{ display: 'block', marginTop: '-100px' }}
           onConfirm={() => this.hideAlert()}
           onCancel={() => this.hideAlert()}
-          confirmBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.info
-          }
-          title={
+          confirmBtnCssClass={`${this.props.classes.button} ${this.props.classes.info}`}
+          title={(
             <p>
-              You entered: <b>{inputValue}</b>
+              You entered: 
+{' '}
+<b>{inputValue}</b>
             </p>
-          }
+          )}
         />
       ),
     });
   }
+
   successDelete() {
     this.setState({
       alert: (
@@ -212,15 +207,14 @@ class SweetAlertPage extends React.Component {
           title="Deleted!"
           onConfirm={() => this.hideAlert()}
           onCancel={() => this.hideAlert()}
-          confirmBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.success
-          }
+          confirmBtnCssClass={`${this.props.classes.button} ${this.props.classes.success}`}
         >
           Your imaginary file has been deleted.
         </SweetAlert>
       ),
     });
   }
+
   cancelDetele() {
     this.setState({
       alert: (
@@ -230,20 +224,20 @@ class SweetAlertPage extends React.Component {
           title="Cancelled"
           onConfirm={() => this.hideAlert()}
           onCancel={() => this.hideAlert()}
-          confirmBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.success
-          }
+          confirmBtnCssClass={`${this.props.classes.button} ${this.props.classes.success}`}
         >
           Your imaginary file is safe :)
         </SweetAlert>
       ),
     });
   }
+
   hideAlert() {
     this.setState({
       alert: null,
     });
   }
+
   render() {
     const { classes } = this.props;
     return (
@@ -251,10 +245,11 @@ class SweetAlertPage extends React.Component {
         <Heading
           textAlign="center"
           title="Sweet Alert"
-          category={
+          category={(
             <span>
               A beautiful plugin, that replace the classic alert, Handcrafted by
-              our friend{' '}
+              our friend
+{' '}
               <a
                 target="_blank"
                 href="https://github.com/djorg83"
@@ -262,7 +257,8 @@ class SweetAlertPage extends React.Component {
               >
                 Daniel Jorgensen
               </a>
-              . Please check out the{' '}
+              . Please check out the
+{' '}
               <a
                 href="https://github.com/djorg83/react-bootstrap-sweetalert"
                 target="_blank"
@@ -272,7 +268,7 @@ class SweetAlertPage extends React.Component {
               </a>
               .
             </span>
-          }
+          )}
         />
         {this.state.alert}
         <GridContainer>

@@ -10,7 +10,7 @@
     "moment": "2.24.0",
     "nouislider": "13.1.0",
     "perfect-scrollbar": "1.4.0",
-    "react": "16.8.1",
+    "react": "^16.14.0",
     "react-big-calendar": "0.20.3",
     "react-bootstrap-sweetalert": "4.4.1",
     "react-chartist": "0.13.3",
@@ -24,13 +24,13 @@
     "react-tagsinput": "3.19.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "npm run build",
     "lint:check": "eslint . --ext=js,jsx;  exit 0",
-    "lint:fix": "eslint . --ext=js,jsx --fix;  exit 0",
+    "lint:fix": "eslint . --ext=js,jsx,ts,tsx --fix;  exit 0",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "compile-sass": "node-sass src/assets/scss/material-dashboard-pro-react.scss src/assets/css/material-dashboard-pro-react.css",
     "minify-sass": "node-sass src/assets/scss/material-dashboard-pro-react.scss src/assets/css/material-dashboard-pro-react.min.css --output-style compressed",
@@ -42,11 +42,13 @@
     "ajv": "6.9.1"
   },
   "devDependencies": {
+    "@craco/craco": "^6.1.1",
     "@types/node": "^14.14.31",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.1",
+    "@types/react": "^16.14.4",
+    "@types/react-dom": "^16.9.11",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.15.2",
+    "craco-alias": "^2.2.0",
     "eslint": "^7.21.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "4.0.0",
@@ -57,9 +59,9 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^5.1.2",
     "lint-staged": "^10.5.4",
+    "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
     "react-scripts": "^4.0.2",
-    "sass": "^1.32.6",
     "typescript": "^4.2.2"
   },
   "husky": {

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -16,12 +15,13 @@ import Edit from '@material-ui/icons/Edit';
 import Close from '@material-ui/icons/Close';
 import Check from '@material-ui/icons/Check';
 
-import tasksStyle from 'assets/jss/material-dashboard-pro-react/components/tasksStyle';
+import tasksStyle from '@/assets/jss/material-dashboard-pro-react/components/tasksStyle';
 
 class Tasks extends React.Component {
   state = {
     checked: this.props.checkedIndexes,
   };
+
   handleToggle = value => () => {
     const { checked } = this.state;
     const currentIndex = checked.indexOf(value);
@@ -37,6 +37,7 @@ class Tasks extends React.Component {
       checked: newChecked,
     });
   };
+
   render() {
     const { classes, tasksIndexes, tasks } = this.props;
     return (
@@ -72,9 +73,7 @@ class Tasks extends React.Component {
                     className={classes.tableActionButton}
                   >
                     <Edit
-                      className={
-                        classes.tableActionButtonIcon + ' ' + classes.edit
-                      }
+                      className={`${classes.tableActionButtonIcon} ${classes.edit}`}
                     />
                   </IconButton>
                 </Tooltip>
@@ -89,9 +88,7 @@ class Tasks extends React.Component {
                     className={classes.tableActionButton}
                   >
                     <Close
-                      className={
-                        classes.tableActionButtonIcon + ' ' + classes.close
-                      }
+                      className={`${classes.tableActionButtonIcon} ${classes.close}`}
                     />
                   </IconButton>
                 </Tooltip>

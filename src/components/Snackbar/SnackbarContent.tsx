@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import cx from 'classnames';
 
 // @material-ui/core components
@@ -10,11 +10,11 @@ import IconButton from '@material-ui/core/IconButton';
 // @material-ui/icons
 import Close from '@material-ui/icons/Close';
 
-import snackbarContentStyle from 'assets/jss/material-dashboard-pro-react/components/snackbarContentStyle';
+import snackbarContentStyle from '@/assets/jss/material-dashboard-pro-react/components/snackbarContentStyle';
 
 function SnackbarContent({ ...props }) {
   const { classes, message, color, close, icon } = props;
-  var action = [];
+  let action = [];
   const messageClasses = cx({
     [classes.iconMessage]: icon !== undefined,
   });
@@ -48,7 +48,7 @@ function SnackbarContent({ ...props }) {
         </div>
       }
       classes={{
-        root: classes.root + ' ' + classes[color],
+        root: `${classes.root} ${classes[color]}`,
         message: classes.message,
       }}
       action={action}

@@ -8,11 +8,11 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 
 // core components
-import CustomInput from 'components/CustomInput/CustomInput';
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
+import CustomInput from '@/components/CustomInput/CustomInput';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
 
-import customSelectStyle from 'assets/jss/material-dashboard-pro-react/customSelectStyle';
+import customSelectStyle from '@/assets/jss/material-dashboard-pro-react/customSelectStyle';
 
 const style = {
   infoText: {
@@ -33,15 +33,19 @@ class Step3 extends React.Component {
       develop: false,
     };
   }
+
   sendState() {
     return this.state;
   }
+
   handleSimple = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
+
   isValidated() {
     return true;
   }
+
   render() {
     const { classes } = this.props;
     return (

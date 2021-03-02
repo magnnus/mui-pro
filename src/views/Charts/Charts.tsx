@@ -9,15 +9,15 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Timeline from '@material-ui/icons/Timeline';
 
 // core components
-import Heading from 'components/Heading/Heading';
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
+import Heading from '@/components/Heading/Heading';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
 
-import Card from 'components/Card/Card';
-import CardHeader from 'components/Card/CardHeader';
-import CardIcon from 'components/Card/CardIcon';
-import CardBody from 'components/Card/CardBody';
-import CardFooter from 'components/Card/CardFooter';
+import Card from '@/components/Card/Card';
+import CardHeader from '@/components/Card/CardHeader';
+import CardIcon from '@/components/Card/CardIcon';
+import CardBody from '@/components/Card/CardBody';
+import CardFooter from '@/components/Card/CardFooter';
 
 import {
   roundedLineChart,
@@ -27,9 +27,9 @@ import {
   multipleBarsChart,
   colouredLinesChart,
   pieChart,
-} from 'variables/charts';
+} from '@/variables/charts';
 
-import chartsStyle from 'assets/jss/material-dashboard-pro-react/views/chartsStyle';
+import chartsStyle from '@/assets/jss/material-dashboard-pro-react/views/chartsStyle';
 
 class Charts extends React.Component {
   render() {
@@ -203,11 +203,11 @@ class Charts extends React.Component {
               </CardBody>
               <CardFooter stats className={classes.cardFooter}>
                 <h6 className={classes.legendTitle}>Legend</h6>
-                <i className={'fas fa-circle ' + classes.info} /> Apple{` `}
-                <i className={'fas fa-circle ' + classes.warning} /> Samsung
-                {` `}
-                <i className={'fas fa-circle ' + classes.danger} /> Windows
-                Phone{` `}
+                <i className={`fas fa-circle ${classes.info}`} /> Apple{' '}
+                <i className={`fas fa-circle ${classes.warning}`} /> Samsung
+{' '}
+                <i className={`fas fa-circle ${classes.danger}`} /> Windows
+                Phone{' '}
               </CardFooter>
             </Card>
           </GridItem>

@@ -1,16 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import Card from 'components/Card/Card';
-import CardBody from 'components/Card/CardBody';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import Card from '@/components/Card/Card';
+import CardBody from '@/components/Card/CardBody';
 
-import gridSystemStyle from 'assets/jss/material-dashboard-pro-react/views/gridSystemStyle';
+import gridSystemStyle from '@/assets/jss/material-dashboard-pro-react/views/gridSystemStyle';
 
 class GridSystem extends React.Component {
   render() {
@@ -24,21 +23,21 @@ class GridSystem extends React.Component {
           <GridItem xs={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`xs={4}`}</code>
+                <code>{'xs={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`xs={4}`}</code>
+                <code>{'xs={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`xs={4}`}</code>
+                <code>{'xs={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
@@ -50,21 +49,21 @@ class GridSystem extends React.Component {
           <GridItem xs={12} sm={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`sm={4}`}</code>
+                <code>{'sm={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`sm={4}`}</code>
+                <code>{'sm={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`sm={4}`}</code>
+                <code>{'sm={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
@@ -76,21 +75,21 @@ class GridSystem extends React.Component {
           <GridItem xs={12} sm={12} md={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`md={4}`}</code>
+                <code>{'md={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`md={4}`}</code>
+                <code>{'md={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`md={4}`}</code>
+                <code>{'md={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
@@ -102,21 +101,21 @@ class GridSystem extends React.Component {
           <GridItem xs={12} sm={12} md={12} lg={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`lg={4}`}</code>
+                <code>{'lg={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={12} md={12} lg={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`lg={4}`}</code>
+                <code>{'lg={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={12} md={12} lg={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`lg={4}`}</code>
+                <code>{'lg={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
@@ -128,28 +127,28 @@ class GridSystem extends React.Component {
           <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`sm={6} lg={3}`}</code>
+                <code>{'sm={6} lg={3}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`sm={6} lg={3}`}</code>
+                <code>{'sm={6} lg={3}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`sm={6} lg={3}`}</code>
+                <code>{'sm={6} lg={3}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`sm={6} lg={3}`}</code>
+                <code>{'sm={6} lg={3}'}</code>
               </CardBody>
             </Card>
           </GridItem>
@@ -165,21 +164,21 @@ class GridSystem extends React.Component {
           <GridItem xs={12} sm={12} md={3}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`md={3}`}</code>
+                <code>{'md={3}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={12} md={3}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`md={3}`}</code>
+                <code>{'md={3}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={12} md={3}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`md={3}`}</code>
+                <code>{'md={3}'}</code>
               </CardBody>
             </Card>
           </GridItem>
@@ -188,14 +187,14 @@ class GridSystem extends React.Component {
           <GridItem xs={12} sm={12} md={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`md={4}`}</code>
+                <code>{'md={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`md={4}`}</code>
+                <code>{'md={4}'}</code>
               </CardBody>
             </Card>
           </GridItem>
@@ -204,7 +203,7 @@ class GridSystem extends React.Component {
           <GridItem xs={12} sm={12} md={6}>
             <Card>
               <CardBody style={{ textAlign: 'center' }}>
-                <code>{`md={6}`}</code>
+                <code>{'md={6}'}</code>
               </CardBody>
             </Card>
           </GridItem>

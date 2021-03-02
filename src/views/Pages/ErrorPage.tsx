@@ -1,14 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
 
-import errorPageStyles from 'assets/jss/material-dashboard-pro-react/views/errorPageStyles';
+import errorPageStyles from '@/assets/jss/material-dashboard-pro-react/views/errorPageStyles';
 
 class ErrorPage extends React.Component {
   render() {

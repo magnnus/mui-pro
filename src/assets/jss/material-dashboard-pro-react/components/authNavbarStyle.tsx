@@ -14,7 +14,7 @@ import {
   grayColor,
   blackColor,
   hexToRgb,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const pagesHeaderStyle = theme => ({
   appBar: {
@@ -121,7 +121,7 @@ const pagesHeaderStyle = theme => ({
     textDecoration: 'none',
     '&:hover,&:focus': {
       color: whiteColor,
-      background: 'rgba(' + hexToRgb(grayColor[17]) + ', 0.2)',
+      background: `rgba(${hexToRgb(grayColor[17])}, 0.2)`,
     },
   },
   listItemIcon: {
@@ -145,7 +145,7 @@ const pagesHeaderStyle = theme => ({
     whiteSpace: 'nowrap',
   },
   navLinkActive: {
-    backgroundColor: 'rgba(' + hexToRgb(whiteColor) + ', 0.1)',
+    backgroundColor: `rgba(${hexToRgb(whiteColor)}, 0.1)`,
   },
   drawerPaper: {
     border: 'none',

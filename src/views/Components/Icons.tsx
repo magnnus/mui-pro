@@ -1,19 +1,19 @@
 /*eslint-disable*/
 import React from 'react';
-import PropTypes from 'prop-types';
+
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
 import Hidden from '@material-ui/core/Hidden';
 
 // core components
-import Heading from 'components/Heading/Heading';
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import Card from 'components/Card/Card';
-import CardBody from 'components/Card/CardBody';
+import Heading from '@/components/Heading/Heading';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import Card from '@/components/Card/Card';
+import CardBody from '@/components/Card/CardBody';
 
-import iconsStyle from 'assets/jss/material-dashboard-pro-react/views/iconsStyle';
+import iconsStyle from '@/assets/jss/material-dashboard-pro-react/views/iconsStyle';
 
 function Icons({ ...props }) {
   return (

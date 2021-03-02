@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -12,16 +11,16 @@ import Email from '@material-ui/icons/Email';
 // import LockOutline from "@material-ui/icons/LockOutline";
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import CustomInput from 'components/CustomInput/CustomInput';
-import Button from 'components/CustomButtons/Button';
-import Card from 'components/Card/Card';
-import CardBody from 'components/Card/CardBody';
-import CardHeader from 'components/Card/CardHeader';
-import CardFooter from 'components/Card/CardFooter';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import CustomInput from '@/components/CustomInput/CustomInput';
+import Button from '@/components/CustomButtons/Button';
+import Card from '@/components/Card/Card';
+import CardBody from '@/components/Card/CardBody';
+import CardHeader from '@/components/Card/CardHeader';
+import CardFooter from '@/components/Card/CardFooter';
 
-import loginPageStyle from 'assets/jss/material-dashboard-pro-react/views/loginPageStyle';
+import loginPageStyle from '@/assets/jss/material-dashboard-pro-react/views/loginPageStyle';
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -31,6 +30,7 @@ class LoginPage extends React.Component {
       cardAnimaton: 'cardHidden',
     };
   }
+
   componentDidMount() {
     // we add a hidden class to the card and after 700 ms we delete it and the transition appears
     this.timeOutFunction = setTimeout(
@@ -40,10 +40,12 @@ class LoginPage extends React.Component {
       700,
     );
   }
+
   componentWillUnmount() {
     clearTimeout(this.timeOutFunction);
     this.timeOutFunction = null;
   }
+
   render() {
     const { classes } = this.props;
     return (

@@ -1,15 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import cx from 'classnames';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
 
-import instructionStyle from 'assets/jss/material-dashboard-pro-react/components/instructionStyle';
+import instructionStyle from '@/assets/jss/material-dashboard-pro-react/components/instructionStyle';
 
 function Instruction({ ...props }) {
   const {

@@ -1,32 +1,32 @@
-import Buttons from 'views/Components/Buttons';
-import Calendar from 'views/Calendar/Calendar';
-import Charts from 'views/Charts/Charts';
-import Dashboard from 'views/Dashboard/Dashboard';
-import ErrorPage from 'views/Pages/ErrorPage';
-import ExtendedForms from 'views/Forms/ExtendedForms';
-import ExtendedTables from 'views/Tables/ExtendedTables';
-import FullScreenMap from 'views/Maps/FullScreenMap';
-import GoogleMaps from 'views/Maps/GoogleMaps';
-import GridSystem from 'views/Components/GridSystem';
-import Icons from 'views/Components/Icons';
-import LockScreenPage from 'views/Pages/LockScreenPage';
-import LoginPage from 'views/Pages/LoginPage';
-import Notifications from 'views/Components/Notifications';
-import Panels from 'views/Components/Panels';
-import PricingPage from 'views/Pages/PricingPage';
-import RTLSupport from 'views/Pages/RTLSupport';
-import ReactTables from 'views/Tables/ReactTables';
-import RegisterPage from 'views/Pages/RegisterPage';
-import RegularForms from 'views/Forms/RegularForms';
-import RegularTables from 'views/Tables/RegularTables';
-import SweetAlert from 'views/Components/SweetAlert';
-import TimelinePage from 'views/Pages/Timeline';
-import Typography from 'views/Components/Typography';
-import UserProfile from 'views/Pages/UserProfile';
-import ValidationForms from 'views/Forms/ValidationForms';
-import VectorMap from 'views/Maps/VectorMap';
-import Widgets from 'views/Widgets/Widgets';
-import Wizard from 'views/Forms/Wizard';
+import Buttons from '@/views/Components/Buttons';
+import Calendar from '@/views/Calendar/Calendar';
+import Charts from '@/views/Charts/Charts';
+import Dashboard from '@/views/Dashboard/Dashboard';
+import ErrorPage from '@/views/Pages/ErrorPage';
+import ExtendedForms from '@/views/Forms/ExtendedForms';
+import ExtendedTables from '@/views/Tables/ExtendedTables';
+import FullScreenMap from '@/views/Maps/FullScreenMap';
+import GoogleMaps from '@/views/Maps/GoogleMaps';
+import GridSystem from '@/views/Components/GridSystem';
+import Icons from '@/views/Components/Icons';
+import LockScreenPage from '@/views/Pages/LockScreenPage';
+import LoginPage from '@/views/Pages/LoginPage';
+import Notifications from '@/views/Components/Notifications';
+import Panels from '@/views/Components/Panels';
+import PricingPage from '@/views/Pages/PricingPage';
+import RTLSupport from '@/views/Pages/RTLSupport';
+import ReactTables from '@/views/Tables/ReactTables';
+import RegisterPage from '@/views/Pages/RegisterPage';
+import RegularForms from '@/views/Forms/RegularForms';
+import RegularTables from '@/views/Tables/RegularTables';
+import SweetAlert from '@/views/Components/SweetAlert';
+import TimelinePage from '@/views/Pages/Timeline';
+import Typography from '@/views/Components/Typography';
+import UserProfile from '@/views/Pages/UserProfile';
+import ValidationForms from '@/views/Forms/ValidationForms';
+import VectorMap from '@/views/Maps/VectorMap';
+import Widgets from '@/views/Widgets/Widgets';
+import Wizard from '@/views/Forms/Wizard';
 
 // @material-ui/icons
 import Apps from '@material-ui/icons/Apps';
@@ -38,7 +38,7 @@ import Place from '@material-ui/icons/Place';
 import Timeline from '@material-ui/icons/Timeline';
 import WidgetsIcon from '@material-ui/icons/Widgets';
 
-var dashRoutes = [
+const dashRoutes = [
   {
     path: '/dashboard',
     name: 'Dashboard',

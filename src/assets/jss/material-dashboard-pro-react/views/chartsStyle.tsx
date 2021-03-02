@@ -7,7 +7,7 @@ import {
   roseColor,
   grayColor,
   cardTitle,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const chartsStyle = {
   cardTitle,

@@ -9,7 +9,7 @@ import {
   blackColor,
   defaultFont,
   hexToRgb,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const tableStyle = theme => ({
   warning: {
@@ -53,7 +53,7 @@ const tableStyle = theme => ({
     fontSize: '1.25em !important',
   },
   tableHeadCell: {
-    color: 'rgba(' + hexToRgb(blackColor) + ', 0.87)',
+    color: `rgba(${hexToRgb(blackColor)}, 0.87)`,
     border: 'none !important',
   },
   tableCell: {
@@ -63,7 +63,7 @@ const tableStyle = theme => ({
     verticalAlign: 'middle',
     fontSize: '1em',
     borderBottom: 'none',
-    borderTop: '1px solid ' + grayColor[5],
+    borderTop: `1px solid ${grayColor[5]}`,
     position: 'relative',
     [theme.breakpoints.down('sm')]: {
       minHeight: '24px',

@@ -15,20 +15,20 @@ import Add from '@material-ui/icons/Add';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import Table from 'components/Table/Table';
-import Button from 'components/CustomButtons/Button';
-import Card from 'components/Card/Card';
-import CardBody from 'components/Card/CardBody';
-import CardIcon from 'components/Card/CardIcon';
-import CardHeader from 'components/Card/CardHeader';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import Table from '@/components/Table/Table';
+import Button from '@/components/CustomButtons/Button';
+import Card from '@/components/Card/Card';
+import CardBody from '@/components/Card/CardBody';
+import CardIcon from '@/components/Card/CardIcon';
+import CardHeader from '@/components/Card/CardHeader';
 
-import extendedTablesStyle from 'assets/jss/material-dashboard-pro-react/views/extendedTablesStyle';
+import extendedTablesStyle from '@/assets/jss/material-dashboard-pro-react/views/extendedTablesStyle';
 
-import product1 from 'assets/img/product1.jpg';
-import product2 from 'assets/img/product2.jpg';
-import product3 from 'assets/img/product3.jpg';
+import product1 from '@/assets/img/product1.jpg';
+import product2 from '@/assets/img/product2.jpg';
+import product3 from '@/assets/img/product3.jpg';
 
 class ExtendedTables extends React.Component {
   constructor(props) {
@@ -38,6 +38,7 @@ class ExtendedTables extends React.Component {
     };
     this.handleToggle = this.handleToggle.bind(this);
   }
+
   handleToggle(value) {
     const { checked } = this.state;
     const currentIndex = checked.indexOf(value);
@@ -53,6 +54,7 @@ class ExtendedTables extends React.Component {
       checked: newChecked,
     });
   }
+
   render() {
     const { classes } = this.props;
     const fillButtons = [
@@ -91,7 +93,7 @@ class ExtendedTables extends React.Component {
         <Button
           round
           color={prop.color}
-          className={classes.actionButton + ' ' + classes.actionButtonRound}
+          className={`${classes.actionButton} ${classes.actionButtonRound}`}
           key={key}
         >
           <prop.icon className={classes.icon} />
@@ -343,7 +345,7 @@ class ExtendedTables extends React.Component {
                       <small className={classes.tdNumberSmall}>€</small> 549
                     </span>,
                     <span>
-                      1{` `}
+                      1{' '}
                       <div className={classes.buttonGroup}>
                         <Button
                           color="info"
@@ -387,7 +389,7 @@ class ExtendedTables extends React.Component {
                       <small className={classes.tdNumberSmall}>€</small> 499
                     </span>,
                     <span>
-                      2{` `}
+                      2{' '}
                       <div className={classes.buttonGroup}>
                         <Button
                           color="info"
@@ -433,7 +435,7 @@ class ExtendedTables extends React.Component {
                       <small className={classes.tdNumberSmall}>€</small> 799
                     </span>,
                     <span>
-                      1{` `}
+                      1{' '}
                       <div className={classes.buttonGroup}>
                         <Button
                           color="info"
@@ -465,7 +467,8 @@ class ExtendedTables extends React.Component {
                     colspan: '5',
                     amount: (
                       <span>
-                        <small>€</small>2,346
+                        <small>€</small>
+                        2,346
                       </span>
                     ),
                   },
@@ -498,7 +501,7 @@ class ExtendedTables extends React.Component {
                   classes.customFont,
                   classes.customFont,
                   classes.tdNumber,
-                  classes.tdNumber + ' ' + classes.tdNumberAndButtonGroup,
+                  `${classes.tdNumber} ${classes.tdNumberAndButtonGroup}`,
                   classes.tdNumber,
                 ]}
                 customClassesForCells={[1, 2, 3, 4, 5, 6]}

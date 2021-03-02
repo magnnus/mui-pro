@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import React from 'react';
 import cx from 'classnames';
-import PropTypes from 'prop-types';
+
 import { Switch, Route } from 'react-router-dom';
 // creates a beautiful scrollbar
 import PerfectScrollbar from 'perfect-scrollbar';
@@ -12,16 +12,16 @@ import withStyles from '@material-ui/core/styles/withStyles';
 
 // core components
 import AdminNavbar from '@/components/Navbars/AdminNavbar';
-import Footer from 'components/Footer/Footer';
-import Sidebar from 'components/Sidebar/Sidebar';
-import FixedPlugin from 'components/FixedPlugin/FixedPlugin';
+import Footer from '@/components/Footer/Footer';
+import Sidebar from '@/components/Sidebar/Sidebar';
+import FixedPlugin from '@/components/FixedPlugin/FixedPlugin';
 
-import routes from 'routes';
+import routes from '@/routes';
 
-import rtlStyle from 'assets/jss/material-dashboard-pro-react/layouts/rtlStyle';
+import rtlStyle from '@/assets/jss/material-dashboard-pro-react/layouts/rtlStyle';
 
-import image from 'assets/img/sidebar-2.jpg';
-import logo from 'assets/img/logo-white.svg';
+import image from '@/assets/img/sidebar-2.jpg';
+import logo from '@/assets/img/logo-white.svg';
 
 var ps;
 

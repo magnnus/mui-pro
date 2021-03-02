@@ -6,7 +6,7 @@ import {
   whiteColor,
   grayColor,
   hexToRgb,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const pricingPageStyle = theme => ({
   container: {
@@ -30,7 +30,7 @@ const pricingPageStyle = theme => ({
   },
   cardTitleWhite: {
     ...cardTitle,
-    color: whiteColor + ' !important',
+    color: `${whiteColor} !important`,
   },
   cardCategory: {
     color: grayColor[0],
@@ -41,11 +41,11 @@ const pricingPageStyle = theme => ({
     marginTop: '10px',
   },
   icon: {
-    color: 'rgba(' + hexToRgb(whiteColor) + ', 0.76)',
+    color: `rgba(${hexToRgb(whiteColor)}, 0.76)`,
     margin: '10px auto 0',
     width: '130px',
     height: '130px',
-    border: '1px solid ' + grayColor[11],
+    border: `1px solid ${grayColor[11]}`,
     borderRadius: '50%',
     lineHeight: '174px',
     '& svg': {

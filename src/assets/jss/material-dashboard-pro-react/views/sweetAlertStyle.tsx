@@ -1,6 +1,6 @@
-import { grayColor } from 'assets/jss/material-dashboard-pro-react';
+import { grayColor } from '@/assets/jss/material-dashboard-pro-react';
 
-import buttonStyle from 'assets/jss/material-dashboard-pro-react/components/buttonStyle';
+import buttonStyle from '@/assets/jss/material-dashboard-pro-react/components/buttonStyle';
 
 const sweetAlertStyle = {
   cardTitle: {

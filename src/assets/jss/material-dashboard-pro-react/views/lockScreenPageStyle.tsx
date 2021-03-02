@@ -4,7 +4,7 @@ import {
   whiteColor,
   blackColor,
   hexToRgb,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const lockScreenPageStyle = theme => ({
   cardTitle,
@@ -20,7 +20,7 @@ const lockScreenPageStyle = theme => ({
     margin: '60px auto 0',
     color: whiteColor,
     display: 'block',
-    transform: 'translate3d(' + hexToRgb(blackColor) + ')',
+    transform: `translate3d(${hexToRgb(blackColor)})`,
     transition: 'all 300ms linear',
   },
   cardHidden: {

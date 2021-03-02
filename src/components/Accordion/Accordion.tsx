@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -10,7 +9,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 // @material-ui/icons
 import ExpandMore from '@material-ui/icons/ExpandMore';
 
-import accordionStyle from 'assets/jss/material-dashboard-pro-react/components/accordionStyle';
+import accordionStyle from '@/assets/jss/material-dashboard-pro-react/components/accordionStyle';
 
 class Accordion extends React.Component {
   constructor(props) {
@@ -19,11 +18,13 @@ class Accordion extends React.Component {
       active: props.active,
     };
   }
+
   handleChange = panel => (event, expanded) => {
     this.setState({
       active: expanded ? panel : -1,
     });
   };
+
   render() {
     const { classes, collapses } = this.props;
     return (

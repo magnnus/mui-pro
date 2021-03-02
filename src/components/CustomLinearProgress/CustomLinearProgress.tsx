@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
-import customLinearProgressStyle from 'assets/jss/material-dashboard-pro-react/components/customLinearProgressStyle';
+import customLinearProgressStyle from '@/assets/jss/material-dashboard-pro-react/components/customLinearProgressStyle';
 
 function CustomLinearProgress({ ...props }) {
   const { classes, color, ...rest } = props;
@@ -13,8 +12,8 @@ function CustomLinearProgress({ ...props }) {
     <LinearProgress
       {...rest}
       classes={{
-        root: classes.root + ' ' + classes[color + 'Background'],
-        bar: classes.bar + ' ' + classes[color],
+        root: `${classes.root} ${classes[`${color}Background`]}`,
+        bar: `${classes.bar} ${classes[color]}`,
       }}
     />
   );

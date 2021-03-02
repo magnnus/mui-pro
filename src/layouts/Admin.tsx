@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import PropTypes from 'prop-types';
+
 import { Switch, Route } from 'react-router-dom';
 // creates a beautiful scrollbar
 import PerfectScrollbar from 'perfect-scrollbar';
@@ -10,19 +10,19 @@ import 'perfect-scrollbar/css/perfect-scrollbar.css';
 import withStyles from '@material-ui/core/styles/withStyles';
 
 // core components
-import AdminNavbar from 'components/Navbars/AdminNavbar';
-import Footer from 'components/Footer/Footer';
-import Sidebar from 'components/Sidebar/Sidebar';
-import FixedPlugin from 'components/FixedPlugin/FixedPlugin';
+import AdminNavbar from '@/components/Navbars/AdminNavbar';
+import Footer from '@/components/Footer/Footer';
+import Sidebar from '@/components/Sidebar/Sidebar';
+import FixedPlugin from '@/components/FixedPlugin/FixedPlugin';
 
-import routes from 'routes.js';
+import routes from '@/routes';
 
-import appStyle from 'assets/jss/material-dashboard-pro-react/layouts/adminStyle';
+import appStyle from '@/assets/jss/material-dashboard-pro-react/layouts/adminStyle';
 
-import image from 'assets/img/sidebar-2.jpg';
-import logo from 'assets/img/logo-white.svg';
+import image from '@/assets/img/sidebar-2.jpg';
+import logo from '@/assets/img/logo-white.svg';
 
-var ps;
+let ps;
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class Dashboard extends React.Component {
     this.state = {
       mobileOpen: false,
       miniActive: false,
-      image: image,
+      image,
       color: 'blue',
       bgColor: 'black',
       hasImage: true,
@@ -38,6 +38,7 @@ class Dashboard extends React.Component {
     };
     this.resizeFunction = this.resizeFunction.bind(this);
   }
+
   componentDidMount() {
     if (navigator.platform.indexOf('Win') > -1) {
       ps = new PerfectScrollbar(this.refs.mainPanel, {
@@ -48,12 +49,14 @@ class Dashboard extends React.Component {
     }
     window.addEventListener('resize', this.resizeFunction);
   }
+
   componentWillUnmount() {
     if (navigator.platform.indexOf('Win') > -1) {
       ps.destroy();
     }
     window.removeEventListener('resize', this.resizeFunction);
   }
+
   componentDidUpdate(e) {
     if (e.history.location.pathname !== e.location.pathname) {
       this.refs.mainPanel.scrollTop = 0;
@@ -62,15 +65,19 @@ class Dashboard extends React.Component {
       }
     }
   }
+
   handleImageClick = image => {
-    this.setState({ image: image });
+    this.setState({ image });
   };
+
   handleColorClick = color => {
-    this.setState({ color: color });
+    this.setState({ color });
   };
+
   handleBgColorClick = bgColor => {
-    this.setState({ bgColor: bgColor });
+    this.setState({ bgColor });
   };
+
   handleFixedClick = () => {
     if (this.state.fixedClasses === 'dropdown') {
       this.setState({ fixedClasses: 'dropdown show' });
@@ -78,30 +85,32 @@ class Dashboard extends React.Component {
       this.setState({ fixedClasses: 'dropdown' });
     }
   };
+
   handleDrawerToggle = () => {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
+
   getRoute() {
     return this.props.location.pathname !== '/admin/full-screen-maps';
   }
+
   getActiveRoute = routes => {
-    let activeRoute = 'Default Brand Text';
+    const activeRoute = 'Default Brand Text';
     for (let i = 0; i < routes.length; i++) {
       if (routes[i].collapse) {
-        let collapseActiveRoute = this.getActiveRoute(routes[i].views);
+        const collapseActiveRoute = this.getActiveRoute(routes[i].views);
         if (collapseActiveRoute !== activeRoute) {
           return collapseActiveRoute;
         }
-      } else {
-        if (
-          window.location.href.indexOf(routes[i].layout + routes[i].path) !== -1
-        ) {
-          return routes[i].name;
-        }
+      } else if (
+        window.location.href.indexOf(routes[i].layout + routes[i].path) !== -1
+      ) {
+        return routes[i].name;
       }
     }
     return activeRoute;
   };
+
   getRoutes = routes => {
     return routes.map((prop, key) => {
       if (prop.collapse) {
@@ -115,34 +124,33 @@ class Dashboard extends React.Component {
             key={key}
           />
         );
-      } else {
-        return null;
       }
+      return null;
     });
   };
+
   sidebarMinimize() {
     this.setState({ miniActive: !this.state.miniActive });
   }
+
   resizeFunction() {
     if (window.innerWidth >= 960) {
       this.setState({ mobileOpen: false });
     }
   }
+
   render() {
     const { classes, ...rest } = this.props;
-    const mainPanel =
-      classes.mainPanel +
-      ' ' +
-      cx({
-        [classes.mainPanelSidebarMini]: this.state.miniActive,
-        [classes.mainPanelWithPerfectScrollbar]:
-          navigator.platform.indexOf('Win') > -1,
-      });
+    const mainPanel = `${classes.mainPanel} ${cx({
+      [classes.mainPanelSidebarMini]: this.state.miniActive,
+      [classes.mainPanelWithPerfectScrollbar]:
+        navigator.platform.indexOf('Win') > -1,
+    })}`;
     return (
       <div className={classes.wrapper}>
         <Sidebar
           routes={routes}
-          logoText={'Hey Guys'}
+          logoText="Hey Guys"
           logo={logo}
           image={this.state.image}
           handleDrawerToggle={this.handleDrawerToggle}
@@ -178,9 +186,9 @@ class Dashboard extends React.Component {
             handleColorClick={this.handleColorClick}
             handleBgColorClick={this.handleBgColorClick}
             handleHasImage={this.handleHasImage}
-            color={this.state['color']}
-            bgColor={this.state['bgColor']}
-            bgImage={this.state['image']}
+            color={this.state.color}
+            bgColor={this.state.bgColor}
+            bgImage={this.state.image}
             handleFixedClick={this.handleFixedClick}
             fixedClasses={this.state.fixedClasses}
             sidebarMinimize={this.sidebarMinimize.bind(this)}

@@ -1,7 +1,7 @@
 // ##############################
 // // // javascript library for creating charts
 // #############################
-var Chartist = require('chartist');
+import Chartist from 'chartist';
 
 // ##############################
 // // // Charts used in Dahsboard view
@@ -11,10 +11,10 @@ var Chartist = require('chartist');
 // // // variables used to create animation on charts
 // #############################
 
-var delays = 80,
-  durations = 500;
-var delays2 = 80,
-  durations2 = 500;
+const delays = 80;
+const durations = 500;
+const delays2 = 80;
+const durations2 = 500;
 
 // ##############################
 // // // Daily Sales
@@ -40,7 +40,7 @@ const dailySalesChart = {
   },
   // for animation
   animation: {
-    draw: function (data) {
+    draw(data) {
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
           d: {
@@ -111,7 +111,7 @@ const emailsSubscriptionChart = {
       {
         seriesBarDistance: 5,
         axisX: {
-          labelInterpolationFnc: function (value) {
+          labelInterpolationFnc(value) {
             return value[0];
           },
         },
@@ -119,7 +119,7 @@ const emailsSubscriptionChart = {
     ],
   ],
   animation: {
-    draw: function (data) {
+    draw(data) {
       if (data.type === 'bar') {
         data.element.animate({
           opacity: {
@@ -158,7 +158,7 @@ const completedTasksChart = {
     },
   },
   animation: {
-    draw: function (data) {
+    draw(data) {
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
           d: {
@@ -215,7 +215,7 @@ const roundedLineChart = {
     showPoint: false,
   },
   animation: {
-    draw: function (data) {
+    draw(data) {
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
           d: {
@@ -272,7 +272,7 @@ const straightLinesChart = {
     },
   },
   animation: {
-    draw: function (data) {
+    draw(data) {
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
           d: {
@@ -336,7 +336,7 @@ const simpleBarChart = {
       {
         seriesBarDistance: 5,
         axisX: {
-          labelInterpolationFnc: function (value) {
+          labelInterpolationFnc(value) {
             return value[0];
           },
         },
@@ -344,7 +344,7 @@ const simpleBarChart = {
     ],
   ],
   animation: {
-    draw: function (data) {
+    draw(data) {
       if (data.type === 'bar') {
         data.element.animate({
           opacity: {
@@ -397,7 +397,7 @@ const colouredLineChart = {
     height: '300px',
   },
   animation: {
-    draw: function (data) {
+    draw(data) {
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
           d: {
@@ -465,7 +465,7 @@ const multipleBarsChart = {
       {
         seriesBarDistance: 5,
         axisX: {
-          labelInterpolationFnc: function (value) {
+          labelInterpolationFnc(value) {
             return value[0];
           },
         },
@@ -473,7 +473,7 @@ const multipleBarsChart = {
     ],
   ],
   animation: {
-    draw: function (data) {
+    draw(data) {
       if (data.type === 'bar') {
         data.element.animate({
           opacity: {
@@ -530,7 +530,7 @@ const colouredLinesChart = {
     height: '300px',
   },
   animation: {
-    draw: function (data) {
+    draw(data) {
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
           d: {
@@ -574,7 +574,7 @@ const pieChart = {
   },
 };
 
-module.exports = {
+export {
   // Charts used in Dahsboard view
   dailySalesChart,
   emailsSubscriptionChart,

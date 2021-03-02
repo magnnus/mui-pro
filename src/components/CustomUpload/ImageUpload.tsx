@@ -1,12 +1,11 @@
 import React from 'react';
 // used for making the prop types of this component
-import PropTypes from 'prop-types';
 
 // core components
-import Button from 'components/CustomButtons/Button';
+import Button from '@/components/CustomButtons/Button';
 
-import defaultImage from 'assets/img/image_placeholder.jpg';
-import defaultAvatar from 'assets/img/placeholder.jpg';
+import defaultImage from '@/assets/img/image_placeholder.jpg';
+import defaultAvatar from '@/assets/img/placeholder.jpg';
 
 class ImageUpload extends React.Component {
   constructor(props) {
@@ -20,27 +19,31 @@ class ImageUpload extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
   }
+
   handleImageChange(e) {
     e.preventDefault();
-    let reader = new FileReader();
-    let file = e.target.files[0];
+    const reader = new FileReader();
+    const file = e.target.files[0];
     reader.onloadend = () => {
       this.setState({
-        file: file,
+        file,
         imagePreviewUrl: reader.result,
       });
     };
     reader.readAsDataURL(file);
   }
+
   handleSubmit(e) {
     e.preventDefault();
     // this.state.file is the file/image uploaded
     // in this function you can save the image (this.state.file) on form submit
     // you have to call it yourself
   }
+
   handleClick() {
     this.refs.fileInput.click();
   }
+
   handleRemove() {
     this.setState({
       file: null,
@@ -48,8 +51,9 @@ class ImageUpload extends React.Component {
     });
     this.refs.fileInput.value = null;
   }
+
   render() {
-    var {
+    const {
       avatar,
       addButtonProps,
       changeButtonProps,
@@ -58,7 +62,7 @@ class ImageUpload extends React.Component {
     return (
       <div className="fileinput text-center">
         <input type="file" onChange={this.handleImageChange} ref="fileInput" />
-        <div className={'thumbnail' + (avatar ? ' img-circle' : '')}>
+        <div className={`thumbnail${avatar ? ' img-circle' : ''}`}>
           <img src={this.state.imagePreviewUrl} alt="..." />
         </div>
         <div>

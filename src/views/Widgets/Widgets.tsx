@@ -10,25 +10,28 @@ import Code from '@material-ui/icons/Code';
 import Cloud from '@material-ui/icons/Cloud';
 import FormatQuote from '@material-ui/icons/FormatQuote';
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import Table from 'components/Table/Table';
-import Button from 'components/CustomButtons/Button';
-import Timeline from 'components/Timeline/Timeline';
-import CustomTabs from 'components/CustomTabs/CustomTabs';
-import Tasks from 'components/Tasks/Tasks';
-import Card from 'components/Card/Card';
-import CardHeader from 'components/Card/CardHeader';
-import CardAvatar from 'components/Card/CardAvatar';
-import CardText from 'components/Card/CardText';
-import CardBody from 'components/Card/CardBody';
-import CardFooter from 'components/Card/CardFooter';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import Table from '@/components/Table/Table';
+import Button from '@/components/CustomButtons/Button';
+import Timeline from '@/components/Timeline/Timeline';
+import CustomTabs from '@/components/CustomTabs/CustomTabs';
+import Tasks from '@/components/Tasks/Tasks';
+import Card from '@/components/Card/Card';
+import CardHeader from '@/components/Card/CardHeader';
+import CardAvatar from '@/components/Card/CardAvatar';
+import CardText from '@/components/Card/CardText';
+import CardBody from '@/components/Card/CardBody';
+import CardFooter from '@/components/Card/CardFooter';
 
-import { widgetStories, bugs, website, server } from 'variables/general';
+import { widgetStories, bugs, website, server } from '@/variables/general';
 
-import image from 'assets/img/faces/card-profile1-square.jpg';
+import image from '@/assets/img/faces/card-profile1-square.jpg';
 
-import { cardTitle, roseColor } from 'assets/jss/material-dashboard-pro-react';
+import {
+  cardTitle,
+  roseColor,
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const styles = {
   cardTitle,

@@ -15,14 +15,14 @@ import AddLocation from '@material-ui/icons/AddLocation';
 import Place from '@material-ui/icons/Place';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import Card from 'components/Card/Card';
-import CardBody from 'components/Card/CardBody';
-import CardIcon from 'components/Card/CardIcon';
-import CardHeader from 'components/Card/CardHeader';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import Card from '@/components/Card/Card';
+import CardBody from '@/components/Card/CardBody';
+import CardIcon from '@/components/Card/CardIcon';
+import CardHeader from '@/components/Card/CardHeader';
 
-import { cardTitle } from 'assets/jss/material-dashboard-pro-react';
+import { cardTitle } from '@/assets/jss/material-dashboard-pro-react';
 
 const styles = {
   cardIconTitle: {
@@ -36,7 +36,7 @@ const SatelliteMap = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
       defaultZoom={3}
-      mapTypeId={'satellite'}
+      mapTypeId="satellite"
       defaultCenter={{ lat: 40.748817, lng: -73.985428 }}
       defaultOptions={{
         scrollwheel: false,
@@ -153,17 +153,17 @@ class GoogleMaps extends React.Component {
             <CardBody>
               <SatelliteMap
                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
-                loadingElement={<div style={{ height: `100%` }} />}
+                loadingElement={<div style={{ height: '100%' }} />}
                 containerElement={
                   <div
                     style={{
-                      height: `280px`,
+                      height: '280px',
                       borderRadius: '6px',
                       overflow: 'hidden',
                     }}
                   />
                 }
-                mapElement={<div style={{ height: `100%` }} />}
+                mapElement={<div style={{ height: '100%' }} />}
               />
             </CardBody>
           </Card>
@@ -179,17 +179,17 @@ class GoogleMaps extends React.Component {
             <CardBody>
               <RegularMap
                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
-                loadingElement={<div style={{ height: `100%` }} />}
+                loadingElement={<div style={{ height: '100%' }} />}
                 containerElement={
                   <div
                     style={{
-                      height: `280px`,
+                      height: '280px',
                       borderRadius: '6px',
                       overflow: 'hidden',
                     }}
                   />
                 }
-                mapElement={<div style={{ height: `100%` }} />}
+                mapElement={<div style={{ height: '100%' }} />}
               />
             </CardBody>
           </Card>
@@ -207,17 +207,17 @@ class GoogleMaps extends React.Component {
             <CardBody>
               <CustomSkinMap
                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
-                loadingElement={<div style={{ height: `100%` }} />}
+                loadingElement={<div style={{ height: '100%' }} />}
                 containerElement={
                   <div
                     style={{
-                      height: `280px`,
+                      height: '280px',
                       borderRadius: '6px',
                       overflow: 'hidden',
                     }}
                   />
                 }
-                mapElement={<div style={{ height: `100%` }} />}
+                mapElement={<div style={{ height: '100%' }} />}
               />
             </CardBody>
           </Card>

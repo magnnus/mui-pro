@@ -2,13 +2,13 @@ import React from 'react';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 // nodejs library to set properties for components
-import PropTypes from 'prop-types';
 
 // material-ui components
 import withStyles from '@material-ui/core/styles/withStyles';
 import Button from '@material-ui/core/Button';
 
-import buttonStyle from 'assets/jss/material-dashboard-pro-react/components/buttonStyle';
+import buttonStyle from '@/assets/jss/material-dashboard-pro-react/components/buttonStyle';
+
 function RegularButton({ ...props }) {
   const {
     classes,

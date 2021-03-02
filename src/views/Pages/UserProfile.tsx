@@ -8,20 +8,20 @@ import InputLabel from '@material-ui/core/InputLabel';
 import PermIdentity from '@material-ui/icons/PermIdentity';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import Button from 'components/CustomButtons/Button';
-import CustomInput from 'components/CustomInput/CustomInput';
-import Clearfix from 'components/Clearfix/Clearfix';
-import Card from 'components/Card/Card';
-import CardBody from 'components/Card/CardBody';
-import CardHeader from 'components/Card/CardHeader';
-import CardIcon from 'components/Card/CardIcon';
-import CardAvatar from 'components/Card/CardAvatar';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import Button from '@/components/CustomButtons/Button';
+import CustomInput from '@/components/CustomInput/CustomInput';
+import Clearfix from '@/components/Clearfix/Clearfix';
+import Card from '@/components/Card/Card';
+import CardBody from '@/components/Card/CardBody';
+import CardHeader from '@/components/Card/CardHeader';
+import CardIcon from '@/components/Card/CardIcon';
+import CardAvatar from '@/components/Card/CardAvatar';
 
-import userProfileStyles from 'assets/jss/material-dashboard-pro-react/views/userProfileStyles';
+import userProfileStyles from '@/assets/jss/material-dashboard-pro-react/views/userProfileStyles';
 
-import avatar from 'assets/img/faces/marc.jpg';
+import avatar from '@/assets/img/faces/marc.jpg';
 
 function UserProfile(props) {
   const { classes } = props;
@@ -35,7 +35,9 @@ function UserProfile(props) {
                 <PermIdentity />
               </CardIcon>
               <h4 className={classes.cardIconTitle}>
-                Edit Profile - <small>Complete your profile</small>
+                Edit Profile - 
+{' '}
+<small>Complete your profile</small>
               </h4>
             </CardHeader>
             <CardBody>

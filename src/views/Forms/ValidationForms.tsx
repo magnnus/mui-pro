@@ -14,19 +14,19 @@ import Check from '@material-ui/icons/Check';
 import Close from '@material-ui/icons/Close';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import CustomInput from 'components/CustomInput/CustomInput';
-import Button from 'components/CustomButtons/Button';
-import Card from 'components/Card/Card';
-import CardHeader from 'components/Card/CardHeader';
-import CardText from 'components/Card/CardText';
-import CardIcon from 'components/Card/CardIcon';
-import CardBody from 'components/Card/CardBody';
-import CardFooter from 'components/Card/CardFooter';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import CustomInput from '@/components/CustomInput/CustomInput';
+import Button from '@/components/CustomButtons/Button';
+import Card from '@/components/Card/Card';
+import CardHeader from '@/components/Card/CardHeader';
+import CardText from '@/components/Card/CardText';
+import CardIcon from '@/components/Card/CardIcon';
+import CardBody from '@/components/Card/CardBody';
+import CardFooter from '@/components/Card/CardFooter';
 
 // style for this view
-import validationFormsStyle from 'assets/jss/material-dashboard-pro-react/views/validationFormsStyle';
+import validationFormsStyle from '@/assets/jss/material-dashboard-pro-react/views/validationFormsStyle';
 
 class ValidationForms extends React.Component {
   constructor(props) {
@@ -75,14 +75,16 @@ class ValidationForms extends React.Component {
     this.typeClick = this.typeClick.bind(this);
     this.rangeClick = this.rangeClick.bind(this);
   }
+
   // function that returns true if value is email, false otherwise
   verifyEmail(value) {
-    var emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (emailRex.test(value)) {
       return true;
     }
     return false;
   }
+
   // function that verifies if a string has a given length or not
   verifyLength(value, length) {
     if (value.length >= length) {
@@ -90,6 +92,7 @@ class ValidationForms extends React.Component {
     }
     return false;
   }
+
   // function that verifies if two strings are equal
   compare(string1, string2) {
     if (string1 === string2) {
@@ -97,14 +100,16 @@ class ValidationForms extends React.Component {
     }
     return false;
   }
+
   // function that verifies if value contains only numbers
   verifyNumber(value) {
-    var numberRex = new RegExp('^[0-9]+$');
+    const numberRex = new RegExp('^[0-9]+$');
     if (numberRex.test(value)) {
       return true;
     }
     return false;
   }
+
   // verifies if value is a valid URL
   verifyUrl(value) {
     try {
@@ -114,62 +119,63 @@ class ValidationForms extends React.Component {
       return false;
     }
   }
+
   change(event, stateName, type, stateNameEqualTo, maxValue) {
     switch (type) {
       case 'email':
         if (this.verifyEmail(event.target.value)) {
-          this.setState({ [stateName + 'State']: 'success' });
+          this.setState({ [`${stateName}State`]: 'success' });
         } else {
-          this.setState({ [stateName + 'State']: 'error' });
+          this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       case 'password':
         if (this.verifyLength(event.target.value, 1)) {
-          this.setState({ [stateName + 'State']: 'success' });
+          this.setState({ [`${stateName}State`]: 'success' });
         } else {
-          this.setState({ [stateName + 'State']: 'error' });
+          this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       case 'equalTo':
         if (this.compare(event.target.value, this.state[stateNameEqualTo])) {
-          this.setState({ [stateName + 'State']: 'success' });
+          this.setState({ [`${stateName}State`]: 'success' });
         } else {
-          this.setState({ [stateName + 'State']: 'error' });
+          this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       case 'checkbox':
         if (event.target.checked) {
-          this.setState({ [stateName + 'State']: 'success' });
+          this.setState({ [`${stateName}State`]: 'success' });
         } else {
-          this.setState({ [stateName + 'State']: 'error' });
+          this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       case 'number':
         if (this.verifyNumber(event.target.value)) {
-          this.setState({ [stateName + 'State']: 'success' });
+          this.setState({ [`${stateName}State`]: 'success' });
         } else {
-          this.setState({ [stateName + 'State']: 'error' });
+          this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       case 'length':
         if (this.verifyLength(event.target.value, stateNameEqualTo)) {
-          this.setState({ [stateName + 'State']: 'success' });
+          this.setState({ [`${stateName}State`]: 'success' });
         } else {
-          this.setState({ [stateName + 'State']: 'error' });
+          this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       case 'max-length':
         if (!this.verifyLength(event.target.value, stateNameEqualTo + 1)) {
-          this.setState({ [stateName + 'State']: 'success' });
+          this.setState({ [`${stateName}State`]: 'success' });
         } else {
-          this.setState({ [stateName + 'State']: 'error' });
+          this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       case 'url':
         if (this.verifyUrl(event.target.value)) {
-          this.setState({ [stateName + 'State']: 'success' });
+          this.setState({ [`${stateName}State`]: 'success' });
         } else {
-          this.setState({ [stateName + 'State']: 'error' });
+          this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       case 'min-value':
@@ -177,9 +183,9 @@ class ValidationForms extends React.Component {
           this.verifyNumber(event.target.value) &&
           event.target.value >= stateNameEqualTo
         ) {
-          this.setState({ [stateName + 'State']: 'success' });
+          this.setState({ [`${stateName}State`]: 'success' });
         } else {
-          this.setState({ [stateName + 'State']: 'error' });
+          this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       case 'max-value':
@@ -187,9 +193,9 @@ class ValidationForms extends React.Component {
           this.verifyNumber(event.target.value) &&
           event.target.value <= stateNameEqualTo
         ) {
-          this.setState({ [stateName + 'State']: 'success' });
+          this.setState({ [`${stateName}State`]: 'success' });
         } else {
-          this.setState({ [stateName + 'State']: 'error' });
+          this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       case 'range':
@@ -198,9 +204,9 @@ class ValidationForms extends React.Component {
           event.target.value >= stateNameEqualTo &&
           event.target.value <= maxValue
         ) {
-          this.setState({ [stateName + 'State']: 'success' });
+          this.setState({ [`${stateName}State`]: 'success' });
         } else {
-          this.setState({ [stateName + 'State']: 'error' });
+          this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       default:
@@ -215,6 +221,7 @@ class ValidationForms extends React.Component {
         break;
     }
   }
+
   registerClick() {
     if (this.state.registerEmailState === '') {
       this.setState({ registerEmailState: 'error' });
@@ -229,6 +236,7 @@ class ValidationForms extends React.Component {
       this.setState({ registerCheckboxState: 'error' });
     }
   }
+
   loginClick() {
     if (this.state.loginEmailState === '') {
       this.setState({ loginEmailState: 'error' });
@@ -237,6 +245,7 @@ class ValidationForms extends React.Component {
       this.setState({ loginPasswordState: 'error' });
     }
   }
+
   typeClick() {
     if (this.state.requiredState === '') {
       this.setState({ requiredState: 'error' });
@@ -254,6 +263,7 @@ class ValidationForms extends React.Component {
       this.setState({ equalToState: 'error' });
     }
   }
+
   rangeClick() {
     if (this.state.minLengthState === '') {
       this.setState({ minLengthState: 'error' });
@@ -271,6 +281,7 @@ class ValidationForms extends React.Component {
       this.setState({ maxValueState: 'error' });
     }
   }
+
   render() {
     const { classes } = this.props;
     return (
@@ -356,7 +367,7 @@ class ValidationForms extends React.Component {
                     label:
                       classes.label +
                       (this.state.registerCheckboxState === 'error'
-                        ? ' ' + classes.labelError
+                        ? ` ${classes.labelError}`
                         : ''),
                   }}
                   label="Subscribe to newsletter"

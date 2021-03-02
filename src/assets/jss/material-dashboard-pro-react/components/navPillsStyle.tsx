@@ -9,7 +9,7 @@ import {
   blackColor,
   grayColor,
   hexToRgb,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const navPillsStyle = theme => ({
   root: {
@@ -84,74 +84,56 @@ const navPillsStyle = theme => ({
     '&,&:hover': {
       color: whiteColor,
       backgroundColor: primaryColor[0],
-      boxShadow:
-        '0 4px 20px 0px rgba(' +
-        hexToRgb(blackColor) +
-        ', 0.14), 0 7px 10px -5px rgba(' +
-        hexToRgb(primaryColor[0]) +
-        ', 0.4)',
+      boxShadow: `0 4px 20px 0px rgba(${hexToRgb(
+        blackColor,
+      )}, 0.14), 0 7px 10px -5px rgba(${hexToRgb(primaryColor[0])}, 0.4)`,
     },
   },
   info: {
     '&,&:hover': {
       color: whiteColor,
       backgroundColor: infoColor[0],
-      boxShadow:
-        '0 4px 20px 0px rgba(' +
-        hexToRgb(blackColor) +
-        ', 0.14), 0 7px 10px -5px rgba(' +
-        hexToRgb(successColor[0]) +
-        ', 0.4)',
+      boxShadow: `0 4px 20px 0px rgba(${hexToRgb(
+        blackColor,
+      )}, 0.14), 0 7px 10px -5px rgba(${hexToRgb(successColor[0])}, 0.4)`,
     },
   },
   success: {
     '&,&:hover': {
       color: whiteColor,
       backgroundColor: successColor[0],
-      boxShadow:
-        '0 2px 2px 0 rgba(' +
-        hexToRgb(successColor[0]) +
-        ', 0.14), 0 3px 1px -2px rgba(' +
-        hexToRgb(successColor[0]) +
-        ', 0.2), 0 1px 5px 0 rgba(' +
-        hexToRgb(successColor[0]) +
-        ', 0.12)',
+      boxShadow: `0 2px 2px 0 rgba(${hexToRgb(
+        successColor[0],
+      )}, 0.14), 0 3px 1px -2px rgba(${hexToRgb(
+        successColor[0],
+      )}, 0.2), 0 1px 5px 0 rgba(${hexToRgb(successColor[0])}, 0.12)`,
     },
   },
   warning: {
     '&,&:hover': {
       color: whiteColor,
       backgroundColor: warningColor[0],
-      boxShadow:
-        '0 4px 20px 0px rgba(' +
-        hexToRgb(blackColor) +
-        ', 0.14), 0 7px 10px -5px rgba(' +
-        hexToRgb(warningColor[0]) +
-        ', 0.4)',
+      boxShadow: `0 4px 20px 0px rgba(${hexToRgb(
+        blackColor,
+      )}, 0.14), 0 7px 10px -5px rgba(${hexToRgb(warningColor[0])}, 0.4)`,
     },
   },
   danger: {
     '&,&:hover': {
       color: whiteColor,
       backgroundColor: dangerColor[0],
-      boxShadow:
-        '0 4px 20px 0px rgba(' +
-        hexToRgb(blackColor) +
-        ', 0.14), 0 7px 10px -5px rgba(' +
-        hexToRgb(warningColor[0]) +
-        ', 0.4)',
+      boxShadow: `0 4px 20px 0px rgba(${hexToRgb(
+        blackColor,
+      )}, 0.14), 0 7px 10px -5px rgba(${hexToRgb(warningColor[0])}, 0.4)`,
     },
   },
   rose: {
     '&,&:hover': {
       color: whiteColor,
       backgroundColor: roseColor[0],
-      boxShadow:
-        '0 4px 20px 0px rgba(' +
-        hexToRgb(blackColor) +
-        ', 0.14), 0 7px 10px -5px rgba(' +
-        hexToRgb(roseColor[0]) +
-        ', 0.4)',
+      boxShadow: `0 4px 20px 0px rgba(${hexToRgb(
+        blackColor,
+      )}, 0.14), 0 7px 10px -5px rgba(${hexToRgb(roseColor[0])}, 0.4)`,
     },
   },
   alignCenter: {

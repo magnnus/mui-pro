@@ -1,4 +1,4 @@
-import { boxShadow } from 'assets/jss/material-dashboard-pro-react';
+import { boxShadow } from '@/assets/jss/material-dashboard-pro-react';
 
 const iconsStyle = {
   iframe: {

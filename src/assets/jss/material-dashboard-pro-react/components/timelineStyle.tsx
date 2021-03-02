@@ -8,7 +8,8 @@ import {
   blackColor,
   grayColor,
   hexToRgb,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
+
 const timelineStyle = theme => ({
   timeline: {
     [theme.breakpoints.down('sm')]: {
@@ -74,48 +75,33 @@ const timelineStyle = theme => ({
   },
   info: {
     backgroundColor: infoColor[0],
-    boxShadow:
-      '0 4px 20px 0px rgba(' +
-      hexToRgb(blackColor) +
-      ', 0.14), 0 7px 10px -5px rgba(' +
-      hexToRgb(infoColor[0]) +
-      ', 0.4)',
+    boxShadow: `0 4px 20px 0px rgba(${hexToRgb(
+      blackColor,
+    )}, 0.14), 0 7px 10px -5px rgba(${hexToRgb(infoColor[0])}, 0.4)`,
   },
   success: {
     backgroundColor: successColor[0],
-    boxShadow:
-      '0 4px 20px 0px rgba(' +
-      hexToRgb(blackColor) +
-      ', 0.14), 0 7px 10px -5px rgba(' +
-      hexToRgb(successColor[0]) +
-      ', 0.4)',
+    boxShadow: `0 4px 20px 0px rgba(${hexToRgb(
+      blackColor,
+    )}, 0.14), 0 7px 10px -5px rgba(${hexToRgb(successColor[0])}, 0.4)`,
   },
   danger: {
     backgroundColor: dangerColor[0],
-    boxShadow:
-      '0 4px 20px 0px rgba(' +
-      hexToRgb(blackColor) +
-      ', 0.14), 0 7px 10px -5px rgba(' +
-      hexToRgb(dangerColor[0]) +
-      ', 0.4)',
+    boxShadow: `0 4px 20px 0px rgba(${hexToRgb(
+      blackColor,
+    )}, 0.14), 0 7px 10px -5px rgba(${hexToRgb(dangerColor[0])}, 0.4)`,
   },
   warning: {
     backgroundColor: warningColor[0],
-    boxShadow:
-      '0 4px 20px 0px rgba(' +
-      hexToRgb(blackColor) +
-      ', 0.14), 0 7px 10px -5px rgba(' +
-      hexToRgb(warningColor[0]) +
-      ', 0.4)',
+    boxShadow: `0 4px 20px 0px rgba(${hexToRgb(
+      blackColor,
+    )}, 0.14), 0 7px 10px -5px rgba(${hexToRgb(warningColor[0])}, 0.4)`,
   },
   primary: {
     backgroundColor: primaryColor[0],
-    boxShadow:
-      '0 4px 20px 0px rgba(' +
-      hexToRgb(blackColor) +
-      ', 0.14), 0 7px 10px -5px rgba(' +
-      hexToRgb(primaryColor[0]) +
-      ', 0.4)',
+    boxShadow: `0 4px 20px 0px rgba(${hexToRgb(
+      blackColor,
+    )}, 0.14), 0 7px 10px -5px rgba(${hexToRgb(primaryColor[0])}, 0.4)`,
   },
   badgeIcon: {
     width: '24px',
@@ -143,9 +129,9 @@ const timelineStyle = theme => ({
     padding: '20px',
     marginBottom: '20px',
     position: 'relative',
-    boxShadow: '0 1px 4px 0 rgba(' + hexToRgb(blackColor) + ', 0.14)',
+    boxShadow: `0 1px 4px 0 rgba(${hexToRgb(blackColor)}, 0.14)`,
     borderRadius: '6px',
-    color: 'rgba(' + hexToRgb(blackColor) + ', 0.87)',
+    color: `rgba(${hexToRgb(blackColor)}, 0.87)`,
     background: whiteColor,
     '&:before': {
       position: 'absolute',
@@ -153,8 +139,8 @@ const timelineStyle = theme => ({
       right: '-15px',
       display: 'inline-block',
       borderTop: '15px solid transparent',
-      borderLeft: '15px solid ' + grayColor[10],
-      borderRight: '0 solid ' + grayColor[10],
+      borderLeft: `15px solid ${grayColor[10]}`,
+      borderRight: `0 solid ${grayColor[10]}`,
       borderBottom: '15px solid transparent',
       content: '" "',
     },
@@ -164,8 +150,8 @@ const timelineStyle = theme => ({
       right: '-14px',
       display: 'inline-block',
       borderTop: '14px solid transparent',
-      borderLeft: '14px solid ' + whiteColor,
-      borderRight: '0 solid ' + whiteColor,
+      borderLeft: `14px solid ${whiteColor}`,
+      borderRight: `0 solid ${whiteColor}`,
       borderBottom: '14px solid transparent',
       content: '" "',
     },

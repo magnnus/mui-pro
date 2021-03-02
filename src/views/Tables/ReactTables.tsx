@@ -10,17 +10,17 @@ import Dvr from '@material-ui/icons/Dvr';
 import Favorite from '@material-ui/icons/Favorite';
 import Close from '@material-ui/icons/Close';
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import Button from 'components/CustomButtons/Button';
-import Card from 'components/Card/Card';
-import CardBody from 'components/Card/CardBody';
-import CardIcon from 'components/Card/CardIcon';
-import CardHeader from 'components/Card/CardHeader';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import Button from '@/components/CustomButtons/Button';
+import Card from '@/components/Card/Card';
+import CardBody from '@/components/Card/CardBody';
+import CardIcon from '@/components/Card/CardIcon';
+import CardHeader from '@/components/Card/CardHeader';
 
-import { dataTable } from 'variables/general';
+import { dataTable } from '@/variables/general';
 
-import { cardTitle } from 'assets/jss/material-dashboard-pro-react';
+import { cardTitle } from '@/assets/jss/material-dashboard-pro-react';
 
 const styles = {
   cardIconTitle: {
@@ -50,17 +50,9 @@ class ReactTables extends React.Component {
                 round
                 simple
                 onClick={() => {
-                  let obj = this.state.data.find(o => o.id === key);
+                  const obj = this.state.data.find(o => o.id === key);
                   alert(
-                    "You've clicked LIKE button on \n{ \nName: " +
-                      obj.name +
-                      ', \nposition: ' +
-                      obj.position +
-                      ', \noffice: ' +
-                      obj.office +
-                      ', \nage: ' +
-                      obj.age +
-                      '\n}.',
+                    `You've clicked LIKE button on \n{ \nName: ${obj.name}, \nposition: ${obj.position}, \noffice: ${obj.office}, \nage: ${obj.age}\n}.`,
                   );
                 }}
                 color="info"
@@ -74,17 +66,9 @@ class ReactTables extends React.Component {
                 round
                 simple
                 onClick={() => {
-                  let obj = this.state.data.find(o => o.id === key);
+                  const obj = this.state.data.find(o => o.id === key);
                   alert(
-                    "You've clicked EDIT button on \n{ \nName: " +
-                      obj.name +
-                      ', \nposition: ' +
-                      obj.position +
-                      ', \noffice: ' +
-                      obj.office +
-                      ', \nage: ' +
-                      obj.age +
-                      '\n}.',
+                    `You've clicked EDIT button on \n{ \nName: ${obj.name}, \nposition: ${obj.position}, \noffice: ${obj.office}, \nage: ${obj.age}\n}.`,
                   );
                 }}
                 color="warning"
@@ -98,7 +82,7 @@ class ReactTables extends React.Component {
                 round
                 simple
                 onClick={() => {
-                  var data = this.state.data;
+                  const { data } = this.state;
                   data.find((o, i) => {
                     if (o.id === key) {
                       // here you should add some custom code so you can delete the data
@@ -108,7 +92,7 @@ class ReactTables extends React.Component {
                     }
                     return false;
                   });
-                  this.setState({ data: data });
+                  this.setState({ data });
                 }}
                 color="danger"
                 className="remove"
@@ -121,6 +105,7 @@ class ReactTables extends React.Component {
       }),
     };
   }
+
   render() {
     const { classes } = this.props;
     return (

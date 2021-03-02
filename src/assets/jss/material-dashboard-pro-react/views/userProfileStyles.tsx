@@ -1,4 +1,7 @@
-import { cardTitle, grayColor } from 'assets/jss/material-dashboard-pro-react';
+import {
+  cardTitle,
+  grayColor,
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const userProfileStyles = {
   cardTitle,
@@ -13,7 +16,7 @@ const userProfileStyles = {
   },
   cardCategory: {
     marginTop: '10px',
-    color: grayColor[0] + ' !important',
+    color: `${grayColor[0]} !important`,
     textAlign: 'center',
   },
   description: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
+
 // import { Manager, Target, Popper } from "react-popper";
 
 // @material-ui/core components
@@ -20,32 +20,30 @@ import Dashboard from '@material-ui/icons/Dashboard';
 import Search from '@material-ui/icons/Search';
 
 // core components
-import CustomInput from 'components/CustomInput/CustomInput';
-import Button from 'components/CustomButtons/Button';
+import CustomInput from '@/components/CustomInput/CustomInput';
+import Button from '@/components/CustomButtons/Button';
 
-import adminNavbarLinksStyle from 'assets/jss/material-dashboard-pro-react/components/adminNavbarLinksStyle';
+import adminNavbarLinksStyle from '@/assets/jss/material-dashboard-pro-react/components/adminNavbarLinksStyle';
 
 class HeaderLinks extends React.Component {
   state = {
     open: false,
   };
+
   handleClick = () => {
     this.setState({ open: !this.state.open });
   };
+
   handleClose = () => {
     this.setState({ open: false });
   };
+
   render() {
     const { classes, rtlActive } = this.props;
     const { open } = this.state;
-    const searchButton =
-      classes.top +
-      ' ' +
-      classes.searchButton +
-      ' ' +
-      classNames({
-        [classes.searchRTL]: rtlActive,
-      });
+    const searchButton = `${classes.top} ${classes.searchButton} ${classNames({
+      [classes.searchRTL]: rtlActive,
+    })}`;
     const dropdownItem = classNames(
       classes.dropdownItem,
       classes.primaryHover,
@@ -62,7 +60,7 @@ class HeaderLinks extends React.Component {
         <CustomInput
           rtlActive={rtlActive}
           formControlProps={{
-            className: classes.top + ' ' + classes.search,
+            className: `${classes.top} ${classes.search}`,
           }}
           inputProps={{
             placeholder: rtlActive ? 'بحث' : 'Search',
@@ -80,7 +78,7 @@ class HeaderLinks extends React.Component {
           className={searchButton}
         >
           <Search
-            className={classes.headerLinksSvg + ' ' + classes.searchIcon}
+            className={`${classes.headerLinksSvg} ${classes.searchIcon}`}
           />
         </Button>
         <Button
@@ -94,13 +92,9 @@ class HeaderLinks extends React.Component {
           }}
         >
           <Dashboard
-            className={
-              classes.headerLinksSvg +
-              ' ' +
-              (rtlActive
-                ? classes.links + ' ' + classes.linksRTL
-                : classes.links)
-            }
+            className={`${classes.headerLinksSvg} ${
+              rtlActive ? `${classes.links} ${classes.linksRTL}` : classes.links
+            }`}
           />
           <Hidden mdUp implementation="css">
             <span className={classes.linkText}>
@@ -125,13 +119,11 @@ class HeaderLinks extends React.Component {
             }}
           >
             <Notifications
-              className={
-                classes.headerLinksSvg +
-                ' ' +
-                (rtlActive
-                  ? classes.links + ' ' + classes.linksRTL
-                  : classes.links)
-              }
+              className={`${classes.headerLinksSvg} ${
+                rtlActive
+                  ? `${classes.links} ${classes.linksRTL}`
+                  : classes.links
+              }`}
             />
             <span className={classes.notifications}>5</span>
             <Hidden mdUp implementation="css">
@@ -214,13 +206,9 @@ class HeaderLinks extends React.Component {
           }}
         >
           <Person
-            className={
-              classes.headerLinksSvg +
-              ' ' +
-              (rtlActive
-                ? classes.links + ' ' + classes.linksRTL
-                : classes.links)
-            }
+            className={`${classes.headerLinksSvg} ${
+              rtlActive ? `${classes.links} ${classes.linksRTL}` : classes.links
+            }`}
           />
           <Hidden mdUp implementation="css">
             <span className={classes.linkText}>

@@ -1,4 +1,4 @@
-import { grayColor } from 'assets/jss/material-dashboard-pro-react';
+import { grayColor } from '@/assets/jss/material-dashboard-pro-react';
 
 const gridSystemStyle = {
   title: {

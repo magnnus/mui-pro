@@ -10,15 +10,15 @@ import SweetAlert from 'react-bootstrap-sweetalert';
 import withStyles from '@material-ui/core/styles/withStyles';
 
 // core components
-import Heading from 'components/Heading/Heading';
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import Card from 'components/Card/Card';
-import CardBody from 'components/Card/CardBody';
+import Heading from '@/components/Heading/Heading';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import Card from '@/components/Card/Card';
+import CardBody from '@/components/Card/CardBody';
 
-import buttonStyle from 'assets/jss/material-dashboard-pro-react/components/buttonStyle';
+import buttonStyle from '@/assets/jss/material-dashboard-pro-react/components/buttonStyle';
 
-import { events } from 'variables/general';
+import { events } from '@/variables/general';
 
 const localizer = BigCalendar.momentLocalizer(moment);
 
@@ -26,14 +26,16 @@ class Calendar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: events,
+      events,
       alert: null,
     };
     this.hideAlert = this.hideAlert.bind(this);
   }
+
   selectedEvent(event) {
     alert(event.title);
   }
+
   addNewEventAlert(slotInfo) {
     this.setState({
       alert: (
@@ -44,18 +46,15 @@ class Calendar extends React.Component {
           title="Input something"
           onConfirm={e => this.addNewEvent(e, slotInfo)}
           onCancel={() => this.hideAlert()}
-          confirmBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.success
-          }
-          cancelBtnCssClass={
-            this.props.classes.button + ' ' + this.props.classes.danger
-          }
+          confirmBtnCssClass={`${this.props.classes.button} ${this.props.classes.success}`}
+          cancelBtnCssClass={`${this.props.classes.button} ${this.props.classes.danger}`}
         />
       ),
     });
   }
+
   addNewEvent(e, slotInfo) {
-    var newEvents = this.state.events;
+    const newEvents = this.state.events;
     newEvents.push({
       title: e,
       start: slotInfo.start,
@@ -66,20 +65,23 @@ class Calendar extends React.Component {
       events: newEvents,
     });
   }
+
   hideAlert() {
     this.setState({
       alert: null,
     });
   }
+
   eventColors(event, start, end, isSelected) {
-    var backgroundColor = 'event-';
+    let backgroundColor = 'event-';
     event.color
-      ? (backgroundColor = backgroundColor + event.color)
-      : (backgroundColor = backgroundColor + 'default');
+      ? (backgroundColor += event.color)
+      : (backgroundColor += 'default');
     return {
       className: backgroundColor,
     };
   }
+
   render() {
     return (
       <div>

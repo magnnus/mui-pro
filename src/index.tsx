@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { createBrowserHistory } from 'history';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 
-import AuthLayout from 'layouts/Auth';
-import RtlLayout from 'layouts/RTL';
-import AdminLayout from 'layouts/Admin';
+import AuthLayout from '@/layouts/Auth';
+import RtlLayout from '@/layouts/RTL';
+import AdminLayout from '@/layouts/Admin';
 
-import 'assets/scss/material-dashboard-pro-react.scss?v=1.5.0';
+import '@/assets/scss/material-dashboard-pro-react.scss?v=1.5.0';
 
 const hist = createBrowserHistory();
 

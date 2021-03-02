@@ -1,4 +1,7 @@
-import { whiteColor, hexToRgb } from 'assets/jss/material-dashboard-pro-react';
+import {
+  whiteColor,
+  hexToRgb,
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const cardBodyStyle = {
   cardBody: {
@@ -39,7 +42,7 @@ const cardBodyStyle = {
     '&': {
       'h1, h2, h3': {
         '& small': {
-          color: 'rgba(' + hexToRgb(whiteColor) + ', 0.8)',
+          color: `rgba(${hexToRgb(whiteColor)}, 0.8)`,
         },
       },
     },

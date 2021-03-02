@@ -21,17 +21,17 @@ import LibraryBooks from '@material-ui/icons/LibraryBooks';
 import AvTimer from '@material-ui/icons/AvTimer';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import CustomDropdown from 'components/CustomDropdown/CustomDropdown';
-import CustomLinearProgress from 'components/CustomLinearProgress/CustomLinearProgress';
-import ImageUpload from 'components/CustomUpload/ImageUpload';
-import Card from 'components/Card/Card';
-import CardHeader from 'components/Card/CardHeader';
-import CardIcon from 'components/Card/CardIcon';
-import CardBody from 'components/Card/CardBody';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import CustomDropdown from '@/components/CustomDropdown/CustomDropdown';
+import CustomLinearProgress from '@/components/CustomLinearProgress/CustomLinearProgress';
+import ImageUpload from '@/components/CustomUpload/ImageUpload';
+import Card from '@/components/Card/Card';
+import CardHeader from '@/components/Card/CardHeader';
+import CardIcon from '@/components/Card/CardIcon';
+import CardBody from '@/components/Card/CardBody';
 
-import extendedFormsStyle from 'assets/jss/material-dashboard-pro-react/views/extendedFormsStyle';
+import extendedFormsStyle from '@/assets/jss/material-dashboard-pro-react/views/extendedFormsStyle';
 
 class ExtendedForms extends React.Component {
   constructor(props) {
@@ -45,6 +45,7 @@ class ExtendedForms extends React.Component {
     };
     this.handleTags = this.handleTags.bind(this);
   }
+
   componentDidMount() {
     nouislider.create(this.refs.slider1, {
       start: [40],
@@ -59,18 +60,23 @@ class ExtendedForms extends React.Component {
       range: { min: 0, max: 100 },
     });
   }
+
   handleSimple = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
+
   handleMultiple = event => {
     this.setState({ multipleSelect: event.target.value });
   };
+
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
   };
+
   handleTags(regularTags) {
     this.setState({ tags: regularTags });
   }
+
   render() {
     const { classes } = this.props;
     return (

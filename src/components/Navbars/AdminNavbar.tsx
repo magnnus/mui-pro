@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import cx from 'classnames';
 
 // @material-ui/core components
@@ -14,22 +14,19 @@ import MoreVert from '@material-ui/icons/MoreVert';
 import ViewList from '@material-ui/icons/ViewList';
 
 // core components
-import AdminNavbarLinks from './AdminNavbarLinks';
-import Button from 'components/CustomButtons/Button';
+import Button from '@/components/CustomButtons/Button';
 
-import adminNavbarStyle from 'assets/jss/material-dashboard-pro-react/components/adminNavbarStyle';
+import adminNavbarStyle from '@/assets/jss/material-dashboard-pro-react/components/adminNavbarStyle';
+import AdminNavbarLinks from './AdminNavbarLinks';
 
 function AdminNavbar({ ...props }) {
   const { classes, color, rtlActive, brandText } = props;
   const appBarClasses = cx({
-    [' ' + classes[color]]: color,
+    [` ${classes[color]}`]: color,
   });
-  const sidebarMinimize =
-    classes.sidebarMinimize +
-    ' ' +
-    cx({
-      [classes.sidebarMinimizeRTL]: rtlActive,
-    });
+  const sidebarMinimize = `${classes.sidebarMinimize} ${cx({
+    [classes.sidebarMinimizeRTL]: rtlActive,
+  })}`;
   return (
     <AppBar className={classes.appBar + appBarClasses}>
       <Toolbar className={classes.container}>

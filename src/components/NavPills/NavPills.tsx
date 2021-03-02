@@ -2,7 +2,7 @@ import React from 'react';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 // nodejs library to set properties for components
-import PropTypes from 'prop-types';
+
 import SwipeableViews from 'react-swipeable-views';
 
 // material-ui components
@@ -11,10 +11,10 @@ import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
 
-import navPillsStyle from 'assets/jss/material-dashboard-pro-react/components/navPillsStyle';
+import navPillsStyle from '@/assets/jss/material-dashboard-pro-react/components/navPillsStyle';
 
 class NavPills extends React.Component {
   constructor(props) {
@@ -23,12 +23,15 @@ class NavPills extends React.Component {
       active: props.active,
     };
   }
+
   handleChange = (event, active) => {
     this.setState({ active });
   };
+
   handleChangeIndex = index => {
     this.setState({ active: index });
   };
+
   render() {
     const {
       classes,
@@ -55,9 +58,9 @@ class NavPills extends React.Component {
         centered={alignCenter}
       >
         {tabs.map((prop, key) => {
-          var icon = {};
+          const icon = {};
           if (prop.tabIcon !== undefined) {
-            icon['icon'] = <prop.tabIcon className={classes.tabIcon} />;
+            icon.icon = <prop.tabIcon className={classes.tabIcon} />;
           }
           const pillsClasses = classNames({
             [classes.pills]: true,

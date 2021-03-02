@@ -16,7 +16,7 @@ import {
   roseColor,
   grayColor,
   hexToRgb,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const snackbarContentStyle = {
   root: {
@@ -30,14 +30,11 @@ const snackbarContentStyle = {
     backgroundColor: 'white',
     color: grayColor[6],
     borderRadius: '3px',
-    boxShadow:
-      '0 12px 20px -10px rgba(' +
-      hexToRgb(whiteColor) +
-      ', 0.28), 0 4px 20px 0px rgba(' +
-      hexToRgb(blackColor) +
-      ', 0.12), 0 7px 8px -5px rgba(' +
-      hexToRgb(whiteColor) +
-      ', 0.2)',
+    boxShadow: `0 12px 20px -10px rgba(${hexToRgb(
+      whiteColor,
+    )}, 0.28), 0 4px 20px 0px rgba(${hexToRgb(
+      blackColor,
+    )}, 0.12), 0 7px 8px -5px rgba(${hexToRgb(whiteColor)}, 0.2)`,
   },
   top20: {
     top: '20px',
@@ -101,14 +98,11 @@ const snackbarContentStyle = {
     padding: '9px',
     borderRadius: '50%',
     maxWidth: '38px',
-    boxShadow:
-      '0 10px 30px -12px rgba(' +
-      hexToRgb(blackColor) +
-      ', 0.42), 0 4px 25px 0px rgba(' +
-      hexToRgb(blackColor) +
-      ', 0.12), 0 8px 10px -5px rgba(' +
-      hexToRgb(blackColor) +
-      ', 0.2)',
+    boxShadow: `0 10px 30px -12px rgba(${hexToRgb(
+      blackColor,
+    )}, 0.42), 0 4px 25px 0px rgba(${hexToRgb(
+      blackColor,
+    )}, 0.12), 0 8px 10px -5px rgba(${hexToRgb(blackColor)}, 0.2)`,
   },
   infoIcon: {
     color: successColor[3],

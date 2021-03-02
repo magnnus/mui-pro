@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import cx from 'classnames';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
 import Button from '@material-ui/core/Button';
 
-import paginationStyle from 'assets/jss/material-dashboard-pro-react/components/paginationStyle';
+import paginationStyle from '@/assets/jss/material-dashboard-pro-react/components/paginationStyle';
 
 function Pagination({ ...props }) {
   const { classes, pages, color } = props;
@@ -26,7 +26,7 @@ function Pagination({ ...props }) {
               </Button>
             ) : (
               <Button
-                onClick={() => console.log("you've clicked " + prop.text)}
+                onClick={() => console.log(`you've clicked ${prop.text}`)}
                 className={paginationLink}
               >
                 {prop.text}

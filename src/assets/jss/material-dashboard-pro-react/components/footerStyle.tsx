@@ -5,7 +5,7 @@ import {
   primaryColor,
   whiteColor,
   grayColor,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const footerStyle = {
   block: {},
@@ -21,7 +21,7 @@ const footerStyle = {
   },
   footer: {
     bottom: '0',
-    borderTop: '1px solid ' + grayColor[15],
+    borderTop: `1px solid ${grayColor[15]}`,
     padding: '15px 0',
     ...defaultFont,
     zIndex: 4,

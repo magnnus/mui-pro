@@ -15,7 +15,7 @@ import {
   blackColor,
   grayColor,
   hexToRgb,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const sidebarStyle = theme => ({
   drawerPaperRTL: {
@@ -102,7 +102,7 @@ const sidebarStyle = theme => ({
     },
   },
   drawerPaperMini: {
-    width: drawerMiniWidth + 'px!important',
+    width: `${drawerMiniWidth}px!important`,
   },
   logo: {
     padding: '15px 0px',
@@ -225,7 +225,7 @@ const sidebarStyle = theme => ({
     width: 'auto',
     '&:hover': {
       outline: 'none',
-      backgroundColor: 'rgba(' + hexToRgb(grayColor[17]) + ', 0.2)',
+      backgroundColor: `rgba(${hexToRgb(grayColor[17])}, 0.2)`,
       boxShadow: 'none',
     },
     '&,&:hover,&:focus': {
@@ -289,7 +289,7 @@ const sidebarStyle = theme => ({
   },
   collapseActive: {
     outline: 'none',
-    backgroundColor: 'rgba(' + hexToRgb(grayColor[17]) + ', 0.2)',
+    backgroundColor: `rgba(${hexToRgb(grayColor[17])}, 0.2)`,
     boxShadow: 'none',
   },
   collapseItemLink: {
@@ -304,7 +304,7 @@ const sidebarStyle = theme => ({
     width: 'auto',
     '&:hover': {
       outline: 'none',
-      backgroundColor: 'rgba(' + hexToRgb(grayColor[17]) + ', 0.2)',
+      backgroundColor: `rgba(${hexToRgb(grayColor[17])}, 0.2)`,
       boxShadow: 'none',
     },
     '&,&:hover,&:focus': {
@@ -387,80 +387,62 @@ const sidebarStyle = theme => ({
     '&,&:hover,&:focus': {
       color: whiteColor,
       backgroundColor: infoColor[0],
-      boxShadow:
-        '0 12px 20px -10px rgba(' +
-        hexToRgb(infoColor[0]) +
-        ',.28), 0 4px 20px 0 rgba(' +
-        hexToRgb(blackColor) +
-        ',.12), 0 7px 8px -5px rgba(' +
-        hexToRgb(infoColor[0]) +
-        ',.2)',
+      boxShadow: `0 12px 20px -10px rgba(${hexToRgb(
+        infoColor[0],
+      )},.28), 0 4px 20px 0 rgba(${hexToRgb(
+        blackColor,
+      )},.12), 0 7px 8px -5px rgba(${hexToRgb(infoColor[0])},.2)`,
     },
   },
   green: {
     '&,&:hover,&:focus': {
       color: whiteColor,
       backgroundColor: successColor[0],
-      boxShadow:
-        '0 12px 20px -10px rgba(' +
-        hexToRgb(successColor[0]) +
-        ',.28), 0 4px 20px 0 rgba(' +
-        hexToRgb(blackColor) +
-        ',.12), 0 7px 8px -5px rgba(' +
-        hexToRgb(successColor[0]) +
-        ',.2)',
+      boxShadow: `0 12px 20px -10px rgba(${hexToRgb(
+        successColor[0],
+      )},.28), 0 4px 20px 0 rgba(${hexToRgb(
+        blackColor,
+      )},.12), 0 7px 8px -5px rgba(${hexToRgb(successColor[0])},.2)`,
     },
   },
   orange: {
     '&,&:hover,&:focus': {
       color: whiteColor,
       backgroundColor: warningColor[0],
-      boxShadow:
-        '0 12px 20px -10px rgba(' +
-        hexToRgb(warningColor[0]) +
-        ',.28), 0 4px 20px 0 rgba(' +
-        hexToRgb(blackColor) +
-        ',.12), 0 7px 8px -5px rgba(' +
-        hexToRgb(warningColor[0]) +
-        ',.2)',
+      boxShadow: `0 12px 20px -10px rgba(${hexToRgb(
+        warningColor[0],
+      )},.28), 0 4px 20px 0 rgba(${hexToRgb(
+        blackColor,
+      )},.12), 0 7px 8px -5px rgba(${hexToRgb(warningColor[0])},.2)`,
     },
   },
   red: {
     '&,&:hover,&:focus': {
       color: whiteColor,
       backgroundColor: dangerColor[0],
-      boxShadow:
-        '0 12px 20px -10px rgba(' +
-        hexToRgb(dangerColor[0]) +
-        ',.28), 0 4px 20px 0 rgba(' +
-        hexToRgb(blackColor) +
-        ',.12), 0 7px 8px -5px rgba(' +
-        hexToRgb(dangerColor[0]) +
-        ',.2)',
+      boxShadow: `0 12px 20px -10px rgba(${hexToRgb(
+        dangerColor[0],
+      )},.28), 0 4px 20px 0 rgba(${hexToRgb(
+        blackColor,
+      )},.12), 0 7px 8px -5px rgba(${hexToRgb(dangerColor[0])},.2)`,
     },
   },
   white: {
     '&,&:hover,&:focus': {
       color: grayColor[2],
       backgroundColor: whiteColor,
-      boxShadow:
-        '0 4px 20px 0 rgba(' +
-        hexToRgb(blackColor) +
-        ',.14), 0 7px 10px -5px rgba(' +
-        hexToRgb(grayColor[2]) +
-        ',.4)',
+      boxShadow: `0 4px 20px 0 rgba(${hexToRgb(
+        blackColor,
+      )},.14), 0 7px 10px -5px rgba(${hexToRgb(grayColor[2])},.4)`,
     },
   },
   rose: {
     '&,&:hover,&:focus': {
       color: whiteColor,
       backgroundColor: roseColor[0],
-      boxShadow:
-        '0 4px 20px 0 rgba(' +
-        hexToRgb(blackColor) +
-        ',.14), 0 7px 10px -5px rgba(' +
-        hexToRgb(roseColor[0]) +
-        ',.4)',
+      boxShadow: `0 4px 20px 0 rgba(${hexToRgb(
+        blackColor,
+      )},.14), 0 7px 10px -5px rgba(${hexToRgb(roseColor[0])},.4)`,
     },
   },
   sidebarWrapper: {

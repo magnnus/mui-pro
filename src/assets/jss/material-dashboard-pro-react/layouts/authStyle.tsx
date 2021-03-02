@@ -2,7 +2,7 @@ import {
   whiteColor,
   blackColor,
   hexToRgb,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const pagesStyle = theme => ({
   wrapper: {
@@ -33,7 +33,7 @@ const pagesStyle = theme => ({
       border: 'none !important',
     },
     '&:before': {
-      backgroundColor: 'rgba(' + hexToRgb(blackColor) + ', 0.65)',
+      backgroundColor: `rgba(${hexToRgb(blackColor)}, 0.65)`,
     },
     '&:before,&:after': {
       display: 'block',

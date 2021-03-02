@@ -1,8 +1,8 @@
 import {
   defaultFont,
   grayColor,
-} from 'assets/jss/material-dashboard-pro-react';
-import modalStyle from 'assets/jss/material-dashboard-pro-react/modalStyle';
+} from '@/assets/jss/material-dashboard-pro-react';
+import modalStyle from '@/assets/jss/material-dashboard-pro-react/modalStyle';
 
 const notificationsStyle = theme => ({
   cardTitle: {

@@ -1,8 +1,9 @@
-import { grayColor } from 'assets/jss/material-dashboard-pro-react';
+import { createStyles } from '@material-ui/core/styles';
+import { grayColor } from '@/assets/jss/material-dashboard-pro-react';
 
-import buttonGroupStyle from 'assets/jss/material-dashboard-pro-react/buttonGroupStyle';
+import buttonGroupStyle from '@/assets/jss/material-dashboard-pro-react/buttonGroupStyle';
 
-const buttonsStyle = {
+const buttonsStyle = createStyles({
   cardTitle: {
     marginTop: '0',
     marginBottom: '3px',
@@ -37,6 +38,6 @@ const buttonsStyle = {
     marginTop: '-2px',
     position: 'relative',
   },
-};
+});
 
 export default buttonsStyle;

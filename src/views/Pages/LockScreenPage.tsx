@@ -1,20 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
 
 // core components
-import Button from 'components/CustomButtons/Button';
-import CustomInput from 'components/CustomInput/CustomInput';
-import Card from 'components/Card/Card';
-import CardBody from 'components/Card/CardBody';
-import CardAvatar from 'components/Card/CardAvatar';
-import CardFooter from 'components/Card/CardFooter';
+import Button from '@/components/CustomButtons/Button';
+import CustomInput from '@/components/CustomInput/CustomInput';
+import Card from '@/components/Card/Card';
+import CardBody from '@/components/Card/CardBody';
+import CardAvatar from '@/components/Card/CardAvatar';
+import CardFooter from '@/components/Card/CardFooter';
 
-import avatar from 'assets/img/faces/avatar.jpg';
+import avatar from '@/assets/img/faces/avatar.jpg';
 
-import lockScreenPageStyle from 'assets/jss/material-dashboard-pro-react/views/lockScreenPageStyle';
+import lockScreenPageStyle from '@/assets/jss/material-dashboard-pro-react/views/lockScreenPageStyle';
 
 class LockScreenPage extends React.Component {
   constructor(props) {
@@ -24,6 +23,7 @@ class LockScreenPage extends React.Component {
       cardAnimaton: 'cardHidden',
     };
   }
+
   componentDidMount() {
     // we add a hidden class to the card and after 700 ms we delete it and the transition appears
     this.timeOutFunction = setTimeout(
@@ -33,10 +33,12 @@ class LockScreenPage extends React.Component {
       700,
     );
   }
+
   componentWillUnmount() {
     clearTimeout(this.timeOutFunction);
     this.timeOutFunction = null;
   }
+
   render() {
     const { classes } = this.props;
     return (
@@ -44,9 +46,9 @@ class LockScreenPage extends React.Component {
         <form>
           <Card
             profile
-            className={
-              classes.customCardClass + ' ' + classes[this.state.cardAnimaton]
-            }
+            className={`${classes.customCardClass} ${
+              classes[this.state.cardAnimaton]
+            }`}
           >
             <CardAvatar profile className={classes.cardAvatar}>
               <a href="#pablo" onClick={e => e.preventDefault()}>

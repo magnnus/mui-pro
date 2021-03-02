@@ -8,7 +8,8 @@ import {
   whiteColor,
   blackColor,
   hexToRgb,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
+
 const cardHeaderStyle = {
   cardHeader: {
     padding: '0.75rem 1.25rem',
@@ -77,12 +78,9 @@ const cardHeaderStyle = {
       width: '100%',
       borderRadius: '6px',
       pointerEvents: 'none',
-      boxShadow:
-        '0 5px 15px -8px rgba(' +
-        hexToRgb(blackColor) +
-        ', 0.24), 0 8px 10px -5px rgba(' +
-        hexToRgb(blackColor) +
-        ', 0.2)',
+      boxShadow: `0 5px 15px -8px rgba(${hexToRgb(
+        blackColor,
+      )}, 0.24), 0 8px 10px -5px rgba(${hexToRgb(blackColor)}, 0.2)`,
     },
     '& a': {
       display: 'block',

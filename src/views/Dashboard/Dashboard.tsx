@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 // react plugin for creating charts
 import ChartistGraph from 'react-chartist';
 // react plugin for creating vector maps
@@ -27,37 +27,37 @@ import ArtTrack from '@material-ui/icons/ArtTrack';
 import Language from '@material-ui/icons/Language';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import Table from 'components/Table/Table';
-import Button from 'components/CustomButtons/Button';
-import Danger from 'components/Typography/Danger';
-import Card from 'components/Card/Card';
-import CardHeader from 'components/Card/CardHeader';
-import CardIcon from 'components/Card/CardIcon';
-import CardBody from 'components/Card/CardBody';
-import CardFooter from 'components/Card/CardFooter';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import Table from '@/components/Table/Table';
+import Button from '@/components/CustomButtons/Button';
+import Danger from '@/components/Typography/Danger';
+import Card from '@/components/Card/Card';
+import CardHeader from '@/components/Card/CardHeader';
+import CardIcon from '@/components/Card/CardIcon';
+import CardBody from '@/components/Card/CardBody';
+import CardFooter from '@/components/Card/CardFooter';
 
 import {
   dailySalesChart,
   emailsSubscriptionChart,
   completedTasksChart,
-} from 'variables/charts';
+} from '@/variables/charts';
 
-import dashboardStyle from 'assets/jss/material-dashboard-pro-react/views/dashboardStyle';
+import dashboardStyle from '@/assets/jss/material-dashboard-pro-react/views/dashboardStyle';
 
-import priceImage1 from 'assets/img/card-2.jpeg';
-import priceImage2 from 'assets/img/card-3.jpeg';
-import priceImage3 from 'assets/img/card-1.jpeg';
+import priceImage1 from '@/assets/img/card-2.jpeg';
+import priceImage2 from '@/assets/img/card-3.jpeg';
+import priceImage3 from '@/assets/img/card-1.jpeg';
 
-const us_flag = require('assets/img/flags/US.png');
-const de_flag = require('assets/img/flags/DE.png');
-const au_flag = require('assets/img/flags/AU.png');
-const gb_flag = require('assets/img/flags/GB.png');
-const ro_flag = require('assets/img/flags/RO.png');
-const br_flag = require('assets/img/flags/BR.png');
+import us_flag from '@/assets/img/flags/US.png';
+import de_flag from '@/assets/img/flags/DE.png';
+import au_flag from '@/assets/img/flags/AU.png';
+import gb_flag from '@/assets/img/flags/GB.png';
+import ro_flag from '@/assets/img/flags/RO.png';
+import br_flag from '@/assets/img/flags/BR.png';
 
-var mapData = {
+const mapData = {
   AU: 760,
   BR: 550,
   CA: 120,
@@ -75,12 +75,15 @@ class Dashboard extends React.Component {
   state = {
     value: 0,
   };
+
   handleChange = (event, value) => {
     this.setState({ value });
   };
+
   handleChangeIndex = index => {
     this.setState({ value: index });
   };
+
   render() {
     const { classes } = this.props;
     return (
@@ -94,7 +97,9 @@ class Dashboard extends React.Component {
                 </CardIcon>
                 <p className={classes.cardCategory}>Used Space</p>
                 <h3 className={classes.cardTitle}>
-                  49/50 <small>GB</small>
+                  49/50 
+{' '}
+<small>GB</small>
                 </h3>
               </CardHeader>
               <CardFooter stats>
@@ -218,7 +223,7 @@ class Dashboard extends React.Component {
                   </GridItem>
                   <GridItem xs={12} sm={12} md={6}>
                     <VectorMap
-                      map={'world_mill'}
+                      map="world_mill"
                       backgroundColor="transparent"
                       zoomOnScroll={false}
                       containerStyle={{
@@ -289,15 +294,19 @@ class Dashboard extends React.Component {
                 <h4 className={classes.cardTitle}>Daily Sales</h4>
                 <p className={classes.cardCategory}>
                   <span className={classes.successText}>
-                    <ArrowUpward className={classes.upArrowCardCategory} /> 55%
-                  </span>{' '}
+                    <ArrowUpward className={classes.upArrowCardCategory} />
+{' '}
+55%
+</span>{' '}
                   increase in today sales.
                 </p>
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime /> updated 4 minutes ago
-                </div>
+                  <AccessTime />
+{' '}
+updated 4 minutes ago
+</div>
               </CardFooter>
             </Card>
           </GridItem>
@@ -343,8 +352,10 @@ class Dashboard extends React.Component {
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime /> campaign sent 2 days ago
-                </div>
+                  <AccessTime />
+{' '}
+campaign sent 2 days ago
+</div>
               </CardFooter>
             </Card>
           </GridItem>
@@ -389,8 +400,10 @@ class Dashboard extends React.Component {
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime /> campaign sent 2 days ago
-                </div>
+                  <AccessTime />
+{' '}
+campaign sent 2 days ago
+</div>
               </CardFooter>
             </Card>
           </GridItem>
@@ -454,8 +467,10 @@ class Dashboard extends React.Component {
                   <h4>$899/night</h4>
                 </div>
                 <div className={`${classes.stats} ${classes.productStats}`}>
-                  <Place /> Barcelona, Spain
-                </div>
+                  <Place />
+{' '}
+Barcelona, Spain
+</div>
               </CardFooter>
             </Card>
           </GridItem>
@@ -515,8 +530,10 @@ class Dashboard extends React.Component {
                   <h4>$1.119/night</h4>
                 </div>
                 <div className={`${classes.stats} ${classes.productStats}`}>
-                  <Place /> London, UK
-                </div>
+                  <Place />
+{' '}
+London, UK
+</div>
               </CardFooter>
             </Card>
           </GridItem>
@@ -576,8 +593,10 @@ class Dashboard extends React.Component {
                   <h4>$459/night</h4>
                 </div>
                 <div className={`${classes.stats} ${classes.productStats}`}>
-                  <Place /> Milan, Italy
-                </div>
+                  <Place />
+{' '}
+Milan, Italy
+</div>
               </CardFooter>
             </Card>
           </GridItem>

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -18,15 +17,15 @@ import Email from '@material-ui/icons/Email';
 import Check from '@material-ui/icons/Check';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import Button from 'components/CustomButtons/Button';
-import CustomInput from 'components/CustomInput/CustomInput';
-import InfoArea from 'components/InfoArea/InfoArea';
-import Card from 'components/Card/Card';
-import CardBody from 'components/Card/CardBody';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import Button from '@/components/CustomButtons/Button';
+import CustomInput from '@/components/CustomInput/CustomInput';
+import InfoArea from '@/components/InfoArea/InfoArea';
+import Card from '@/components/Card/Card';
+import CardBody from '@/components/Card/CardBody';
 
-import registerPageStyle from 'assets/jss/material-dashboard-pro-react/views/registerPageStyle';
+import registerPageStyle from '@/assets/jss/material-dashboard-pro-react/views/registerPageStyle';
 
 class RegisterPage extends React.Component {
   constructor(props) {
@@ -36,6 +35,7 @@ class RegisterPage extends React.Component {
     };
     this.handleToggle = this.handleToggle.bind(this);
   }
+
   handleToggle(value) {
     const { checked } = this.state;
     const currentIndex = checked.indexOf(value);
@@ -51,6 +51,7 @@ class RegisterPage extends React.Component {
       checked: newChecked,
     });
   }
+
   render() {
     const { classes } = this.props;
     return (
@@ -85,16 +86,13 @@ class RegisterPage extends React.Component {
                     <div className={classes.center}>
                       <Button justIcon round color="twitter">
                         <i className="fab fa-twitter" />
-                      </Button>
-                      {` `}
+                      </Button>{' '}
                       <Button justIcon round color="dribbble">
                         <i className="fab fa-dribbble" />
-                      </Button>
-                      {` `}
+                      </Button>{' '}
                       <Button justIcon round color="facebook">
                         <i className="fab fa-facebook-f" />
-                      </Button>
-                      {` `}
+                      </Button>{' '}
                       <h4 className={classes.socialTitle}>or be classical</h4>
                     </div>
                     <form className={classes.form}>

@@ -2,7 +2,6 @@ import React from 'react';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 // nodejs library to set properties for components
-import PropTypes from 'prop-types';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -14,9 +13,9 @@ import Grow from '@material-ui/core/Grow';
 import Divider from '@material-ui/core/Divider';
 import Popper from '@material-ui/core/Popper';
 // core components
-import Button from 'components/CustomButtons/Button';
+import Button from '@/components/CustomButtons/Button';
 
-import customDropdownStyle from 'assets/jss/material-dashboard-pro-react/components/customDropdownStyle';
+import customDropdownStyle from '@/assets/jss/material-dashboard-pro-react/components/customDropdownStyle';
 
 class CustomDropdown extends React.Component {
   constructor(props) {
@@ -32,6 +31,7 @@ class CustomDropdown extends React.Component {
   handleClick = () => {
     this.setState(state => ({ open: !state.open }));
   };
+
   handleClose = event => {
     if (this.anchorEl.contains(event.target)) {
       return;
@@ -39,12 +39,14 @@ class CustomDropdown extends React.Component {
 
     this.setState({ open: false });
   };
+
   handleCloseMenu(param) {
     this.setState({ open: false });
     if (this.props && this.props.onClick) {
       this.props.onClick(param);
     }
   }
+
   render() {
     const { open } = this.state;
     const {
@@ -71,7 +73,7 @@ class CustomDropdown extends React.Component {
     });
     const dropdownItem = classNames({
       [classes.dropdownItem]: true,
-      [classes[hoverColor + 'Hover']]: true,
+      [classes[`${hoverColor}Hover`]]: true,
       [classes.noLiPadding]: noLiPadding,
       [classes.dropdownItemRTL]: rtlActive,
     });
@@ -94,7 +96,8 @@ class CustomDropdown extends React.Component {
                 className={classes.dropdownDividerItem}
               />
             );
-          } else if (prop.ref === 'multi') {
+          }
+          if (prop.ref === 'multi') {
             return (
               <MenuItem
                 key={key}

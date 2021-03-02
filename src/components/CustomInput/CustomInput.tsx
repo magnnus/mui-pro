@@ -1,6 +1,6 @@
 import React from 'react';
 // nodejs library to set properties for components
-import PropTypes from 'prop-types';
+
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 // @material-ui/core components
@@ -10,7 +10,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Input from '@material-ui/core/Input';
 
-import customInputStyle from 'assets/jss/material-dashboard-pro-react/components/customInputStyle';
+import customInputStyle from '@/assets/jss/material-dashboard-pro-react/components/customInputStyle';
 
 function CustomInput({ ...props }) {
   const {
@@ -28,8 +28,8 @@ function CustomInput({ ...props }) {
   } = props;
 
   const labelClasses = classNames({
-    [' ' + classes.labelRootError]: error,
-    [' ' + classes.labelRootSuccess]: success && !error,
+    [` ${classes.labelRootError}`]: error,
+    [` ${classes.labelRootSuccess}`]: success && !error,
   });
   const underlineClasses = classNames({
     [classes.underlineError]: error,
@@ -44,7 +44,7 @@ function CustomInput({ ...props }) {
     [classes.input]: true,
     [classes.whiteInput]: white,
   });
-  var formControlClasses;
+  let formControlClasses;
   if (formControlProps !== undefined) {
     formControlClasses = classNames(
       formControlProps.className,
@@ -53,7 +53,7 @@ function CustomInput({ ...props }) {
   } else {
     formControlClasses = classes.formControl;
   }
-  var helpTextClasses = classNames({
+  const helpTextClasses = classNames({
     [classes.labelRootError]: error,
     [classes.labelRootSuccess]: success && !error,
   });
@@ -61,7 +61,7 @@ function CustomInput({ ...props }) {
     <FormControl {...formControlProps} className={formControlClasses}>
       {labelText !== undefined ? (
         <InputLabel
-          className={classes.labelRoot + ' ' + labelClasses}
+          className={`${classes.labelRoot} ${labelClasses}`}
           htmlFor={id}
           {...labelProps}
         >
@@ -79,7 +79,7 @@ function CustomInput({ ...props }) {
         {...inputProps}
       />
       {helpText !== undefined ? (
-        <FormHelperText id={id + '-text'} className={helpTextClasses}>
+        <FormHelperText id={`${id}-text`} className={helpTextClasses}>
           {helpText}
         </FormHelperText>
       ) : null}

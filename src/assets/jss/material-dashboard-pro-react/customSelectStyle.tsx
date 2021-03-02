@@ -5,7 +5,7 @@ import {
   blackColor,
   grayColor,
   hexToRgb,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const customSelectStyle = {
   select: {
@@ -32,17 +32,17 @@ const customSelectStyle = {
     '& > div': {
       '&:before': {
         borderBottomWidth: '1px !important',
-        borderBottomColor: grayColor[4] + '!important',
+        borderBottomColor: `${grayColor[4]}!important`,
       },
       '&:after': {
-        borderBottomColor: primaryColor[0] + '!important',
+        borderBottomColor: `${primaryColor[0]}!important`,
       },
     },
   },
   selectLabel: {
     fontSize: '12px',
     textTransform: 'uppercase',
-    color: grayColor[2] + ' !important',
+    color: `${grayColor[2]} !important`,
     top: '8px',
   },
   selectMenu: {
@@ -88,13 +88,13 @@ const customSelectStyle = {
     },
   },
   selectMenuItemSelected: {
-    backgroundColor: primaryColor[0] + '!important',
+    backgroundColor: `${primaryColor[0]}!important`,
     color: whiteColor,
   },
   selectMenuItemSelectedMultiple: {
     backgroundColor: 'transparent !important',
     '&:hover': {
-      backgroundColor: primaryColor[0] + '!important',
+      backgroundColor: `${primaryColor[0]}!important`,
       color: whiteColor,
       ...primaryBoxShadow,
       '&:after': {
@@ -123,7 +123,7 @@ const customSelectStyle = {
     minWidth: '100%',
     display: 'block',
     border: '0',
-    boxShadow: '0 2px 5px 0 rgba(' + hexToRgb(blackColor) + ', 0.26)',
+    boxShadow: `0 2px 5px 0 rgba(${hexToRgb(blackColor)}, 0.26)`,
     backgroundClip: 'padding-box',
     margin: '2px 0 0',
     fontSize: '14px',

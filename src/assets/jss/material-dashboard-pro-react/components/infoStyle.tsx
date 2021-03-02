@@ -6,7 +6,7 @@ import {
   infoColor,
   roseColor,
   grayColor,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const infoStyle = {
   infoArea: {

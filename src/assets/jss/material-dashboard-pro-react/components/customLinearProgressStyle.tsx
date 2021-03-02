@@ -7,7 +7,7 @@ import {
   roseColor,
   grayColor,
   hexToRgb,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const customLinearProgressStyle = {
   root: {
@@ -40,25 +40,25 @@ const customLinearProgressStyle = {
     backgroundColor: grayColor[0],
   },
   primaryBackground: {
-    background: 'rgba(' + hexToRgb(primaryColor[0]) + ', 0.2)',
+    background: `rgba(${hexToRgb(primaryColor[0])}, 0.2)`,
   },
   warningBackground: {
-    background: 'rgba(' + hexToRgb(warningColor[0]) + ', 0.2)',
+    background: `rgba(${hexToRgb(warningColor[0])}, 0.2)`,
   },
   dangerBackground: {
-    background: 'rgba(' + hexToRgb(dangerColor[0]) + ', 0.2)',
+    background: `rgba(${hexToRgb(dangerColor[0])}, 0.2)`,
   },
   successBackground: {
-    background: 'rgba(' + hexToRgb(successColor[0]) + ', 0.2)',
+    background: `rgba(${hexToRgb(successColor[0])}, 0.2)`,
   },
   infoBackground: {
-    background: 'rgba(' + hexToRgb(infoColor[0]) + ', 0.2)',
+    background: `rgba(${hexToRgb(infoColor[0])}, 0.2)`,
   },
   roseBackground: {
-    background: 'rgba(' + hexToRgb(roseColor[0]) + ', 0.2)',
+    background: `rgba(${hexToRgb(roseColor[0])}, 0.2)`,
   },
   grayBackground: {
-    background: 'rgba(' + hexToRgb(grayColor[5]) + ', 0.2)',
+    background: `rgba(${hexToRgb(grayColor[5])}, 0.2)`,
   },
 };
 

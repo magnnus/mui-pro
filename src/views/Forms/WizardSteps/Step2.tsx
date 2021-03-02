@@ -9,11 +9,11 @@ import FormControl from '@material-ui/core/FormControl';
 import Checkbox from '@material-ui/core/Checkbox';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
 
-import customSelectStyle from 'assets/jss/material-dashboard-pro-react/customSelectStyle';
-import customCheckboxRadioSwitch from 'assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch';
+import customSelectStyle from '@/assets/jss/material-dashboard-pro-react/customSelectStyle';
+import customCheckboxRadioSwitch from '@/assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch';
 
 const style = {
   infoText: {
@@ -43,18 +43,23 @@ class Step2 extends React.Component {
       develop: false,
     };
   }
+
   sendState() {
     return this.state;
   }
+
   handleSimple = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
+
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
   };
+
   isValidated() {
     return true;
   }
+
   render() {
     const { classes } = this.props;
     return (
@@ -70,16 +75,12 @@ class Step2 extends React.Component {
                     onClick={this.handleChange('desgin')}
                     checkedIcon={
                       <i
-                        className={
-                          'fas fa-pencil-alt ' + classes.iconCheckboxIcon
-                        }
+                        className={`fas fa-pencil-alt ${classes.iconCheckboxIcon}`}
                       />
                     }
                     icon={
                       <i
-                        className={
-                          'fas fa-pencil-alt ' + classes.iconCheckboxIcon
-                        }
+                        className={`fas fa-pencil-alt ${classes.iconCheckboxIcon}`}
                       />
                     }
                     classes={{
@@ -97,16 +98,12 @@ class Step2 extends React.Component {
                     onClick={this.handleChange('code')}
                     checkedIcon={
                       <i
-                        className={
-                          'fas fa-terminal ' + classes.iconCheckboxIcon
-                        }
+                        className={`fas fa-terminal ${classes.iconCheckboxIcon}`}
                       />
                     }
                     icon={
                       <i
-                        className={
-                          'fas fa-terminal ' + classes.iconCheckboxIcon
-                        }
+                        className={`fas fa-terminal ${classes.iconCheckboxIcon}`}
                       />
                     }
                     classes={{
@@ -124,12 +121,12 @@ class Step2 extends React.Component {
                     onClick={this.handleChange('develop')}
                     checkedIcon={
                       <i
-                        className={'fas fa-laptop ' + classes.iconCheckboxIcon}
+                        className={`fas fa-laptop ${classes.iconCheckboxIcon}`}
                       />
                     }
                     icon={
                       <i
-                        className={'fas fa-laptop ' + classes.iconCheckboxIcon}
+                        className={`fas fa-laptop ${classes.iconCheckboxIcon}`}
                       />
                     }
                     classes={{

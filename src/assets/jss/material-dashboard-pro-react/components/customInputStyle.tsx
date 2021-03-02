@@ -5,7 +5,7 @@ import {
   defaultFont,
   whiteColor,
   grayColor,
-} from 'assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/material-dashboard-pro-react';
 
 const customInputStyle = {
   disabled: {
@@ -15,7 +15,7 @@ const customInputStyle = {
   },
   underline: {
     '&:hover:not($disabled):before,&:before': {
-      borderColor: grayColor[4] + '!important',
+      borderColor: `${grayColor[4]}!important`,
       borderWidth: '1px !important',
     },
     '&:after': {
@@ -34,7 +34,7 @@ const customInputStyle = {
   },
   labelRoot: {
     ...defaultFont,
-    color: grayColor[3] + ' !important',
+    color: `${grayColor[3]} !important`,
     fontWeight: '400',
     fontSize: '14px',
     lineHeight: '1.42857',
@@ -44,10 +44,10 @@ const customInputStyle = {
     },
   },
   labelRootError: {
-    color: dangerColor[0] + ' !important',
+    color: `${dangerColor[0]} !important`,
   },
   labelRootSuccess: {
-    color: successColor[0] + ' !important',
+    color: `${successColor[0]} !important`,
   },
   formControl: {
     margin: '0 0 17px 0',

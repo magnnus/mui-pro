@@ -5,14 +5,14 @@ import { NavLink } from 'react-router-dom';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Switch from '@material-ui/core/Switch';
 
-import styles from 'assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch';
+import styles from '@/assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch';
 
-import imagine1 from 'assets/img/sidebar-1.jpg';
-import imagine2 from 'assets/img/sidebar-2.jpg';
-import imagine3 from 'assets/img/sidebar-3.jpg';
-import imagine4 from 'assets/img/sidebar-4.jpg';
+import imagine1 from '@/assets/img/sidebar-1.jpg';
+import imagine2 from '@/assets/img/sidebar-2.jpg';
+import imagine3 from '@/assets/img/sidebar-3.jpg';
+import imagine4 from '@/assets/img/sidebar-4.jpg';
 
-import Button from 'components/CustomButtons/Button';
+import Button from '@/components/CustomButtons/Button';
 
 class FixedPlugin extends Component {
   constructor(props) {

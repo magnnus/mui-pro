@@ -14,20 +14,20 @@ import AddAlert from '@material-ui/icons/AddAlert';
 import Close from '@material-ui/icons/Close';
 
 // core components
-import Heading from 'components/Heading/Heading';
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import SnackbarContent from 'components/Snackbar/SnackbarContent';
-import Button from 'components/CustomButtons/Button';
-import Snackbar from 'components/Snackbar/Snackbar';
-import Instruction from 'components/Instruction/Instruction';
-import Card from 'components/Card/Card';
-import CardBody from 'components/Card/CardBody';
+import Heading from '@/components/Heading/Heading';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import SnackbarContent from '@/components/Snackbar/SnackbarContent';
+import Button from '@/components/CustomButtons/Button';
+import Snackbar from '@/components/Snackbar/Snackbar';
+import Instruction from '@/components/Instruction/Instruction';
+import Card from '@/components/Card/Card';
+import CardBody from '@/components/Card/CardBody';
 
-import notificationsStyle from 'assets/jss/material-dashboard-pro-react/views/notificationsStyle';
+import notificationsStyle from '@/assets/jss/material-dashboard-pro-react/views/notificationsStyle';
 
-import noticeModal1 from 'assets/img/card-1.jpeg';
-import noticeModal2 from 'assets/img/card-2.jpeg';
+import noticeModal1 from '@/assets/img/card-1.jpeg';
+import noticeModal2 from '@/assets/img/card-2.jpeg';
 
 function Transition(props) {
   return <Slide direction="down" {...props} />;

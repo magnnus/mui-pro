@@ -7,15 +7,15 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Assignment from '@material-ui/icons/Assignment';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer';
-import GridItem from 'components/Grid/GridItem';
-import Table from 'components/Table/Table';
-import Card from 'components/Card/Card';
-import CardHeader from 'components/Card/CardHeader';
-import CardIcon from 'components/Card/CardIcon';
-import CardBody from 'components/Card/CardBody';
+import GridContainer from '@/components/Grid/GridContainer';
+import GridItem from '@/components/Grid/GridItem';
+import Table from '@/components/Table/Table';
+import Card from '@/components/Card/Card';
+import CardHeader from '@/components/Card/CardHeader';
+import CardIcon from '@/components/Card/CardIcon';
+import CardBody from '@/components/Card/CardBody';
 
-import { cardTitle } from 'assets/jss/material-dashboard-pro-react';
+import { cardTitle } from '@/assets/jss/material-dashboard-pro-react';
 
 const style = {
   customCardContentClass: {
