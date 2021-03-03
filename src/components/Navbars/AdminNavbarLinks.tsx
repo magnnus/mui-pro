@@ -4,7 +4,7 @@ import classNames from 'classnames';
 // import { Manager, Target, Popper } from "react-popper";
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
@@ -23,7 +23,7 @@ import Search from '@material-ui/icons/Search';
 import CustomInput from '@/components/CustomInput/CustomInput';
 import Button from '@/components/CustomButtons/Button';
 
-import adminNavbarLinksStyle from '@/assets/jss/material-dashboard-pro-react/components/adminNavbarLinksStyle';
+import styles from '@/assets/jss/pro/components/adminNavbarLinksStyle';
 
 class HeaderLinks extends React.Component {
   state = {
@@ -221,9 +221,8 @@ class HeaderLinks extends React.Component {
   }
 }
 
-HeaderLinks.propTypes = {
-  classes: PropTypes.object.isRequired,
-  rtlActive: PropTypes.bool,
-};
+export interface IHeaderLinksTypes extends WithStyles<typeof styles> {
+  rtlActive: boolean;
+}
 
-export default withStyles(adminNavbarLinksStyle)(HeaderLinks);
+export default withStyles(styles)(HeaderLinks);

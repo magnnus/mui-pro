@@ -2,7 +2,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Slide from '@material-ui/core/Slide';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -24,7 +24,7 @@ import Instruction from '@/components/Instruction/Instruction';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import notificationsStyle from '@/assets/jss/material-dashboard-pro-react/views/notificationsStyle';
+import notificationsStyle from '@/assets/jss/pro/views/notificationsStyle';
 
 import noticeModal1 from '@/assets/img/card-1.jpeg';
 import noticeModal2 from '@/assets/img/card-2.jpeg';
@@ -458,11 +458,9 @@ class Notifications extends React.Component {
                             text={
                               <span>
                                 The first step is to create an account at{' '}
-                                <a href="/">
-                                  Hey Guys
-                                </a>
-                                . You can choose a social network or go for the
-                                classic version, whatever works best for you.
+                                <a href="/">Hey Guys</a>. You can choose a
+                                social network or go for the classic version,
+                                whatever works best for you.
                               </span>
                             }
                             image={noticeModal1}
@@ -474,11 +472,9 @@ class Notifications extends React.Component {
                             text={
                               <span>
                                 The first step is to create an account at{' '}
-                                <a href="/">
-                                  Hey Guys
-                                </a>
-                                . You can choose a social network or go for the
-                                classic version, whatever works best for you.
+                                <a href="/">Hey Guys</a>. You can choose a
+                                social network or go for the classic version,
+                                whatever works best for you.
                               </span>
                             }
                             image={noticeModal2}
@@ -487,8 +483,8 @@ class Notifications extends React.Component {
                           />
                           <p>
                             If you have more questions, don't hesitate to
-                            contact us or send us a tweet @heyguys. We're
-                            here to help!
+                            contact us or send us a tweet @heyguys. We're here
+                            to help!
                           </p>
                         </DialogContent>
                         <DialogActions
@@ -591,4 +587,4 @@ class Notifications extends React.Component {
   }
 }
 
-export default withStyles(notificationsStyle)(Notifications);
+export default withStyles(styles)(Notifications);

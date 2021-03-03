@@ -4,13 +4,13 @@ import React from 'react';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Input from '@material-ui/core/Input';
 
-import customInputStyle from '@/assets/jss/material-dashboard-pro-react/components/customInputStyle';
+import styles from '@/assets/jss/pro/components/customInputStyle';
 
 function CustomInput({ ...props }) {
   const {
@@ -87,18 +87,17 @@ function CustomInput({ ...props }) {
   );
 }
 
-CustomInput.propTypes = {
-  classes: PropTypes.object.isRequired,
-  labelText: PropTypes.node,
-  labelProps: PropTypes.object,
-  id: PropTypes.string,
-  inputProps: PropTypes.object,
-  formControlProps: PropTypes.object,
-  inputRootCustomClasses: PropTypes.string,
-  error: PropTypes.bool,
-  success: PropTypes.bool,
-  white: PropTypes.bool,
-  helpText: PropTypes.node,
-};
+export interface ICustomInputTypes extends WithStyles<typeof styles> {
+  labelText: PropTypes.node;
+  labelProps: PropTypes.object;
+  id: string;
+  inputProps: PropTypes.object;
+  formControlProps: PropTypes.object;
+  inputRootCustomClasses: string;
+  error: boolean;
+  success: boolean;
+  white: boolean;
+  helpText: PropTypes.node;
+}
 
-export default withStyles(customInputStyle)(CustomInput);
+export default withStyles(styles)(CustomInput);

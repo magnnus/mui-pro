@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Checkbox from '@material-ui/core/Checkbox';
 
 // material-ui icons
@@ -24,7 +24,7 @@ import CardBody from '@/components/Card/CardBody';
 import CardIcon from '@/components/Card/CardIcon';
 import CardHeader from '@/components/Card/CardHeader';
 
-import extendedTablesStyle from '@/assets/jss/material-dashboard-pro-react/views/extendedTablesStyle';
+import extendedTablesStyle from '@/assets/jss/pro/views/extendedTablesStyle';
 
 import product1 from '@/assets/img/product1.jpg';
 import product2 from '@/assets/img/product2.jpg';
@@ -514,4 +514,4 @@ class ExtendedTables extends React.Component {
   }
 }
 
-export default withStyles(extendedTablesStyle)(ExtendedTables);
+export default withStyles(styles)(ExtendedTables);

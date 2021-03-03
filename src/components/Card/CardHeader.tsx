@@ -4,11 +4,11 @@ import classNames from 'classnames';
 // nodejs library to set properties for components
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 // @material-ui/icons
 
 // core components
-import cardHeaderStyle from '@/assets/jss/material-dashboard-pro-react/components/cardHeaderStyle';
+import styles from '@/assets/jss/pro/components/cardHeaderStyle';
 
 function CardHeader({ ...props }) {
   const {
@@ -44,24 +44,16 @@ function CardHeader({ ...props }) {
   );
 }
 
-CardHeader.propTypes = {
-  classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
-  color: PropTypes.oneOf([
-    'warning',
-    'success',
-    'danger',
-    'info',
-    'primary',
-    'rose',
-  ]),
-  plain: PropTypes.bool,
-  image: PropTypes.bool,
-  contact: PropTypes.bool,
-  signup: PropTypes.bool,
-  stats: PropTypes.bool,
-  icon: PropTypes.bool,
-  text: PropTypes.bool,
-};
+export interface ICardHeaderTypes extends WithStyles<typeof styles> {
+  className: string;
+  color: 'warning' | 'success' | 'danger' | 'info' | 'primary' | 'rose';
+  plain: boolean;
+  image: boolean;
+  contact: boolean;
+  signup: boolean;
+  stats: boolean;
+  icon: boolean;
+  text: boolean;
+}
 
-export default withStyles(cardHeaderStyle)(CardHeader);
+export default withStyles(styles)(CardHeader);

@@ -4,11 +4,11 @@ import classNames from 'classnames';
 // nodejs library to set properties for components
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 // @material-ui/icons
 
 // core components
-import cardIconStyle from '@/assets/jss/material-dashboard-pro-react/components/cardIconStyle';
+import styles from '@/assets/jss/pro/components/cardIconStyle';
 
 function CardIcon({ ...props }) {
   const { classes, className, children, color, ...rest } = props;
@@ -24,17 +24,9 @@ function CardIcon({ ...props }) {
   );
 }
 
-CardIcon.propTypes = {
-  classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
-  color: PropTypes.oneOf([
-    'warning',
-    'success',
-    'danger',
-    'info',
-    'primary',
-    'rose',
-  ]),
-};
+export interface ICardIconTypes extends WithStyles<typeof styles> {
+  className: string;
+  color: 'warning' | 'success' | 'danger' | 'info' | 'primary' | 'rose';
+}
 
-export default withStyles(cardIconStyle)(CardIcon);
+export default withStyles(styles)(CardIcon);

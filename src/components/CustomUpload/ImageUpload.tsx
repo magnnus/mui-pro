@@ -90,11 +90,11 @@ class ImageUpload extends React.Component {
   }
 }
 
-ImageUpload.propTypes = {
-  avatar: PropTypes.bool,
-  addButtonProps: PropTypes.object,
-  changeButtonProps: PropTypes.object,
-  removeButtonProps: PropTypes.object,
-};
+export interface IImageUploadTypes {
+  avatar: boolean;
+  addButtonProps: PropTypes.object;
+  changeButtonProps: PropTypes.object;
+  removeButtonProps: PropTypes.object;
+}
 
 export default ImageUpload;

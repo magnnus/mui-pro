@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
 
 // @material-ui/icons
@@ -17,7 +17,7 @@ import Button from '@/components/CustomButtons/Button';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import pricingPageStyle from '@/assets/jss/material-dashboard-pro-react/views/pricingPageStyle';
+import pricingPageStyle from '@/assets/jss/pro/views/pricingPageStyle';
 
 class PricingPage extends React.Component {
   render() {
@@ -123,8 +123,6 @@ class PricingPage extends React.Component {
   }
 }
 
-PricingPage.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface IPricingPageTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(pricingPageStyle)(PricingPage);
+export default withStyles(styles)(PricingPage);

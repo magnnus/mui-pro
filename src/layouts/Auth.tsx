@@ -3,7 +3,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 // core components
 import AuthNavbar from '@/components/Navbars/AuthNavbar';
@@ -11,7 +11,7 @@ import Footer from '@/components/Footer/Footer';
 
 import routes from '@/routes';
 
-import pagesStyle from '@/assets/jss/material-dashboard-pro-react/layouts/authStyle';
+import pagesStyle from '@/assets/jss/pro/layouts/authStyle';
 
 import register from '@/assets/img/register.jpeg';
 import login from '@/assets/img/login.jpeg';
@@ -96,8 +96,6 @@ class Pages extends React.Component {
   }
 }
 
-Pages.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface IPagesTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(pagesStyle)(Pages);
+export default withStyles(styles)(Pages);

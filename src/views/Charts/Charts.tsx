@@ -3,7 +3,7 @@ import React from 'react';
 import ChartistGraph from 'react-chartist';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 // @material-ui/icons
 import Timeline from '@material-ui/icons/Timeline';
@@ -29,7 +29,7 @@ import {
   pieChart,
 } from '@/variables/charts';
 
-import chartsStyle from '@/assets/jss/material-dashboard-pro-react/views/chartsStyle';
+import chartsStyle from '@/assets/jss/pro/views/chartsStyle';
 
 class Charts extends React.Component {
   render() {
@@ -204,8 +204,7 @@ class Charts extends React.Component {
               <CardFooter stats className={classes.cardFooter}>
                 <h6 className={classes.legendTitle}>Legend</h6>
                 <i className={`fas fa-circle ${classes.info}`} /> Apple{' '}
-                <i className={`fas fa-circle ${classes.warning}`} /> Samsung
-{' '}
+                <i className={`fas fa-circle ${classes.warning}`} /> Samsung{' '}
                 <i className={`fas fa-circle ${classes.danger}`} /> Windows
                 Phone{' '}
               </CardFooter>
@@ -217,4 +216,4 @@ class Charts extends React.Component {
   }
 }
 
-export default withStyles(chartsStyle)(Charts);
+export default withStyles(styles)(Charts);

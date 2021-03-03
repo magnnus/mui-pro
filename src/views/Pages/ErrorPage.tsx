@@ -1,13 +1,13 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 // core components
 import GridContainer from '@/components/Grid/GridContainer';
 import GridItem from '@/components/Grid/GridItem';
 
-import errorPageStyles from '@/assets/jss/material-dashboard-pro-react/views/errorPageStyles';
+import errorPageStyles from '@/assets/jss/pro/views/errorPageStyles';
 
 class ErrorPage extends React.Component {
   render() {
@@ -28,8 +28,6 @@ class ErrorPage extends React.Component {
   }
 }
 
-ErrorPage.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface IErrorPageTypes extends WithStyles<typeof styles> {}
 
 export default withStyles(errorPageStyles)(ErrorPage);

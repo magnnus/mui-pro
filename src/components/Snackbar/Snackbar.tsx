@@ -3,14 +3,14 @@ import React from 'react';
 import cx from 'classnames';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Snack from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 
 // @material-ui/icons
 import Close from '@material-ui/icons/Close';
 
-import snackbarContentStyle from '@/assets/jss/material-dashboard-pro-react/components/snackbarContentStyle';
+import styles from '@/assets/jss/pro/components/snackbarContentStyle';
 
 function Snackbar({ ...props }) {
   const { classes, message, color, close, icon, place, open } = props;
@@ -78,21 +78,13 @@ Snackbar.defaultProps = {
   color: 'info',
 };
 
-Snackbar.propTypes = {
-  classes: PropTypes.object.isRequired,
-  message: PropTypes.node.isRequired,
-  color: PropTypes.oneOf([
-    'info',
-    'success',
-    'warning',
-    'danger',
-    'primary',
-    'rose',
-  ]),
-  close: PropTypes.bool,
-  icon: PropTypes.func,
-  place: PropTypes.oneOf(['tl', 'tr', 'tc', 'br', 'bl', 'bc']),
-  open: PropTypes.bool,
-};
+export interface ISnackbarTypes extends WithStyles<typeof styles> {
+  message: React.ReactNode;
+  color: 'info' | 'success' | 'warning' | 'danger' | 'primary' | 'rose';
+  close: boolean;
+  icon?(): void;
+  place: 'tl' | 'tr' | 'tc' | 'br' | 'bl' | 'bc';
+  open: boolean;
+}
 
-export default withStyles(snackbarContentStyle)(Snackbar);
+export default withStyles(styles)(Snackbar);

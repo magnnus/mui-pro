@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 const style = {
@@ -19,4 +19,4 @@ function GridItem({ ...props }) {
   );
 }
 
-export default withStyles(style)(GridItem);
+export default withStyles(styles)(GridItem);

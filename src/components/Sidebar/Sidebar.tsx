@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import cx from 'classnames';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -18,7 +18,7 @@ import Icon from '@material-ui/core/Icon';
 // core components
 import AdminNavbarLinks from '@/components/Navbars/AdminNavbarLinks';
 
-import sidebarStyle from '@/assets/jss/material-dashboard-pro-react/components/sidebarStyle';
+import styles from '@/assets/jss/pro/components/sidebarStyle';
 
 import avatar from '@/assets/img/faces/avatar.jpg';
 
@@ -176,13 +176,13 @@ class Sidebar extends React.Component {
               )}
               <ListItemText
                 primary={rtlActive ? prop.rtlName : prop.name}
-                secondary={(
+                secondary={
                   <b
                     className={`${caret} ${
                       this.state[prop.state] ? classes.caretActive : ''
                     }`}
                   />
-                )}
+                }
                 disableTypography
                 className={cx(
                   { [itemText]: prop.icon !== undefined },
@@ -478,23 +478,14 @@ Sidebar.defaultProps = {
   bgColor: 'blue',
 };
 
-Sidebar.propTypes = {
-  classes: PropTypes.object.isRequired,
-  bgColor: PropTypes.oneOf(['white', 'black', 'blue']),
-  rtlActive: PropTypes.bool,
-  color: PropTypes.oneOf([
-    'white',
-    'red',
-    'orange',
-    'green',
-    'blue',
-    'purple',
-    'rose',
-  ]),
-  logo: PropTypes.string,
-  logoText: PropTypes.string,
-  image: PropTypes.string,
-  routes: PropTypes.arrayOf(PropTypes.object),
-};
+export interface ISidebarTypes extends WithStyles<typeof styles> {
+  bgColor: 'white' | 'black' | 'blue';
+  rtlActive: boolean;
+  color: 'white' | 'red' | 'orange' | 'green' | 'blue' | 'purple' | 'rose';
+  logo: string;
+  logoText: string;
+  image: string;
+  routes: object[];
+}
 
-export default withStyles(sidebarStyle)(Sidebar);
+export default withStyles(styles)(Sidebar);

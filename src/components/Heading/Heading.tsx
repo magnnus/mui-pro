@@ -2,9 +2,9 @@ import React from 'react';
 import cx from 'classnames';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
-import headingStyle from '@/assets/jss/material-dashboard-pro-react/components/headingStyle';
+import styles from '@/assets/jss/pro/components/headingStyle';
 
 function Heading({ ...props }) {
   const { textAlign, category, title, classes } = props;
@@ -26,11 +26,10 @@ function Heading({ ...props }) {
   return null;
 }
 
-Heading.propTypes = {
-  classes: PropTypes.object.isRequired,
-  title: PropTypes.node,
-  category: PropTypes.node,
-  textAlign: PropTypes.oneOf(['right', 'left', 'center']),
-};
+export interface IHeadingTypes extends WithStyles<typeof styles> {
+  title: React.ReactNode;
+  category: React.ReactNode;
+  textAlign: 'right' | 'left' | 'center';
+}
 
-export default withStyles(headingStyle)(Heading);
+export default withStyles(styles)(Heading);

@@ -4,11 +4,11 @@ import classNames from 'classnames';
 // nodejs library to set properties for components
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 // @material-ui/icons
 
 // core components
-import cardTextStyle from '@/assets/jss/material-dashboard-pro-react/components/cardTextStyle';
+import styles from '@/assets/jss/pro/components/cardTextStyle';
 
 function CardText({ ...props }) {
   const { classes, className, children, color, ...rest } = props;
@@ -24,17 +24,9 @@ function CardText({ ...props }) {
   );
 }
 
-CardText.propTypes = {
-  classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
-  color: PropTypes.oneOf([
-    'warning',
-    'success',
-    'danger',
-    'info',
-    'primary',
-    'rose',
-  ]),
-};
+export interface ICardTextTypes extends WithStyles<typeof styles> {
+  className: string;
+  color: 'warning' | 'success' | 'danger' | 'info' | 'primary' | 'rose';
+}
 
-export default withStyles(cardTextStyle)(CardText);
+export default withStyles(styles)(CardText);

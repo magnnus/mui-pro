@@ -7,7 +7,7 @@ import TagsInput from 'react-tagsinput';
 import nouislider from 'nouislider';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -31,7 +31,7 @@ import CardHeader from '@/components/Card/CardHeader';
 import CardIcon from '@/components/Card/CardIcon';
 import CardBody from '@/components/Card/CardBody';
 
-import extendedFormsStyle from '@/assets/jss/material-dashboard-pro-react/views/extendedFormsStyle';
+import extendedFormsStyle from '@/assets/jss/pro/views/extendedFormsStyle';
 
 class ExtendedForms extends React.Component {
   constructor(props) {
@@ -829,4 +829,4 @@ class ExtendedForms extends React.Component {
   }
 }
 
-export default withStyles(extendedFormsStyle)(ExtendedForms);
+export default withStyles(styles)(ExtendedForms);

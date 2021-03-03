@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import SwipeableViews from 'react-swipeable-views';
 
 // material-ui components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 
@@ -14,7 +14,7 @@ import Tabs from '@material-ui/core/Tabs';
 import GridContainer from '@/components/Grid/GridContainer';
 import GridItem from '@/components/Grid/GridItem';
 
-import navPillsStyle from '@/assets/jss/material-dashboard-pro-react/components/navPillsStyle';
+import styles from '@/assets/jss/pro/components/navPillsStyle';
 
 class NavPills extends React.Component {
   constructor(props) {
@@ -120,31 +120,21 @@ NavPills.defaultProps = {
   color: 'primary',
 };
 
-NavPills.propTypes = {
-  classes: PropTypes.object.isRequired,
+export interface INavPillsTypes extends WithStyles<typeof styles> {
   // index of the default active pill
-  active: PropTypes.number,
-  tabs: PropTypes.arrayOf(
-    PropTypes.shape({
-      tabButton: PropTypes.string,
-      tabIcon: PropTypes.func,
-      tabContent: PropTypes.node,
-    }),
-  ).isRequired,
-  color: PropTypes.oneOf([
-    'primary',
-    'warning',
-    'danger',
-    'success',
-    'info',
-    'rose',
-  ]),
-  direction: PropTypes.string,
-  horizontal: PropTypes.shape({
-    tabsGrid: PropTypes.object,
-    contentGrid: PropTypes.object,
-  }),
-  alignCenter: PropTypes.bool,
-};
+  active?: number;
+  tabs: {
+    tabButton: string;
+    tabIcon?(): void;
+    tabContent: React.ReactNode;
+  }[];
+  color: 'primary' | 'warning' | 'danger' | 'success' | 'info' | 'rose';
+  direction: string;
+  horizontal?: {
+    tabsGrid: object;
+    contentGrid: object;
+  }[];
+  alignCenter: boolean;
+}
 
-export default withStyles(navPillsStyle)(NavPills);
+export default withStyles(styles)(NavPills);

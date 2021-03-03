@@ -3,10 +3,10 @@ import React from 'react';
 import cx from 'classnames';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
-import paginationStyle from '@/assets/jss/material-dashboard-pro-react/components/paginationStyle';
+import styles from '@/assets/jss/pro/components/paginationStyle';
 
 function Pagination({ ...props }) {
   const { classes, pages, color } = props;
@@ -43,20 +43,14 @@ Pagination.defaultProps = {
   color: 'primary',
 };
 
-Pagination.propTypes = {
-  classes: PropTypes.object.isRequired,
-  pages: PropTypes.arrayOf(
-    PropTypes.shape({
-      active: PropTypes.bool,
-      disabled: PropTypes.bool,
-      text: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.oneOf(['PREV', 'NEXT', '...']),
-      ]).isRequired,
-      onClick: PropTypes.func,
-    }),
-  ).isRequired,
-  color: PropTypes.oneOf(['primary', 'info', 'success', 'warning', 'danger']),
-};
+export interface IPaginationTypes extends WithStyles<typeof styles> {
+  pages: {
+    active: boolean;
+    disabled: boolean;
+    text: number | 'PREV' | 'NEXT' | '...';
+    onClick?(): void;
+  }[];
+  color?: 'primary' | 'info' | 'success' | 'warning' | 'danger';
+}
 
-export default withStyles(paginationStyle)(Pagination);
+export default withStyles(styles)(Pagination);

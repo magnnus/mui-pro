@@ -1,9 +1,9 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
-import typographyStyle from '@/assets/jss/material-dashboard-pro-react/components/typographyStyle';
+import styles from '@/assets/jss/pro/components/typographyStyle';
 
 function Warning({ ...props }) {
   const { classes, children } = props;
@@ -14,8 +14,6 @@ function Warning({ ...props }) {
   );
 }
 
-Warning.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface IWarningTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(typographyStyle)(Warning);
+export default withStyles(styles)(Warning);

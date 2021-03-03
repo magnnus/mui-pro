@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 // core components
 import GridContainer from '@/components/Grid/GridContainer';
@@ -9,7 +9,7 @@ import GridItem from '@/components/Grid/GridItem';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import gridSystemStyle from '@/assets/jss/material-dashboard-pro-react/views/gridSystemStyle';
+import gridSystemStyle from '@/assets/jss/pro/views/gridSystemStyle';
 
 class GridSystem extends React.Component {
   render() {
@@ -315,8 +315,6 @@ class GridSystem extends React.Component {
   }
 }
 
-GridSystem.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface IGridSystemTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(gridSystemStyle)(GridSystem);
+export default withStyles(styles)(GridSystem);

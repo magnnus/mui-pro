@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -26,7 +26,7 @@ import CardBody from '@/components/Card/CardBody';
 import CardFooter from '@/components/Card/CardFooter';
 
 // style for this view
-import validationFormsStyle from '@/assets/jss/material-dashboard-pro-react/views/validationFormsStyle';
+import validationFormsStyle from '@/assets/jss/pro/views/validationFormsStyle';
 
 class ValidationForms extends React.Component {
   constructor(props) {
@@ -820,4 +820,4 @@ class ValidationForms extends React.Component {
   }
 }
 
-export default withStyles(validationFormsStyle)(ValidationForms);
+export default withStyles(styles)(ValidationForms);

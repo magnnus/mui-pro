@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -25,7 +25,7 @@ import InfoArea from '@/components/InfoArea/InfoArea';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import registerPageStyle from '@/assets/jss/material-dashboard-pro-react/views/registerPageStyle';
+import registerPageStyle from '@/assets/jss/pro/views/registerPageStyle';
 
 class RegisterPage extends React.Component {
   constructor(props) {
@@ -192,8 +192,6 @@ class RegisterPage extends React.Component {
   }
 }
 
-RegisterPage.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface IRegisterPageTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(registerPageStyle)(RegisterPage);
+export default withStyles(styles)(RegisterPage);

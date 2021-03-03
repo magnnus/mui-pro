@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { NavLink } from 'react-router-dom';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Hidden from '@material-ui/core/Hidden';
@@ -24,7 +24,7 @@ import MonetizationOn from '@material-ui/icons/MonetizationOn';
 // core components
 import Button from '@/components/CustomButtons/Button';
 
-import authNavbarStyle from '@/assets/jss/material-dashboard-pro-react/components/authNavbarStyle';
+import styles from '@/assets/jss/pro/components/authNavbarStyle';
 
 class AuthNavbar extends React.Component {
   constructor(props) {
@@ -183,10 +183,9 @@ class AuthNavbar extends React.Component {
   }
 }
 
-AuthNavbar.propTypes = {
-  classes: PropTypes.object.isRequired,
-  color: PropTypes.oneOf(['primary', 'info', 'success', 'warning', 'danger']),
-  brandText: PropTypes.string,
-};
+export interface IAuthNavbarTypes extends WithStyles<typeof styles> {
+  color: 'primary' | 'info' | 'success' | 'warning' | 'danger';
+  brandText: string;
+}
 
-export default withStyles(authNavbarStyle)(AuthNavbar);
+export default withStyles(styles)(AuthNavbar);

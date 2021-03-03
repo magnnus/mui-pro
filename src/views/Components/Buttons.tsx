@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 // @material-ui/icons
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
@@ -20,7 +20,7 @@ import Button from '@/components/CustomButtons/Button';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import buttonsStyle from '@/assets/jss/material-dashboard-pro-react/views/buttonsStyle';
+import buttonsStyle from '@/assets/jss/pro/views/buttonsStyle';
 
 class Buttons extends React.Component {
   render() {
@@ -61,35 +61,23 @@ class Buttons extends React.Component {
               </div>
               <div className={classes.cardContentRight}>
                 <Button className={classes.marginRight}>
-                  <KeyboardArrowLeft className={classes.icons} />
-{' '}
-Left
-</Button>
+                  <KeyboardArrowLeft className={classes.icons} /> Left
+                </Button>
                 <Button className={classes.marginRight}>
-                  Right 
-{' '}
-<KeyboardArrowRight className={classes.icons} />
+                  Right <KeyboardArrowRight className={classes.icons} />
                 </Button>
                 <Button color="info" className={classes.marginRight}>
-                  <PriorityHigh className={classes.icons} />
-{' '}
-Info
-</Button>
+                  <PriorityHigh className={classes.icons} /> Info
+                </Button>
                 <Button color="success" className={classes.marginRight}>
-                  <Check className={classes.icons} />
-{' '}
-Success
-</Button>
+                  <Check className={classes.icons} /> Success
+                </Button>
                 <Button color="warning" className={classes.marginRight}>
-                  <Warning className={classes.icons} />
-{' '}
-Warning
-</Button>
+                  <Warning className={classes.icons} /> Warning
+                </Button>
                 <Button color="danger" className={classes.marginRight}>
-                  <Close className={classes.icons} />
-{' '}
-Danger
-</Button>
+                  <Close className={classes.icons} /> Danger
+                </Button>
               </div>
             </GridItem>
           </GridContainer>
@@ -130,10 +118,8 @@ Danger
                   round
                 </Button>
                 <Button color="primary" round className={classes.marginRight}>
-                  <Favorite className={classes.icons} />
-{' '}
-with icon
-</Button>
+                  <Favorite className={classes.icons} /> with icon
+                </Button>
                 <Button
                   justIcon
                   round
@@ -212,8 +198,7 @@ with icon
                   <Button color="info" round className={classes.lastButton}>
                     4
                   </Button>
-                </div>
-{' '}
+                </div>{' '}
                 <div className={classes.buttonGroup}>
                   <Button color="info" round className={classes.firstButton}>
                     5
@@ -239,8 +224,7 @@ with icon
                     <Button color="twitter">
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-twitter`}
-                      />
-{' '}
+                      />{' '}
                       Connect with Twitter
                     </Button>
                   </GridItem>
@@ -267,8 +251,7 @@ with icon
                     <Button color="twitter" simple>
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-twitter`}
-                      />
-{' '}
+                      />{' '}
                       Connect with Twitter
                     </Button>
                   </GridItem>
@@ -278,8 +261,7 @@ with icon
                     <Button color="facebook">
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-facebook-square`}
-                      />
-{' '}
+                      />{' '}
                       Share · 2.2k
                     </Button>
                   </GridItem>
@@ -306,8 +288,7 @@ with icon
                     <Button color="facebook" simple>
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-facebook-square`}
-                      />
-{' '}
+                      />{' '}
                       Share · 2.2k
                     </Button>
                   </GridItem>
@@ -317,8 +298,7 @@ with icon
                     <Button color="google">
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-google-plus-g`}
-                      />
-{' '}
+                      />{' '}
                       Share on Google+
                     </Button>
                   </GridItem>
@@ -345,8 +325,7 @@ with icon
                     <Button color="google" simple>
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-google-plus-g`}
-                      />
-{' '}
+                      />{' '}
                       Share on Google+
                     </Button>
                   </GridItem>
@@ -356,8 +335,7 @@ with icon
                     <Button color="linkedin">
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-linkedin`}
-                      />
-{' '}
+                      />{' '}
                       Connect with Linkedin
                     </Button>
                   </GridItem>
@@ -384,8 +362,7 @@ with icon
                     <Button color="linkedin" simple>
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-linkedin`}
-                      />
-{' '}
+                      />{' '}
                       Connect with Linkedin
                     </Button>
                   </GridItem>
@@ -395,8 +372,7 @@ with icon
                     <Button color="pinterest">
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-pinterest`}
-                      />
-{' '}
+                      />{' '}
                       Pint it · 212
                     </Button>
                   </GridItem>
@@ -423,8 +399,7 @@ with icon
                     <Button color="pinterest" simple>
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-pinterest`}
-                      />
-{' '}
+                      />{' '}
                       Pint it · 212
                     </Button>
                   </GridItem>
@@ -434,8 +409,7 @@ with icon
                     <Button color="youtube">
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-youtube`}
-                      />
-{' '}
+                      />{' '}
                       View on Youtube
                     </Button>
                   </GridItem>
@@ -462,8 +436,7 @@ with icon
                     <Button color="youtube" simple>
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-youtube`}
-                      />
-{' '}
+                      />{' '}
                       View on Youtube
                     </Button>
                   </GridItem>
@@ -473,8 +446,7 @@ with icon
                     <Button color="tumblr">
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-tumblr-square`}
-                      />
-{' '}
+                      />{' '}
                       Repost
                     </Button>
                   </GridItem>
@@ -501,8 +473,7 @@ with icon
                     <Button color="tumblr" simple>
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-tumblr-square`}
-                      />
-{' '}
+                      />{' '}
                       Repost
                     </Button>
                   </GridItem>
@@ -512,8 +483,7 @@ with icon
                     <Button color="github">
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-github`}
-                      />
-{' '}
+                      />{' '}
                       Connect with Github
                     </Button>
                   </GridItem>
@@ -540,8 +510,7 @@ with icon
                     <Button color="github" simple>
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-github`}
-                      />
-{' '}
+                      />{' '}
                       Connect with Github
                     </Button>
                   </GridItem>
@@ -551,8 +520,7 @@ with icon
                     <Button color="behance">
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-behance-square`}
-                      />
-{' '}
+                      />{' '}
                       Follow us
                     </Button>
                   </GridItem>
@@ -579,8 +547,7 @@ with icon
                     <Button color="behance" simple>
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-behance-square`}
-                      />
-{' '}
+                      />{' '}
                       Follow us
                     </Button>
                   </GridItem>
@@ -590,8 +557,7 @@ with icon
                     <Button color="dribbble">
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-dribbble`}
-                      />
-{' '}
+                      />{' '}
                       Find us on Dribble
                     </Button>
                   </GridItem>
@@ -618,8 +584,7 @@ with icon
                     <Button color="dribbble" simple>
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-dribbble`}
-                      />
-{' '}
+                      />{' '}
                       Find us on Dribble
                     </Button>
                   </GridItem>
@@ -629,8 +594,7 @@ with icon
                     <Button color="reddit">
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-reddit`}
-                      />
-{' '}
+                      />{' '}
                       Repost · 232
                     </Button>
                   </GridItem>
@@ -657,8 +621,7 @@ with icon
                     <Button color="reddit" simple>
                       <i
                         className={`${classes.socialButtonsIcons} ${classes.marginRight} fab fa-reddit`}
-                      />
-{' '}
+                      />{' '}
                       Repost · 232
                     </Button>
                   </GridItem>
@@ -672,8 +635,6 @@ with icon
   }
 }
 
-Buttons.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface IButtonsTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(buttonsStyle)(Buttons);
+export default withStyles(styles)(Buttons);

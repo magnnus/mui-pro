@@ -3,7 +3,7 @@ import React from 'react';
 import ReactTable from 'react-table';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 // @material-ui/icons
 import Assignment from '@material-ui/icons/Assignment';
 import Dvr from '@material-ui/icons/Dvr';

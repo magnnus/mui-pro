@@ -3,13 +3,13 @@ import React from 'react';
 import cx from 'classnames';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 // core components
 import GridContainer from '@/components/Grid/GridContainer';
 import GridItem from '@/components/Grid/GridItem';
 
-import instructionStyle from '@/assets/jss/material-dashboard-pro-react/components/instructionStyle';
+import styles from '@/assets/jss/pro/components/instructionStyle';
 
 function Instruction({ ...props }) {
   const {
@@ -50,14 +50,13 @@ Instruction.defaultProps = {
   imageAlt: '...',
 };
 
-Instruction.propTypes = {
-  classes: PropTypes.object.isRequired,
-  title: PropTypes.node.isRequired,
-  text: PropTypes.node.isRequired,
-  image: PropTypes.string.isRequired,
-  imageAlt: PropTypes.string,
-  className: PropTypes.string,
-  imageClassName: PropTypes.string,
-};
+export interface IInstructionTypes extends WithStyles<typeof styles> {
+  title: React.ReactNode;
+  text: React.ReactNode;
+  image: string;
+  imageAlt: string;
+  className: string;
+  imageClassName: string;
+}
 
-export default withStyles(instructionStyle)(Instruction);
+export default withStyles(styles)(Instruction);

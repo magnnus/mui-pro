@@ -4,13 +4,22 @@ import classNames from 'classnames';
 // nodejs library to set properties for components
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 // @material-ui/icons
 // core components
 
-import cardAvatarStyle from '@/assets/jss/material-dashboard-pro-react/components/cardAvatarStyle';
+import styles from '@/assets/jss/pro/components/cardAvatarStyle';
 
-function CardAvatar({ ...props }) {
+export interface ICardAvatarTypes extends WithStyles<typeof styles> {
+  children: React.ReactNode;
+  className?: string;
+  profile?: boolean;
+  plain?: boolean;
+  testimonial?: boolean;
+  testimonialFooter?: boolean;
+}
+
+const CardAvatar: React.FC<ICardAvatarTypes> = ({ ...props }) => {
   const {
     classes,
     children,
@@ -34,15 +43,6 @@ function CardAvatar({ ...props }) {
       {children}
     </div>
   );
-}
-
-CardAvatar.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  profile: PropTypes.bool,
-  plain: PropTypes.bool,
-  testimonial: PropTypes.bool,
-  testimonialFooter: PropTypes.bool,
 };
 
-export default withStyles(cardAvatarStyle)(CardAvatar);
+export default withStyles(styles)(CardAvatar);

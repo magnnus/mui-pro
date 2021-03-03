@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 
 // @material-ui/icons
@@ -19,7 +19,7 @@ import CardHeader from '@/components/Card/CardHeader';
 import CardIcon from '@/components/Card/CardIcon';
 import CardAvatar from '@/components/Card/CardAvatar';
 
-import userProfileStyles from '@/assets/jss/material-dashboard-pro-react/views/userProfileStyles';
+import userProfileStyles from '@/assets/jss/pro/views/userProfileStyles';
 
 import avatar from '@/assets/img/faces/marc.jpg';
 
@@ -35,9 +35,7 @@ function UserProfile(props) {
                 <PermIdentity />
               </CardIcon>
               <h4 className={classes.cardIconTitle}>
-                Edit Profile - 
-{' '}
-<small>Complete your profile</small>
+                Edit Profile - <small>Complete your profile</small>
               </h4>
             </CardHeader>
             <CardBody>

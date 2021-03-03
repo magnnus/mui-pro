@@ -6,7 +6,7 @@ import RecordVoiceOver from '@material-ui/icons/RecordVoiceOver';
 import Email from '@material-ui/icons/Email';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
 // core components
@@ -199,4 +199,4 @@ class Step1 extends React.Component {
   }
 }
 
-export default withStyles(style)(Step1);
+export default withStyles(styles)(Step1);

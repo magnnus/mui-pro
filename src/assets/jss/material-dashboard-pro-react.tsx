@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 // ##############################
 // // // Function that converts from hex color to rgb color
 // // // Example: input = #9c27b0 => output = 156, 39, 176
@@ -79,7 +80,7 @@ const container = {
 
 const defaultFont = {
   fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  fontWeight: '300',
+  fontWeight: 300,
   lineHeight: '1.5em',
 };
 
@@ -275,7 +276,7 @@ const tooltip = {
   fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
   fontSize: '12px',
   fontStyle: 'normal',
-  fontWeight: '400',
+  fontWeight: 400,
   textShadow: 'none',
   textTransform: 'none',
   letterSpacing: 'normal',
@@ -289,7 +290,7 @@ const tooltip = {
 const title = {
   color: grayColor[2],
   textDecoration: 'none',
-  fontWeight: '300',
+  fontWeight: 300,
   marginTop: '30px',
   marginBottom: '25px',
   minHeight: '32px',
@@ -297,7 +298,7 @@ const title = {
   '& small': {
     color: grayColor[1],
     fontSize: '65%',
-    fontWeight: '400',
+    fontWeight: 400,
     lineHeight: '1',
   },
 };
@@ -328,14 +329,6 @@ const cardLink = {
 export {
   hexToRgb,
   // variables
-  drawerWidth,
-  drawerMiniWidth,
-  transition,
-  container,
-  containerFluid,
-  boxShadow,
-  card,
-  defaultFont,
   primaryColor,
   warningColor,
   dangerColor,
@@ -355,6 +348,14 @@ export {
   behanceColor,
   dribbbleColor,
   redditColor,
+  drawerWidth,
+  drawerMiniWidth,
+  transition,
+  container,
+  containerFluid,
+  boxShadow,
+  card,
+  defaultFont,
   primaryBoxShadow,
   infoBoxShadow,
   successBoxShadow,

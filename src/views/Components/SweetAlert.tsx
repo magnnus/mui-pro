@@ -3,7 +3,7 @@ import React from 'react';
 import SweetAlert from 'react-bootstrap-sweetalert';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 // core components
 import Heading from '@/components/Heading/Heading';
@@ -13,7 +13,7 @@ import Button from '@/components/CustomButtons/Button';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import sweetAlertStyle from '@/assets/jss/material-dashboard-pro-react/views/sweetAlertStyle';
+import sweetAlertStyle from '@/assets/jss/pro/views/sweetAlertStyle';
 
 class SweetAlertPage extends React.Component {
   constructor(props) {
@@ -86,11 +86,7 @@ class SweetAlertPage extends React.Component {
           onCancel={() => this.hideAlert()}
           confirmBtnCssClass={`${this.props.classes.button} ${this.props.classes.success}`}
         >
-          You can use 
-{' '}
-<b>bold</b> text, 
-{' '}
-<a href="/">links</a> and other HTML
+          You can use <b>bold</b> text, <a href="/">links</a> and other HTML
           tags
         </SweetAlert>
       ),
@@ -186,13 +182,11 @@ class SweetAlertPage extends React.Component {
           onConfirm={() => this.hideAlert()}
           onCancel={() => this.hideAlert()}
           confirmBtnCssClass={`${this.props.classes.button} ${this.props.classes.info}`}
-          title={(
+          title={
             <p>
-              You entered: 
-{' '}
-<b>{inputValue}</b>
+              You entered: <b>{inputValue}</b>
             </p>
-          )}
+          }
         />
       ),
     });
@@ -245,11 +239,10 @@ class SweetAlertPage extends React.Component {
         <Heading
           textAlign="center"
           title="Sweet Alert"
-          category={(
+          category={
             <span>
               A beautiful plugin, that replace the classic alert, Handcrafted by
-              our friend
-{' '}
+              our friend{' '}
               <a
                 target="_blank"
                 href="https://github.com/djorg83"
@@ -257,8 +250,7 @@ class SweetAlertPage extends React.Component {
               >
                 Daniel Jorgensen
               </a>
-              . Please check out the
-{' '}
+              . Please check out the{' '}
               <a
                 href="https://github.com/djorg83/react-bootstrap-sweetalert"
                 target="_blank"
@@ -268,7 +260,7 @@ class SweetAlertPage extends React.Component {
               </a>
               .
             </span>
-          )}
+          }
         />
         {this.state.alert}
         <GridContainer>
@@ -389,4 +381,4 @@ class SweetAlertPage extends React.Component {
   }
 }
 
-export default withStyles(sweetAlertStyle)(SweetAlertPage);
+export default withStyles(styles)(SweetAlertPage);

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -12,7 +12,7 @@ import CustomInput from '@/components/CustomInput/CustomInput';
 import GridContainer from '@/components/Grid/GridContainer';
 import GridItem from '@/components/Grid/GridItem';
 
-import customSelectStyle from '@/assets/jss/material-dashboard-pro-react/customSelectStyle';
+import customSelectStyle from '@/assets/jss/pro/customSelectStyle';
 
 const style = {
   infoText: {
@@ -133,4 +133,4 @@ class Step3 extends React.Component {
   }
 }
 
-export default withStyles(style)(Step3);
+export default withStyles(styles)(Step3);

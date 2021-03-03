@@ -2,12 +2,12 @@ import React from 'react';
 import cx from 'classnames';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 // core components
 import Button from '@/components/CustomButtons/Button';
 import Card from '@/components/Card/Card';
 
-import wizardStyle from '@/assets/jss/material-dashboard-pro-react/components/wizardStyle';
+import styles from '@/assets/jss/pro/components/wizardStyle';
 
 class Wizard extends React.Component {
   constructor(props) {
@@ -337,33 +337,23 @@ Wizard.defaultProps = {
   finishButtonText: 'Finish',
 };
 
-Wizard.propTypes = {
-  classes: PropTypes.object.isRequired,
-  steps: PropTypes.arrayOf(
-    PropTypes.shape({
-      stepName: PropTypes.string.isRequired,
-      stepComponent: PropTypes.func.isRequired,
-      stepId: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  color: PropTypes.oneOf([
-    'primary',
-    'warning',
-    'danger',
-    'success',
-    'info',
-    'rose',
-  ]),
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  previousButtonClasses: PropTypes.string,
-  previousButtonText: PropTypes.string,
-  nextButtonClasses: PropTypes.string,
-  nextButtonText: PropTypes.string,
-  finishButtonClasses: PropTypes.string,
-  finishButtonText: PropTypes.string,
-  finishButtonClick: PropTypes.func,
-  validate: PropTypes.bool,
-};
+export interface IWizardTypes extends WithStyles<typeof styles> {
+  steps: {
+    stepName: string;
+    stepComponent(): void;
+    stepId: string;
+  }[];
+  color: 'primary' | 'warning' | 'danger' | 'success' | 'info' | 'rose';
+  title: string;
+  subtitle: string;
+  previousButtonClasses: string;
+  previousButtonText: string;
+  nextButtonClasses: string;
+  nextButtonText: string;
+  finishButtonClasses: string;
+  finishButtonText: string;
+  finishButtonClick?(): void;
+  validate: boolean;
+}
 
-export default withStyles(wizardStyle)(Wizard);
+export default withStyles(styles)(Wizard);

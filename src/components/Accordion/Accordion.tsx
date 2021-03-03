@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -9,9 +9,21 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 // @material-ui/icons
 import ExpandMore from '@material-ui/icons/ExpandMore';
 
-import accordionStyle from '@/assets/jss/material-dashboard-pro-react/components/accordionStyle';
+import styles from '@/assets/jss/pro/components/accordionStyle';
 
-class Accordion extends React.Component {
+export interface IAccordionTypes extends WithStyles<typeof styles> {
+  // index of the default active collapse
+  active?: number;
+  collapses: {
+    title: string;
+    content: React.ReactNode;
+  }[];
+}
+class Accordion extends React.Component<IAccordionTypes, { active: number }> {
+  static defaultProps = {
+    active: -1,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -34,6 +46,7 @@ class Accordion extends React.Component {
             <ExpansionPanel
               expanded={this.state.active === key}
               onChange={this.handleChange(key)}
+              // eslint-disable-next-line react/no-array-index-key
               key={key}
               classes={{
                 root: classes.expansionPanel,
@@ -62,20 +75,4 @@ class Accordion extends React.Component {
   }
 }
 
-Accordion.defaultProps = {
-  active: -1,
-};
-
-Accordion.propTypes = {
-  classes: PropTypes.object.isRequired,
-  // index of the default active collapse
-  active: PropTypes.number,
-  collapses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      content: PropTypes.node,
-    }),
-  ).isRequired,
-};
-
-export default withStyles(accordionStyle)(Accordion);
+export default withStyles(styles)(Accordion);

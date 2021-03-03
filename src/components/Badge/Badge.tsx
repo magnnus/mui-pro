@@ -1,28 +1,25 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
-import badgeStyle from '@/assets/jss/material-dashboard-pro-react/components/badgeStyle';
+import styles from '@/assets/jss/pro/components/badgeStyle';
 
-function Badge({ ...props }) {
-  const { classes, color, children } = props;
+export interface IBadgeTypes extends WithStyles<typeof styles> {
+  color:
+    | 'primary'
+    | 'warning'
+    | 'danger'
+    | 'success'
+    | 'info'
+    | 'rose'
+    | 'gray';
+}
+
+const Badge: React.FC<IBadgeTypes> = ({ classes, color, children }) => {
   return (
     <span className={`${classes.badge} ${classes[color]}`}>{children}</span>
   );
-}
-
-Badge.propTypes = {
-  classes: PropTypes.object.isRequired,
-  color: PropTypes.oneOf([
-    'primary',
-    'warning',
-    'danger',
-    'success',
-    'info',
-    'rose',
-    'gray',
-  ]),
 };
 
-export default withStyles(badgeStyle)(Badge);
+export default withStyles(styles)(Badge);

@@ -7,7 +7,7 @@ import PerfectScrollbar from 'perfect-scrollbar';
 import 'perfect-scrollbar/css/perfect-scrollbar.css';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 // core components
 import AdminNavbar from '@/components/Navbars/AdminNavbar';
@@ -17,7 +17,7 @@ import FixedPlugin from '@/components/FixedPlugin/FixedPlugin';
 
 import routes from '@/routes';
 
-import appStyle from '@/assets/jss/material-dashboard-pro-react/layouts/adminStyle';
+import appStyle from '@/assets/jss/pro/layouts/adminStyle';
 
 import image from '@/assets/img/sidebar-2.jpg';
 import logo from '@/assets/img/logo-white.svg';
@@ -200,8 +200,6 @@ class Dashboard extends React.Component {
   }
 }
 
-Dashboard.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface IDashboardTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(appStyle)(Dashboard);
+export default withStyles(styles)(Dashboard);

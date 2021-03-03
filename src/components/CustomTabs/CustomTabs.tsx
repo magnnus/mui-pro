@@ -4,7 +4,7 @@ import classNames from 'classnames';
 // nodejs library to set properties for components
 
 // material-ui components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 // core components
@@ -12,7 +12,7 @@ import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 import CardHeader from '@/components/Card/CardHeader';
 
-import customTabsStyle from '@/assets/jss/material-dashboard-pro-react/components/customTabsStyle';
+import styles from '@/assets/jss/pro/components/customTabsStyle';
 
 class CustomTabs extends React.Component {
   state = {
@@ -87,26 +87,16 @@ class CustomTabs extends React.Component {
   }
 }
 
-CustomTabs.propTypes = {
-  classes: PropTypes.object.isRequired,
-  headerColor: PropTypes.oneOf([
-    'warning',
-    'success',
-    'danger',
-    'info',
-    'primary',
-    'rose',
-  ]),
-  title: PropTypes.string,
-  tabs: PropTypes.arrayOf(
-    PropTypes.shape({
-      tabName: PropTypes.string.isRequired,
-      tabIcon: PropTypes.func,
-      tabContent: PropTypes.node.isRequired,
-    }),
-  ),
-  rtlActive: PropTypes.bool,
-  plainTabs: PropTypes.bool,
-};
+export interface ICustomTabsTypes extends WithStyles<typeof styles> {
+  headerColor: 'warning' | 'success' | 'danger' | 'info' | 'primary' | 'rose';
+  title: string;
+  tabs: {
+    tabName: string;
+    tabIcon?(): void;
+    tabContent: React.ReactNode;
+  }[];
+  rtlActive: boolean;
+  plainTabs: boolean;
+}
 
-export default withStyles(customTabsStyle)(CustomTabs);
+export default withStyles(styles)(CustomTabs);

@@ -4,11 +4,11 @@ import classNames from 'classnames';
 // nodejs library to set properties for components
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 // @material-ui/icons
 
 // core components
-import cardBodyStyle from '@/assets/jss/material-dashboard-pro-react/components/cardBodyStyle';
+import styles from '@/assets/jss/pro/components/cardBodyStyle';
 
 function CardBody({ ...props }) {
   const {
@@ -44,17 +44,16 @@ function CardBody({ ...props }) {
   );
 }
 
-CardBody.propTypes = {
-  classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
-  background: PropTypes.bool,
-  plain: PropTypes.bool,
-  formHorizontal: PropTypes.bool,
-  pricing: PropTypes.bool,
-  signup: PropTypes.bool,
-  color: PropTypes.bool,
-  profile: PropTypes.bool,
-  calendar: PropTypes.bool,
-};
+export interface ICardBodyTypes extends WithStyles<typeof styles> {
+  className: string;
+  background: boolean;
+  plain: boolean;
+  formHorizontal: boolean;
+  pricing: boolean;
+  signup: boolean;
+  color: boolean;
+  profile: boolean;
+  calendar: boolean;
+}
 
-export default withStyles(cardBodyStyle)(CardBody);
+export default withStyles(styles)(CardBody);

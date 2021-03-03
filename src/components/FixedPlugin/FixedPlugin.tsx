@@ -2,10 +2,10 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Switch from '@material-ui/core/Switch';
 
-import styles from '@/assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch';
+import styles from '@/assets/jss/pro/customCheckboxRadioSwitch';
 
 import imagine1 from '@/assets/img/sidebar-1.jpg';
 import imagine2 from '@/assets/img/sidebar-2.jpg';
@@ -267,12 +267,7 @@ class FixedPlugin extends Component {
             </li>
             <li className="button-container">
               <div>
-                <Button
-                  color="warning"
-                  href=""
-                  target="_blank"
-                  fullWidth
-                >
+                <Button color="warning" href="" target="_blank" fullWidth>
                   Buy now
                 </Button>
               </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // mterial-ui components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 const style = {
   clearfix: {
@@ -20,8 +20,6 @@ function Clearfix({ ...props }) {
   return <div className={classes.clearfix} />;
 }
 
-Clearfix.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface IClearfixTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(style)(Clearfix);
+export default withStyles(styles)(Clearfix);

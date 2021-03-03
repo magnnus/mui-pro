@@ -1,10 +1,10 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
-import customLinearProgressStyle from '@/assets/jss/material-dashboard-pro-react/components/customLinearProgressStyle';
+import styles from '@/assets/jss/pro/components/customLinearProgressStyle';
 
 function CustomLinearProgress({ ...props }) {
   const { classes, color, ...rest } = props;
@@ -23,17 +23,15 @@ CustomLinearProgress.defaultProps = {
   color: 'gray',
 };
 
-CustomLinearProgress.propTypes = {
-  classes: PropTypes.object.isRequired,
-  color: PropTypes.oneOf([
-    'primary',
-    'warning',
-    'danger',
-    'success',
-    'info',
-    'rose',
-    'gray',
-  ]),
-};
+export interface ICustomLinearProgressTypes extends WithStyles<typeof styles> {
+  color:
+    | 'primary'
+    | 'warning'
+    | 'danger'
+    | 'success'
+    | 'info'
+    | 'rose'
+    | 'gray';
+}
 
-export default withStyles(customLinearProgressStyle)(CustomLinearProgress);
+export default withStyles(styles)(CustomLinearProgress);

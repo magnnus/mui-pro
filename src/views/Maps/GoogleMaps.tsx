@@ -8,7 +8,7 @@ import {
 } from 'react-google-maps';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 // @material-ui/icons
 import Map from '@material-ui/icons/Map';
 import AddLocation from '@material-ui/icons/AddLocation';

@@ -3,14 +3,14 @@ import React from 'react';
 import cx from 'classnames';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Snack from '@material-ui/core/SnackbarContent';
 import IconButton from '@material-ui/core/IconButton';
 
 // @material-ui/icons
 import Close from '@material-ui/icons/Close';
 
-import snackbarContentStyle from '@/assets/jss/material-dashboard-pro-react/components/snackbarContentStyle';
+import styles from '@/assets/jss/pro/components/snackbarContentStyle';
 
 function SnackbarContent({ ...props }) {
   const { classes, message, color, close, icon } = props;
@@ -60,19 +60,11 @@ SnackbarContent.defaultProps = {
   color: 'info',
 };
 
-SnackbarContent.propTypes = {
-  classes: PropTypes.object.isRequired,
-  message: PropTypes.node.isRequired,
-  color: PropTypes.oneOf([
-    'info',
-    'success',
-    'warning',
-    'danger',
-    'primary',
-    'rose',
-  ]),
-  close: PropTypes.bool,
-  icon: PropTypes.func,
-};
+export interface ISnackbarContentTypes extends WithStyles<typeof styles> {
+  message: React.ReactNode;
+  color: 'info' | 'success' | 'warning' | 'danger' | 'primary' | 'rose';
+  close: boolean;
+  icon?(): void;
+}
 
-export default withStyles(snackbarContentStyle)(SnackbarContent);
+export default withStyles(styles)(SnackbarContent);

@@ -1,9 +1,9 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
-import infoStyle from '@/assets/jss/material-dashboard-pro-react/components/infoStyle';
+import styles from '@/assets/jss/pro/components/infoStyle';
 
 function InfoArea({ ...props }) {
   const { classes, title, description, iconColor } = props;
@@ -24,20 +24,18 @@ InfoArea.defaultProps = {
   iconColor: 'gray',
 };
 
-InfoArea.propTypes = {
-  classes: PropTypes.object.isRequired,
-  icon: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  iconColor: PropTypes.oneOf([
-    'primary',
-    'warning',
-    'danger',
-    'success',
-    'info',
-    'rose',
-    'gray',
-  ]),
-};
+export interface IInfoAreaTypes extends WithStyles<typeof styles> {
+  icon: PropTypes.func.isRequired;
+  title: string;
+  description: string;
+  iconColor:
+    | 'primary'
+    | 'warning'
+    | 'danger'
+    | 'success'
+    | 'info'
+    | 'rose'
+    | 'gray';
+}
 
-export default withStyles(infoStyle)(InfoArea);
+export default withStyles(styles)(InfoArea);

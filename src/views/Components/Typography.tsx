@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 // core components
 import Quote from '@/components/Typography/Quote';
@@ -142,8 +142,6 @@ function Typography({ ...props }) {
   );
 }
 
-Typography.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface ITypographyTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(style)(Typography);
+export default withStyles(styles)(Typography);

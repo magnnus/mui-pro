@@ -4,10 +4,10 @@ import classNames from 'classnames';
 // nodejs library to set properties for components
 
 // material-ui components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
-import buttonStyle from '@/assets/jss/material-dashboard-pro-react/components/buttonStyle';
+import styles from '@/assets/jss/pro/components/buttonStyle';
 
 function RegularButton({ ...props }) {
   const {
@@ -46,39 +46,37 @@ function RegularButton({ ...props }) {
   );
 }
 
-RegularButton.propTypes = {
-  classes: PropTypes.object.isRequired,
-  color: PropTypes.oneOf([
-    'primary',
-    'info',
-    'success',
-    'warning',
-    'danger',
-    'rose',
-    'white',
-    'twitter',
-    'facebook',
-    'google',
-    'linkedin',
-    'pinterest',
-    'youtube',
-    'tumblr',
-    'github',
-    'behance',
-    'dribbble',
-    'reddit',
-    'transparent',
-  ]),
-  size: PropTypes.oneOf(['sm', 'lg']),
-  simple: PropTypes.bool,
-  round: PropTypes.bool,
-  fullWidth: PropTypes.bool,
-  disabled: PropTypes.bool,
-  block: PropTypes.bool,
-  link: PropTypes.bool,
-  justIcon: PropTypes.bool,
-  className: PropTypes.string,
-  muiClasses: PropTypes.object,
-};
+export interface IRegularButtonTypes extends WithStyles<typeof styles> {
+  color:
+    | 'primary'
+    | 'info'
+    | 'success'
+    | 'warning'
+    | 'danger'
+    | 'rose'
+    | 'white'
+    | 'twitter'
+    | 'facebook'
+    | 'google'
+    | 'linkedin'
+    | 'pinterest'
+    | 'youtube'
+    | 'tumblr'
+    | 'github'
+    | 'behance'
+    | 'dribbble'
+    | 'reddit'
+    | 'transparent';
+  size: 'sm' | 'lg';
+  simple: boolean;
+  round: boolean;
+  fullWidth: boolean;
+  disabled: boolean;
+  block: boolean;
+  link: boolean;
+  justIcon: boolean;
+  className: string;
+  muiClasses: object;
+}
 
-export default withStyles(buttonStyle)(RegularButton);
+export default withStyles(styles)(RegularButton);

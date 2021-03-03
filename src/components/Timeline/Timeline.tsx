@@ -2,12 +2,12 @@ import React from 'react';
 import cx from 'classnames';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 // core components
 import Badge from '@/components/Badge/Badge';
 
-import timelineStyle from '@/assets/jss/material-dashboard-pro-react/components/timelineStyle';
+import styles from '@/assets/jss/pro/components/timelineStyle';
 
 function Timeline({ ...props }) {
   const { classes, stories, simple } = props;
@@ -55,10 +55,9 @@ function Timeline({ ...props }) {
   );
 }
 
-Timeline.propTypes = {
-  classes: PropTypes.object.isRequired,
-  stories: PropTypes.arrayOf(PropTypes.object).isRequired,
-  simple: PropTypes.bool,
-};
+export interface ITimelineTypes extends WithStyles<typeof styles> {
+  stories: object[];
+  simple: boolean;
+}
 
-export default withStyles(timelineStyle)(Timeline);
+export default withStyles(styles)(Timeline);

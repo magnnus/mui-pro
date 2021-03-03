@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -26,7 +26,7 @@ import CardText from '@/components/Card/CardText';
 import CardIcon from '@/components/Card/CardIcon';
 import CardBody from '@/components/Card/CardBody';
 
-import regularFormsStyle from '@/assets/jss/material-dashboard-pro-react/views/regularFormsStyle';
+import regularFormsStyle from '@/assets/jss/pro/views/regularFormsStyle';
 
 class RegularForms extends React.Component {
   constructor(props) {
@@ -870,4 +870,4 @@ class RegularForms extends React.Component {
   }
 }
 
-export default withStyles(regularFormsStyle)(RegularForms);
+export default withStyles(styles)(RegularForms);

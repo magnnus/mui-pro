@@ -1,9 +1,8 @@
 /*eslint-disable*/
 import React from 'react';
 
-
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Hidden from '@material-ui/core/Hidden';
 
 // core components
@@ -13,7 +12,7 @@ import GridItem from '@/components/Grid/GridItem';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import iconsStyle from '@/assets/jss/material-dashboard-pro-react/views/iconsStyle';
+import iconsStyle from '@/assets/jss/pro/views/iconsStyle';
 
 function Icons({ ...props }) {
   return (
@@ -65,8 +64,6 @@ function Icons({ ...props }) {
   );
 }
 
-Icons.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface IIconsTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(iconsStyle)(Icons);
+export default withStyles(styles)(Icons);

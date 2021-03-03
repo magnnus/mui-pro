@@ -1,9 +1,9 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
-import typographyStyle from '@/assets/jss/material-dashboard-pro-react/components/typographyStyle';
+import styles from '@/assets/jss/pro/components/typographyStyle';
 
 function Quote({ ...props }) {
   const { classes, text, author } = props;
@@ -15,10 +15,9 @@ function Quote({ ...props }) {
   );
 }
 
-Quote.propTypes = {
-  classes: PropTypes.object.isRequired,
-  text: PropTypes.node,
-  author: PropTypes.node,
-};
+export interface IQuoteTypes extends WithStyles<typeof styles> {
+  text: PropTypes.node;
+  author: PropTypes.node;
+}
 
-export default withStyles(typographyStyle)(Quote);
+export default withStyles(styles)(Quote);

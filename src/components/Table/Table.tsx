@@ -2,14 +2,14 @@ import React from 'react';
 import cx from 'classnames';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-import tableStyle from '@/assets/jss/material-dashboard-pro-react/components/tableStyle';
+import styles from '@/assets/jss/pro/components/tableStyle';
 
 function CustomTable({ ...props }) {
   const {
@@ -148,31 +148,29 @@ CustomTable.defaultProps = {
   customHeadClassesForCells: [],
 };
 
-CustomTable.propTypes = {
-  classes: PropTypes.object.isRequired,
-  tableHeaderColor: PropTypes.oneOf([
-    'warning',
-    'primary',
-    'danger',
-    'success',
-    'info',
-    'rose',
-    'gray',
-  ]),
-  tableHead: PropTypes.arrayOf(PropTypes.string),
-  // Of(PropTypes.arrayOf(PropTypes.node)) || Of(PropTypes.object),
-  tableData: PropTypes.array,
-  hover: PropTypes.bool,
-  coloredColls: PropTypes.arrayOf(PropTypes.number),
+export interface ICustomTableTypes extends WithStyles<typeof styles> {
+  tableHeaderColor:
+    | 'warning'
+    | 'primary'
+    | 'danger'
+    | 'success'
+    | 'info'
+    | 'rose'
+    | 'gray';
+  tableHead: string[];
+  // Of(React.ReactNode[]) || Of(PropTypes.object),
+  tableData: any[];
+  hover: boolean;
+  coloredColls: number[];
   // Of(["warning","primary","danger","success","info","rose","gray"]) - colorsColls
-  colorsColls: PropTypes.array,
-  customCellClasses: PropTypes.arrayOf(PropTypes.string),
-  customClassesForCells: PropTypes.arrayOf(PropTypes.number),
-  customHeadCellClasses: PropTypes.arrayOf(PropTypes.string),
-  customHeadClassesForCells: PropTypes.arrayOf(PropTypes.number),
-  striped: PropTypes.bool,
+  colorsColls: any[];
+  customCellClasses: string[];
+  customClassesForCells: number[];
+  customHeadCellClasses: string[];
+  customHeadClassesForCells: number[];
+  striped: boolean;
   // this will cause some changes in font
-  tableShopping: PropTypes.bool,
-};
+  tableShopping: boolean;
+}
 
-export default withStyles(tableStyle)(CustomTable);
+export default withStyles(styles)(CustomTable);

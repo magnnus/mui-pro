@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -15,7 +15,7 @@ import Edit from '@material-ui/icons/Edit';
 import Close from '@material-ui/icons/Close';
 import Check from '@material-ui/icons/Check';
 
-import tasksStyle from '@/assets/jss/material-dashboard-pro-react/components/tasksStyle';
+import styles from '@/assets/jss/pro/components/tasksStyle';
 
 class Tasks extends React.Component {
   state = {
@@ -101,11 +101,10 @@ class Tasks extends React.Component {
   }
 }
 
-Tasks.propTypes = {
-  classes: PropTypes.object.isRequired,
-  tasksIndexes: PropTypes.arrayOf(PropTypes.number),
-  checkedIndexes: PropTypes.arrayOf(PropTypes.number),
-  tasks: PropTypes.arrayOf(PropTypes.node),
-};
+export interface ITasksTypes extends WithStyles<typeof styles> {
+  tasksIndexes: number[];
+  checkedIndexes: number[];
+  tasks: React.ReactNode[];
+}
 
-export default withStyles(tasksStyle)(Tasks);
+export default withStyles(styles)(Tasks);

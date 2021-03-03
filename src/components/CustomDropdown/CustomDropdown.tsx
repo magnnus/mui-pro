@@ -4,7 +4,7 @@ import classNames from 'classnames';
 // nodejs library to set properties for components
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
@@ -15,7 +15,7 @@ import Popper from '@material-ui/core/Popper';
 // core components
 import Button from '@/components/CustomButtons/Button';
 
-import customDropdownStyle from '@/assets/jss/material-dashboard-pro-react/components/customDropdownStyle';
+import styles from '@/assets/jss/pro/components/customDropdownStyle';
 
 class CustomDropdown extends React.Component {
   constructor(props) {
@@ -185,44 +185,41 @@ CustomDropdown.defaultProps = {
   hoverColor: 'primary',
 };
 
-CustomDropdown.propTypes = {
-  classes: PropTypes.object.isRequired,
-  hoverColor: PropTypes.oneOf([
-    'dark',
-    'primary',
-    'info',
-    'success',
-    'warning',
-    'danger',
-    'rose',
-  ]),
-  buttonText: PropTypes.node,
-  buttonIcon: PropTypes.func,
-  dropdownList: PropTypes.array,
-  buttonProps: PropTypes.object,
-  dropup: PropTypes.bool,
-  dropdownHeader: PropTypes.node,
-  rtlActive: PropTypes.bool,
-  caret: PropTypes.bool,
-  dropPlacement: PropTypes.oneOf([
-    'bottom',
-    'top',
-    'right',
-    'left',
-    'bottom-start',
-    'bottom-end',
-    'top-start',
-    'top-end',
-    'right-start',
-    'right-end',
-    'left-start',
-    'left-end',
-  ]),
-  noLiPadding: PropTypes.bool,
-  innerDropDown: PropTypes.bool,
-  navDropdown: PropTypes.bool,
+export interface ICustomDropdownTypes extends WithStyles<typeof styles> {
+  hoverColor:
+    | 'dark'
+    | 'primary'
+    | 'info'
+    | 'success'
+    | 'warning'
+    | 'danger'
+    | 'rose';
+  buttonText: React.ReactNode;
+  buttonIcon?(): void;
+  dropdownList: any[];
+  buttonProps: object;
+  dropup: boolean;
+  dropdownHeader: React.ReactNode;
+  rtlActive: boolean;
+  caret: boolean;
+  dropPlacement:
+    | 'bottom'
+    | 'top'
+    | 'right'
+    | 'left'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'top-start'
+    | 'top-end'
+    | 'right-start'
+    | 'right-end'
+    | 'left-start'
+    | 'left-end';
+  noLiPadding: boolean;
+  innerDropDown: boolean;
+  navDropdown: boolean;
   // This is a function that returns the clicked menu item
-  onClick: PropTypes.func,
-};
+  onClick?(): void;
+}
 
-export default withStyles(customDropdownStyle)(CustomDropdown);
+export default withStyles(styles)(CustomDropdown);

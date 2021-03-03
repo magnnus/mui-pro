@@ -7,7 +7,7 @@ import moment from 'moment';
 import SweetAlert from 'react-bootstrap-sweetalert';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 // core components
 import Heading from '@/components/Heading/Heading';
@@ -16,7 +16,7 @@ import GridItem from '@/components/Grid/GridItem';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import buttonStyle from '@/assets/jss/material-dashboard-pro-react/components/buttonStyle';
+import styles from '@/assets/jss/pro/components/buttonStyle';
 
 import { events } from '@/variables/general';
 
@@ -134,4 +134,4 @@ class Calendar extends React.Component {
   }
 }
 
-export default withStyles(buttonStyle)(Calendar);
+export default withStyles(styles)(Calendar);

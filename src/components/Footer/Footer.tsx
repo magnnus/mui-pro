@@ -3,11 +3,11 @@ import React from 'react';
 import cx from 'classnames';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
-import footerStyle from '@/assets/jss/material-dashboard-pro-react/components/footerStyle';
+import styles from '@/assets/jss/pro/components/footerStyle';
 
 function Footer({ ...props }) {
   const { classes, fluid, white, rtlActive } = props;
@@ -66,11 +66,10 @@ function Footer({ ...props }) {
   );
 }
 
-Footer.propTypes = {
-  classes: PropTypes.object.isRequired,
-  fluid: PropTypes.bool,
-  white: PropTypes.bool,
-  rtlActive: PropTypes.bool,
-};
+export interface IFooterTypes extends WithStyles<typeof styles> {
+  fluid: boolean;
+  white: boolean;
+  rtlActive: boolean;
+}
 
-export default withStyles(footerStyle)(Footer);
+export default withStyles(styles)(Footer);

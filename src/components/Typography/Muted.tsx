@@ -1,9 +1,9 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
-import typographyStyle from '@/assets/jss/material-dashboard-pro-react/components/typographyStyle';
+import styles from '@/assets/jss/pro/components/typographyStyle';
 
 function Muted({ ...props }) {
   const { classes, children } = props;
@@ -14,8 +14,6 @@ function Muted({ ...props }) {
   );
 }
 
-Muted.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface IMutedTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(typographyStyle)(Muted);
+export default withStyles(styles)(Muted);

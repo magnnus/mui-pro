@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Icon from '@material-ui/core/Icon';
 
@@ -20,7 +20,7 @@ import CardBody from '@/components/Card/CardBody';
 import CardHeader from '@/components/Card/CardHeader';
 import CardFooter from '@/components/Card/CardFooter';
 
-import loginPageStyle from '@/assets/jss/material-dashboard-pro-react/views/loginPageStyle';
+import loginPageStyle from '@/assets/jss/pro/views/loginPageStyle';
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -138,8 +138,6 @@ class LoginPage extends React.Component {
   }
 }
 
-LoginPage.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface ILoginPageTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(loginPageStyle)(LoginPage);
+export default withStyles(styles)(LoginPage);

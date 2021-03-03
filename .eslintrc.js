@@ -33,5 +33,10 @@ module.exports = {
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',
     'no-unused-vars': 0,
+    'react/static-property-placement': ['warn', 'static public field'],
+    'react/destructuring-assignment': 'off',
+    'react/no-array-index-key': 'off',
+    'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
 };

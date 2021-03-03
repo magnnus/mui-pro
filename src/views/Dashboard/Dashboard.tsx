@@ -6,7 +6,7 @@ import ChartistGraph from 'react-chartist';
 import { VectorMap } from 'react-jvectormap';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
 import Icon from '@material-ui/core/Icon';
 
@@ -44,7 +44,7 @@ import {
   completedTasksChart,
 } from '@/variables/charts';
 
-import dashboardStyle from '@/assets/jss/material-dashboard-pro-react/views/dashboardStyle';
+import dashboardStyle from '@/assets/jss/pro/views/dashboardStyle';
 
 import priceImage1 from '@/assets/img/card-2.jpeg';
 import priceImage2 from '@/assets/img/card-3.jpeg';
@@ -97,9 +97,7 @@ class Dashboard extends React.Component {
                 </CardIcon>
                 <p className={classes.cardCategory}>Used Space</p>
                 <h3 className={classes.cardTitle}>
-                  49/50 
-{' '}
-<small>GB</small>
+                  49/50 <small>GB</small>
                 </h3>
               </CardHeader>
               <CardFooter stats>
@@ -294,19 +292,15 @@ class Dashboard extends React.Component {
                 <h4 className={classes.cardTitle}>Daily Sales</h4>
                 <p className={classes.cardCategory}>
                   <span className={classes.successText}>
-                    <ArrowUpward className={classes.upArrowCardCategory} />
-{' '}
-55%
-</span>{' '}
+                    <ArrowUpward className={classes.upArrowCardCategory} /> 55%
+                  </span>{' '}
                   increase in today sales.
                 </p>
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime />
-{' '}
-updated 4 minutes ago
-</div>
+                  <AccessTime /> updated 4 minutes ago
+                </div>
               </CardFooter>
             </Card>
           </GridItem>
@@ -352,10 +346,8 @@ updated 4 minutes ago
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime />
-{' '}
-campaign sent 2 days ago
-</div>
+                  <AccessTime /> campaign sent 2 days ago
+                </div>
               </CardFooter>
             </Card>
           </GridItem>
@@ -400,10 +392,8 @@ campaign sent 2 days ago
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime />
-{' '}
-campaign sent 2 days ago
-</div>
+                  <AccessTime /> campaign sent 2 days ago
+                </div>
               </CardFooter>
             </Card>
           </GridItem>
@@ -467,10 +457,8 @@ campaign sent 2 days ago
                   <h4>$899/night</h4>
                 </div>
                 <div className={`${classes.stats} ${classes.productStats}`}>
-                  <Place />
-{' '}
-Barcelona, Spain
-</div>
+                  <Place /> Barcelona, Spain
+                </div>
               </CardFooter>
             </Card>
           </GridItem>
@@ -530,10 +518,8 @@ Barcelona, Spain
                   <h4>$1.119/night</h4>
                 </div>
                 <div className={`${classes.stats} ${classes.productStats}`}>
-                  <Place />
-{' '}
-London, UK
-</div>
+                  <Place /> London, UK
+                </div>
               </CardFooter>
             </Card>
           </GridItem>
@@ -593,10 +579,8 @@ London, UK
                   <h4>$459/night</h4>
                 </div>
                 <div className={`${classes.stats} ${classes.productStats}`}>
-                  <Place />
-{' '}
-Milan, Italy
-</div>
+                  <Place /> Milan, Italy
+                </div>
               </CardFooter>
             </Card>
           </GridItem>
@@ -606,8 +590,6 @@ Milan, Italy
   }
 }
 
-Dashboard.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface IDashboardTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(dashboardStyle)(Dashboard);
+export default withStyles(styles)(Dashboard);

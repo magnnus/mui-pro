@@ -3,7 +3,7 @@ import React from 'react';
 import cx from 'classnames';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Hidden from '@material-ui/core/Hidden';
@@ -16,7 +16,7 @@ import ViewList from '@material-ui/icons/ViewList';
 // core components
 import Button from '@/components/CustomButtons/Button';
 
-import adminNavbarStyle from '@/assets/jss/material-dashboard-pro-react/components/adminNavbarStyle';
+import styles from '@/assets/jss/pro/components/adminNavbarStyle';
 import AdminNavbarLinks from './AdminNavbarLinks';
 
 function AdminNavbar({ ...props }) {
@@ -78,11 +78,10 @@ function AdminNavbar({ ...props }) {
   );
 }
 
-AdminNavbar.propTypes = {
-  classes: PropTypes.object.isRequired,
-  color: PropTypes.oneOf(['primary', 'info', 'success', 'warning', 'danger']),
-  rtlActive: PropTypes.bool,
-  brandText: PropTypes.string,
-};
+export interface IAdminNavbarTypes extends WithStyles<typeof styles> {
+  color: 'primary' | 'info' | 'success' | 'warning' | 'danger';
+  rtlActive: boolean;
+  brandText: string;
+}
 
-export default withStyles(adminNavbarStyle)(AdminNavbar);
+export default withStyles(styles)(AdminNavbar);

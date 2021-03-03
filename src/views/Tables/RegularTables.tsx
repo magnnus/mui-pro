@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 // material-ui icons
 import Assignment from '@material-ui/icons/Assignment';
@@ -169,4 +169,4 @@ function RegularTables({ ...props }) {
   );
 }
 
-export default withStyles(style)(RegularTables);
+export default withStyles(styles)(RegularTables);

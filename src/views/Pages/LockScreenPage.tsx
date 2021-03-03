@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 
 // core components
 import Button from '@/components/CustomButtons/Button';
@@ -13,7 +13,7 @@ import CardFooter from '@/components/Card/CardFooter';
 
 import avatar from '@/assets/img/faces/avatar.jpg';
 
-import lockScreenPageStyle from '@/assets/jss/material-dashboard-pro-react/views/lockScreenPageStyle';
+import lockScreenPageStyle from '@/assets/jss/pro/views/lockScreenPageStyle';
 
 class LockScreenPage extends React.Component {
   constructor(props) {
@@ -80,8 +80,6 @@ class LockScreenPage extends React.Component {
   }
 }
 
-LockScreenPage.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+export interface ILockScreenPageTypes extends WithStyles<typeof styles> {}
 
-export default withStyles(lockScreenPageStyle)(LockScreenPage);
+export default withStyles(styles)(LockScreenPage);
