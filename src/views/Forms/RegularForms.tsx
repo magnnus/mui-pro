@@ -26,27 +26,22 @@ import CardText from '@/components/Card/CardText';
 import CardIcon from '@/components/Card/CardIcon';
 import CardBody from '@/components/Card/CardBody';
 
-import regularFormsStyle from '@/assets/jss/pro/views/regularFormsStyle';
+import styles from '@/assets/jss/pro/views/regularFormsStyle';
 
-class RegularForms extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checked: [24, 22],
-      selectedValue: null,
-      selectedEnabled: 'b',
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleChangeEnabled = this.handleChangeEnabled.bind(this);
-  }
+class RegularForms extends React.Component<WithStyles<typeof styles>> {
+  state = {
+    checked: [24, 22],
+    selectedValue: null,
+    selectedEnabled: 'b',
+  };
 
-  handleChange(event) {
+  handleChange = event => {
     this.setState({ selectedValue: event.target.value });
-  }
+  };
 
-  handleChangeEnabled(event) {
+  handleChangeEnabled = event => {
     this.setState({ selectedEnabled: event.target.value });
-  }
+  };
 
   handleToggle(value) {
     const { checked } = this.state;

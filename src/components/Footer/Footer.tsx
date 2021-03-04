@@ -53,8 +53,9 @@ function Footer({ ...props }) {
           </List>
         </div>
         <p className={classes.right}>
-          &copy; {1900 + new Date().getYear()}{' '}
-          <a href="" className={anchor}>
+          &copy;
+          {new Date().getFullYear()}
+          <a href="/" className={anchor}>
             {rtlActive ? 'توقيت الإبداعية' : 'Hey Guys'}
           </a>
           {rtlActive

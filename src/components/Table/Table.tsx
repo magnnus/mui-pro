@@ -11,22 +11,45 @@ import TableRow from '@material-ui/core/TableRow';
 
 import styles from '@/assets/jss/pro/components/tableStyle';
 
-function CustomTable({ ...props }) {
-  const {
-    classes,
-    tableHead,
-    tableData,
-    tableHeaderColor,
-    hover,
-    colorsColls,
-    coloredColls,
-    customCellClasses,
-    customClassesForCells,
-    striped,
-    tableShopping,
-    customHeadCellClasses,
-    customHeadClassesForCells,
-  } = props;
+export interface ICustomTableTypes extends WithStyles<typeof styles> {
+  tableHeaderColor:
+    | 'warning'
+    | 'primary'
+    | 'danger'
+    | 'success'
+    | 'info'
+    | 'rose'
+    | 'gray';
+  tableHead: string[];
+  // Of(React.ReactNode[]) || Of(PropTypes.object),
+  tableData: any[];
+  hover: boolean;
+  coloredColls: number[];
+  // Of(["warning","primary","danger","success","info","rose","gray"]) - colorsColls
+  colorsColls: any[];
+  customCellClasses: string[];
+  customClassesForCells: number[];
+  customHeadCellClasses: string[];
+  customHeadClassesForCells: number[];
+  striped: boolean;
+  // this will cause some changes in font
+  tableShopping: boolean;
+}
+const CustomTable: React.FC<Partial<ICustomTableTypes>> = ({
+  classes,
+  tableHead,
+  tableData,
+  tableHeaderColor,
+  hover,
+  colorsColls,
+  coloredColls,
+  customCellClasses,
+  customClassesForCells,
+  striped,
+  tableShopping,
+  customHeadCellClasses,
+  customHeadClassesForCells,
+}) => {
   return (
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
@@ -53,13 +76,14 @@ function CustomTable({ ...props }) {
           </TableHead>
         ) : null}
         <TableBody>
-          {tableData.map((prop, key) => {
+          {tableData.map((propItem, key) => {
             let rowColor = '';
             let rowColored = false;
-            if (prop.color !== undefined) {
-              rowColor = prop.color;
+            let prop = propItem;
+            if (propItem.color !== undefined) {
+              rowColor = propItem.color;
               rowColored = true;
-              prop = prop.data;
+              prop = propItem.data;
             }
             const tableRowClasses = cx({
               [classes.tableRowHover]: hover,
@@ -112,18 +136,18 @@ function CustomTable({ ...props }) {
               <TableRow
                 key={key}
                 hover={hover}
-                className={`${classes.tableRow} ${tableRowClasses}`}
+                className={`${tableRowClasses}`}
               >
-                {prop.map((prop, key) => {
+                {prop.map((item, k) => {
                   const tableCellClasses = `${classes.tableCell} ${cx({
-                    [classes[colorsColls[coloredColls.indexOf(key)]]]:
-                      coloredColls.indexOf(key) !== -1,
-                    [customCellClasses[customClassesForCells.indexOf(key)]]:
-                      customClassesForCells.indexOf(key) !== -1,
+                    [classes[colorsColls[coloredColls.indexOf(k)]]]:
+                      coloredColls.indexOf(k) !== -1,
+                    [customCellClasses[customClassesForCells.indexOf(k)]]:
+                      customClassesForCells.indexOf(k) !== -1,
                   })}`;
                   return (
-                    <TableCell className={tableCellClasses} key={key}>
-                      {prop}
+                    <TableCell className={tableCellClasses} key={k}>
+                      {item}
                     </TableCell>
                   );
                 })}
@@ -134,7 +158,7 @@ function CustomTable({ ...props }) {
       </Table>
     </div>
   );
-}
+};
 
 CustomTable.defaultProps = {
   tableHeaderColor: 'gray',
@@ -147,30 +171,5 @@ CustomTable.defaultProps = {
   customHeadCellClasses: [],
   customHeadClassesForCells: [],
 };
-
-export interface ICustomTableTypes extends WithStyles<typeof styles> {
-  tableHeaderColor:
-    | 'warning'
-    | 'primary'
-    | 'danger'
-    | 'success'
-    | 'info'
-    | 'rose'
-    | 'gray';
-  tableHead: string[];
-  // Of(React.ReactNode[]) || Of(PropTypes.object),
-  tableData: any[];
-  hover: boolean;
-  coloredColls: number[];
-  // Of(["warning","primary","danger","success","info","rose","gray"]) - colorsColls
-  colorsColls: any[];
-  customCellClasses: string[];
-  customClassesForCells: number[];
-  customHeadCellClasses: string[];
-  customHeadClassesForCells: number[];
-  striped: boolean;
-  // this will cause some changes in font
-  tableShopping: boolean;
-}
 
 export default withStyles(styles)(CustomTable);

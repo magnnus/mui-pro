@@ -17,9 +17,10 @@ import Button from '@/components/CustomButtons/Button';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import pricingPageStyle from '@/assets/jss/pro/views/pricingPageStyle';
+import styles from '@/assets/jss/pro/views/pricingPageStyle';
 
-class PricingPage extends React.Component {
+export interface IPricingPageTypes extends WithStyles<typeof styles> {}
+class PricingPage extends React.Component<IPricingPageTypes> {
   render() {
     const { classes } = this.props;
     return (
@@ -122,7 +123,5 @@ class PricingPage extends React.Component {
     );
   }
 }
-
-export interface IPricingPageTypes extends WithStyles<typeof styles> {}
 
 export default withStyles(styles)(PricingPage);

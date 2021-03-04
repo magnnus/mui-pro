@@ -102,7 +102,7 @@ const pagesHeaderStyle = (theme: Theme) =>
       margin: '0',
       padding: '0',
       [theme.breakpoints.down('sm')]: {
-        zIndex: '999',
+        zIndex: 999,
         width: '100%',
         paddingRight: '15px',
       },

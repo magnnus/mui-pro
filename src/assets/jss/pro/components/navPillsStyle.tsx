@@ -59,6 +59,7 @@ const navPillsStyle = (theme: Theme) =>
       display: 'block',
       margin: '15px 0',
     },
+    tabContent: {},
     horizontalPills: {
       width: '100%',
       float: 'none',

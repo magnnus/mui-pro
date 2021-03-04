@@ -88,16 +88,16 @@ function CustomInput({ ...props }) {
 }
 
 export interface ICustomInputTypes extends WithStyles<typeof styles> {
-  labelText: PropTypes.node;
-  labelProps: PropTypes.object;
+  labelText: React.ReactNode;
+  labelProps: object;
   id: string;
-  inputProps: PropTypes.object;
-  formControlProps: PropTypes.object;
+  inputProps: object;
+  formControlProps: object;
   inputRootCustomClasses: string;
   error: boolean;
   success: boolean;
   white: boolean;
-  helpText: PropTypes.node;
+  helpText: React.ReactNode;
 }
 
 export default withStyles(styles)(CustomInput);

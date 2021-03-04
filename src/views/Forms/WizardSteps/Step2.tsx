@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import { withStyles, WithStyles } from '@material-ui/core/styles';
+import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -15,9 +15,9 @@ import GridItem from '@/components/Grid/GridItem';
 import customSelectStyle from '@/assets/jss/pro/customSelectStyle';
 import customCheckboxRadioSwitch from '@/assets/jss/pro/customCheckboxRadioSwitch';
 
-const style = {
+const styles = createStyles({
   infoText: {
-    fontWeight: '300',
+    fontWeight: 300,
     margin: '10px 0 30px',
     textAlign: 'center',
   },
@@ -31,18 +31,15 @@ const style = {
   },
   ...customSelectStyle,
   ...customCheckboxRadioSwitch,
-};
+});
 
-class Step2 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      simpleSelect: '',
-      desgin: false,
-      code: false,
-      develop: false,
-    };
-  }
+class Step2 extends React.Component<WithStyles<typeof styles>> {
+  state = {
+    simpleSelect: '',
+    desgin: false,
+    code: false,
+    develop: false,
+  };
 
   sendState() {
     return this.state;
@@ -56,6 +53,7 @@ class Step2 extends React.Component {
     this.setState({ [name]: event.target.checked });
   };
 
+  // eslint-disable-next-line class-methods-use-this
   isValidated() {
     return true;
   }

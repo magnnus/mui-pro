@@ -26,16 +26,19 @@ import Button from '@/components/CustomButtons/Button';
 
 import styles from '@/assets/jss/pro/components/authNavbarStyle';
 
-class AuthNavbar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      open: false,
-    };
-  }
+export interface IAuthNavbarTypes extends WithStyles<typeof styles> {
+  color?: 'primary' | 'info' | 'success' | 'warning' | 'danger';
+  brandText: string;
+  location?: Location;
+}
+
+class AuthNavbar extends React.Component<IAuthNavbarTypes, { open: boolean }> {
+  state = {
+    open: false,
+  };
 
   handleDrawerToggle = () => {
-    this.setState({ open: !this.state.open });
+    this.setState(preState => ({ open: !preState.open }));
   };
 
   // verifies if routeName is the one active (in browser input)
@@ -45,6 +48,7 @@ class AuthNavbar extends React.Component {
 
   componentDidUpdate(e) {
     if (e.history.location.pathname !== e.location.pathname) {
+      // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ open: false });
     }
   }
@@ -181,11 +185,6 @@ class AuthNavbar extends React.Component {
       </AppBar>
     );
   }
-}
-
-export interface IAuthNavbarTypes extends WithStyles<typeof styles> {
-  color: 'primary' | 'info' | 'success' | 'warning' | 'danger';
-  brandText: string;
 }
 
 export default withStyles(styles)(AuthNavbar);

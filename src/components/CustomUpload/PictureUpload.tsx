@@ -1,19 +1,15 @@
+/* eslint-disable react/no-unused-state */
 import React from 'react';
 
 import defaultImage from '@/assets/img/default-avatar.png';
 
 class PictureUpload extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      file: null,
-      imagePreviewUrl: defaultImage,
-    };
-    this.handleImageChange = this.handleImageChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  state = {
+    file: null,
+    imagePreviewUrl: defaultImage,
+  };
 
-  handleImageChange(e) {
+  handleImageChange = e => {
     e.preventDefault();
     const reader = new FileReader();
     const file = e.target.files[0];
@@ -24,14 +20,15 @@ class PictureUpload extends React.Component {
       });
     };
     reader.readAsDataURL(file);
-  }
+  };
 
-  handleSubmit(e) {
+  // eslint-disable-next-line class-methods-use-this
+  handleSubmit = e => {
     e.preventDefault();
     // this.state.file is the file/image uploaded
     // in this function you can save the image (this.state.file) on form submit
     // you have to call it yourself
-  }
+  };
 
   render() {
     return (

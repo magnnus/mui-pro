@@ -31,29 +31,29 @@ import CardHeader from '@/components/Card/CardHeader';
 import CardIcon from '@/components/Card/CardIcon';
 import CardBody from '@/components/Card/CardBody';
 
-import extendedFormsStyle from '@/assets/jss/pro/views/extendedFormsStyle';
+import styles from '@/assets/jss/pro/views/extendedFormsStyle';
 
-class ExtendedForms extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checkedA: true,
-      checkedB: false,
-      simpleSelect: '',
-      multipleSelect: [],
-      tags: ['pizza', 'pasta', 'parmesan'],
-    };
-    this.handleTags = this.handleTags.bind(this);
-  }
+class ExtendedForms extends React.Component<WithStyles<typeof styles>> {
+  slider1: HTMLDivElement = null;
+
+  slider2: HTMLDivElement = null;
+
+  state = {
+    checkedA: true,
+    checkedB: false,
+    simpleSelect: '',
+    multipleSelect: [],
+    tags: ['pizza', 'pasta', 'parmesan'],
+  };
 
   componentDidMount() {
-    nouislider.create(this.refs.slider1, {
+    nouislider.create(this.slider1, {
       start: [40],
       connect: [true, false],
       step: 1,
       range: { min: 0, max: 100 },
     });
-    nouislider.create(this.refs.slider2, {
+    nouislider.create(this.slider2, {
       start: [20, 60],
       connect: [false, true, false],
       step: 1,
@@ -73,9 +73,9 @@ class ExtendedForms extends React.Component {
     this.setState({ [name]: event.target.checked });
   };
 
-  handleTags(regularTags) {
+  handleTags = regularTags => {
     this.setState({ tags: regularTags });
-  }
+  };
 
   render() {
     const { classes } = this.props;
@@ -643,7 +643,6 @@ class ExtendedForms extends React.Component {
                             'Action',
                             'Another action',
                             <CustomDropdown
-                              ref="multi"
                               innerDropDown
                               buttonText="Submenu"
                               hoverColor="info"
@@ -656,7 +655,6 @@ class ExtendedForms extends React.Component {
                                 'Submenu action',
                                 'Submenu action',
                                 <CustomDropdown
-                                  ref="multi"
                                   innerDropDown
                                   hoverColor="info"
                                   buttonText="Subsubmenu"
@@ -670,7 +668,6 @@ class ExtendedForms extends React.Component {
                                   ]}
                                 />,
                                 <CustomDropdown
-                                  ref="multi"
                                   innerDropDown
                                   hoverColor="info"
                                   buttonText="Second Subsubmenu"
@@ -778,9 +775,19 @@ class ExtendedForms extends React.Component {
                   </GridItem>
                   <GridItem xs={12} sm={12} md={6}>
                     <legend>Sliders</legend>
-                    <div className="slider-primary" ref="slider1" />
+                    <div
+                      className="slider-primary"
+                      ref={ref => {
+                        this.slider1 = ref;
+                      }}
+                    />
                     <br />
-                    <div className="slider-info" ref="slider2" />
+                    <div
+                      className="slider-info"
+                      ref={ref => {
+                        this.slider2 = ref;
+                      }}
+                    />
                   </GridItem>
                 </GridContainer>
                 <GridContainer>

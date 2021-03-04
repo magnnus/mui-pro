@@ -8,7 +8,7 @@ import {
 } from 'react-google-maps';
 
 // @material-ui/core components
-import { withStyles, WithStyles } from '@material-ui/core/styles';
+import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles';
 // @material-ui/icons
 import Map from '@material-ui/icons/Map';
 import AddLocation from '@material-ui/icons/AddLocation';
@@ -24,15 +24,15 @@ import CardHeader from '@/components/Card/CardHeader';
 
 import { cardTitle } from '@/assets/jss/material-dashboard-pro-react';
 
-const styles = {
+const styles = createStyles({
   cardIconTitle: {
     ...cardTitle,
     marginTop: '15px',
     marginBottom: '0px',
   },
-};
+});
 
-const SatelliteMap = withScriptjs(
+const SatelliteMap = withScriptjs<any>(
   withGoogleMap(props => (
     <GoogleMap
       defaultZoom={3}
@@ -47,7 +47,7 @@ const SatelliteMap = withScriptjs(
   )),
 );
 
-const RegularMap = withScriptjs(
+const RegularMap = withScriptjs<any>(
   withGoogleMap(props => (
     <GoogleMap
       defaultZoom={8}
@@ -61,7 +61,7 @@ const RegularMap = withScriptjs(
   )),
 );
 
-const CustomSkinMap = withScriptjs(
+const CustomSkinMap = withScriptjs<any>(
   withGoogleMap(props => (
     <GoogleMap
       defaultZoom={13}
@@ -137,7 +137,7 @@ const CustomSkinMap = withScriptjs(
   )),
 );
 
-class GoogleMaps extends React.Component {
+class GoogleMaps extends React.Component<WithStyles<typeof styles>> {
   render() {
     const { classes } = this.props;
     return (

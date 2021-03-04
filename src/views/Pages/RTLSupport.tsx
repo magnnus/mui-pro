@@ -1,6 +1,6 @@
 import React from 'react';
 // @material-ui/core components
-import { withStyles, WithStyles } from '@material-ui/core/styles';
+import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
 // @material-ui/icons
 // import Weekend from "@material-ui/icons/Weekend";
@@ -37,15 +37,17 @@ import image from '@/assets/img/faces/card-profile1-square.jpg';
 import {
   cardTitle,
   roseColor,
+  whiteColor,
 } from '@/assets/jss/material-dashboard-pro-react';
 
-const styles = {
+const styles = createStyles({
   cardTitle,
   cardTitleWhite: {
     ...cardTitle,
     color: '#FFFFFF',
     marginTop: '0',
   },
+  cardDescription: {},
   cardCategoryWhite: {
     margin: '0',
     color: 'rgba(255, 255, 255, 0.8)',
@@ -72,8 +74,11 @@ const styles = {
       fontSize: '55px',
     },
   },
+  iconWhite: {
+    color: whiteColor,
+  },
   iconRose: {
-    color: roseColor,
+    color: roseColor[0],
   },
   marginTop30: {
     marginTop: '30px',
@@ -89,9 +94,9 @@ const styles = {
     fontStyle: 'italic',
     color: '#999999',
   },
-};
+});
 
-class RTLSupport extends React.Component {
+class RTLSupport extends React.Component<WithStyles<typeof styles>> {
   render() {
     const { classes } = this.props;
     return (

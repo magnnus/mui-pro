@@ -2,7 +2,11 @@
 // // // javascript library for creating charts
 // #############################
 import Chartist from 'chartist';
-
+import {
+  ChartitGraphPieProps,
+  ChartitGraphLineProps,
+  ChartitGraphBarProps,
+} from 'react-chartist';
 // ##############################
 // // // Charts used in Dahsboard view
 // #############################
@@ -20,7 +24,8 @@ const durations2 = 500;
 // // // Daily Sales
 // #############################
 
-const dailySalesChart = {
+const dailySalesChart: ChartitGraphLineProps = {
+  type: 'Line',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
     series: [[12, 17, 7, 17, 23, 18, 38]],
@@ -39,7 +44,7 @@ const dailySalesChart = {
     },
   },
   // for animation
-  animation: {
+  listener: {
     draw(data) {
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
@@ -74,7 +79,8 @@ const dailySalesChart = {
 // // // Email Subscriptions
 // #############################
 
-const emailsSubscriptionChart = {
+const emailsSubscriptionChart: ChartitGraphLineProps = {
+  type: 'Line',
   data: {
     labels: [
       'Jan',
@@ -118,7 +124,7 @@ const emailsSubscriptionChart = {
       },
     ],
   ],
-  animation: {
+  listener: {
     draw(data) {
       if (data.type === 'bar') {
         data.element.animate({
@@ -139,7 +145,8 @@ const emailsSubscriptionChart = {
 // // // Completed Tasks
 // #############################
 
-const completedTasksChart = {
+const completedTasksChart: ChartitGraphLineProps = {
+  type: 'Line',
   data: {
     labels: ['12am', '3pm', '6pm', '9pm', '12pm', '3am', '6am', '9am'],
     series: [[230, 750, 450, 300, 280, 240, 200, 190]],
@@ -157,7 +164,7 @@ const completedTasksChart = {
       left: 0,
     },
   },
-  animation: {
+  listener: {
     draw(data) {
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
@@ -192,7 +199,8 @@ const completedTasksChart = {
 // // // Rounded Line Chart
 // #############################
 
-const roundedLineChart = {
+const roundedLineChart: ChartitGraphLineProps = {
+  type: 'Line',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
     series: [[12, 17, 7, 17, 23, 18, 38]],
@@ -214,7 +222,7 @@ const roundedLineChart = {
     },
     showPoint: false,
   },
-  animation: {
+  listener: {
     draw(data) {
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
@@ -249,7 +257,8 @@ const roundedLineChart = {
 // // // Straight Lines Chart
 // #############################
 
-const straightLinesChart = {
+const straightLinesChart: ChartitGraphLineProps = {
+  type: 'Line',
   data: {
     labels: ["'07", "'08", "'09", "'10", "'11", "'12", "'13", "'14", "'15"],
     series: [[10, 16, 8, 13, 20, 15, 20, 34, 30]],
@@ -271,7 +280,7 @@ const straightLinesChart = {
       line: 'ct-line ct-white',
     },
   },
-  animation: {
+  listener: {
     draw(data) {
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
@@ -306,7 +315,8 @@ const straightLinesChart = {
 // // // Simple Bar Chart
 // #############################
 
-const simpleBarChart = {
+const simpleBarChart: ChartitGraphBarProps = {
+  type: 'Bar',
   data: {
     labels: [
       'Jan',
@@ -343,7 +353,7 @@ const simpleBarChart = {
       },
     ],
   ],
-  animation: {
+  listener: {
     draw(data) {
       if (data.type === 'bar') {
         data.element.animate({
@@ -364,7 +374,8 @@ const simpleBarChart = {
 // // // Coloured Line Chart
 // #############################
 
-const colouredLineChart = {
+const colouredLineChart: ChartitGraphLineProps = {
+  type: 'Line',
   data: {
     labels: [
       "'06",
@@ -396,7 +407,7 @@ const colouredLineChart = {
     showPoint: true,
     height: '300px',
   },
-  animation: {
+  listener: {
     draw(data) {
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
@@ -431,7 +442,8 @@ const colouredLineChart = {
 // // // Multiple Bars Chart
 // #############################
 
-const multipleBarsChart = {
+const multipleBarsChart: ChartitGraphBarProps = {
+  type: 'Bar',
   data: {
     labels: [
       'Jan',
@@ -472,7 +484,7 @@ const multipleBarsChart = {
       },
     ],
   ],
-  animation: {
+  listener: {
     draw(data) {
       if (data.type === 'bar') {
         data.element.animate({
@@ -493,7 +505,8 @@ const multipleBarsChart = {
 // // // Coloured Lines Chart
 // #############################
 
-const colouredLinesChart = {
+const colouredLinesChart: ChartitGraphLineProps = {
+  type: 'Line',
   data: {
     labels: [
       "'06",
@@ -529,7 +542,7 @@ const colouredLinesChart = {
     showPoint: true,
     height: '300px',
   },
-  animation: {
+  listener: {
     draw(data) {
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
@@ -564,7 +577,8 @@ const colouredLinesChart = {
 // // // Pie Chart
 // #############################
 
-const pieChart = {
+const pieChart: ChartitGraphPieProps = {
+  type: 'Pie',
   data: {
     labels: ['62%', '32%', '6%'],
     series: [62, 32, 6],

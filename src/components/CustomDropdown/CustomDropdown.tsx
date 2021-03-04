@@ -17,16 +17,59 @@ import Button from '@/components/CustomButtons/Button';
 
 import styles from '@/assets/jss/pro/components/customDropdownStyle';
 
-class CustomDropdown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      open: false,
-    };
-    this.handleClick = this.handleClick.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-    this.handleCloseMenu = this.handleCloseMenu.bind(this);
+export interface ICustomDropdownTypes extends WithStyles<typeof styles> {
+  hoverColor:
+    | 'dark'
+    | 'primary'
+    | 'info'
+    | 'success'
+    | 'warning'
+    | 'danger'
+    | 'rose';
+  buttonText: React.ReactNode;
+  buttonIcon?: React.ComponentType<any>;
+  dropdownList: any[];
+  buttonProps: object;
+  dropup: boolean;
+  dropdownHeader: React.ReactNode;
+  rtlActive: boolean;
+  caret: boolean;
+  dropPlacement:
+    | 'bottom'
+    | 'top'
+    | 'right'
+    | 'left'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'top-start'
+    | 'top-end'
+    | 'right-start'
+    | 'right-end'
+    | 'left-start'
+    | 'left-end';
+  noLiPadding: boolean;
+  innerDropDown: boolean;
+  navDropdown: boolean;
+  // This is a function that returns the clicked menu item
+  onClick?(...rest: any[]): void;
+}
+class CustomDropdown extends React.Component<
+  ICustomDropdownTypes,
+  {
+    open: boolean;
   }
+> {
+  static defaultProps: Partial<ICustomDropdownTypes> = {
+    caret: true,
+    dropup: false,
+    hoverColor: 'primary',
+  };
+
+  state = {
+    open: false,
+  };
+
+  anchorEl: any = null;
 
   handleClick = () => {
     this.setState(state => ({ open: !state.open }));
@@ -40,12 +83,12 @@ class CustomDropdown extends React.Component {
     this.setState({ open: false });
   };
 
-  handleCloseMenu(param) {
+  handleCloseMenu = param => {
     this.setState({ open: false });
     if (this.props && this.props.onClick) {
       this.props.onClick(param);
     }
-  }
+  };
 
   render() {
     const { open } = this.state;
@@ -152,10 +195,10 @@ class CustomDropdown extends React.Component {
             [classes.pooperNav]: open && navDropdown,
           })}
         >
-          {({ TransitionProps, placement }) => (
+          {/* {({ TransitionProps, placement }) => ( */}
+          {() => (
             <Grow
               in={open}
-              id="menu-list"
               style={
                 dropup
                   ? { transformOrigin: '0 100% 0' }
@@ -166,7 +209,7 @@ class CustomDropdown extends React.Component {
                 {innerDropDown ? (
                   dropDownMenu
                 ) : (
-                  <ClickAwayListener onClickAway={this.handleClose} ref="cacat">
+                  <ClickAwayListener onClickAway={this.handleClose}>
                     {dropDownMenu}
                   </ClickAwayListener>
                 )}
@@ -177,49 +220,6 @@ class CustomDropdown extends React.Component {
       </div>
     );
   }
-}
-
-CustomDropdown.defaultProps = {
-  caret: true,
-  dropup: false,
-  hoverColor: 'primary',
-};
-
-export interface ICustomDropdownTypes extends WithStyles<typeof styles> {
-  hoverColor:
-    | 'dark'
-    | 'primary'
-    | 'info'
-    | 'success'
-    | 'warning'
-    | 'danger'
-    | 'rose';
-  buttonText: React.ReactNode;
-  buttonIcon?(): void;
-  dropdownList: any[];
-  buttonProps: object;
-  dropup: boolean;
-  dropdownHeader: React.ReactNode;
-  rtlActive: boolean;
-  caret: boolean;
-  dropPlacement:
-    | 'bottom'
-    | 'top'
-    | 'right'
-    | 'left'
-    | 'bottom-start'
-    | 'bottom-end'
-    | 'top-start'
-    | 'top-end'
-    | 'right-start'
-    | 'right-end'
-    | 'left-start'
-    | 'left-end';
-  noLiPadding: boolean;
-  innerDropDown: boolean;
-  navDropdown: boolean;
-  // This is a function that returns the clicked menu item
-  onClick?(): void;
 }
 
 export default withStyles(styles)(CustomDropdown);

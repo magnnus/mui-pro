@@ -16,8 +16,8 @@ function Quote({ ...props }) {
 }
 
 export interface IQuoteTypes extends WithStyles<typeof styles> {
-  text: PropTypes.node;
-  author: PropTypes.node;
+  text: React.ReactNode;
+  author: React.ReactNode;
 }
 
 export default withStyles(styles)(Quote);

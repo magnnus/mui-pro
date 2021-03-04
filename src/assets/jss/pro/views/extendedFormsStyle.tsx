@@ -32,6 +32,7 @@ const extendedFormsStyle = createStyles({
   mlAuto: {
     marginLeft: 'auto',
   },
+  block: {},
 });
 
 export default extendedFormsStyle;

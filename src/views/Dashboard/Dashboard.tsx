@@ -44,7 +44,7 @@ import {
   completedTasksChart,
 } from '@/variables/charts';
 
-import dashboardStyle from '@/assets/jss/pro/views/dashboardStyle';
+import styles from '@/assets/jss/pro/views/dashboardStyle';
 
 import priceImage1 from '@/assets/img/card-2.jpeg';
 import priceImage2 from '@/assets/img/card-3.jpeg';
@@ -71,7 +71,8 @@ const mapData = {
   US: 2920,
 };
 
-class Dashboard extends React.Component {
+export interface IDashboardTypes extends WithStyles<typeof styles> {}
+class Dashboard extends React.Component<IDashboardTypes> {
   state = {
     value: 0,
   };
@@ -263,7 +264,7 @@ class Dashboard extends React.Component {
                   data={dailySalesChart.data}
                   type="Line"
                   options={dailySalesChart.options}
-                  listener={dailySalesChart.animation}
+                  listener={dailySalesChart.listener}
                 />
               </CardHeader>
               <CardBody>
@@ -313,7 +314,7 @@ class Dashboard extends React.Component {
                   type="Bar"
                   options={emailsSubscriptionChart.options}
                   responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-                  listener={emailsSubscriptionChart.animation}
+                  listener={emailsSubscriptionChart.listener}
                 />
               </CardHeader>
               <CardBody>
@@ -359,7 +360,7 @@ class Dashboard extends React.Component {
                   data={completedTasksChart.data}
                   type="Line"
                   options={completedTasksChart.options}
-                  listener={completedTasksChart.animation}
+                  listener={completedTasksChart.listener}
                 />
               </CardHeader>
               <CardBody>
@@ -589,7 +590,5 @@ class Dashboard extends React.Component {
     );
   }
 }
-
-export interface IDashboardTypes extends WithStyles<typeof styles> {}
 
 export default withStyles(styles)(Dashboard);

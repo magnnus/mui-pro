@@ -27,19 +27,19 @@ const customDropdownStyle = (theme: Theme) =>
     },
     pooperNav: {
       [theme.breakpoints.down('sm')]: {
-        position: 'static !important',
-        left: 'unset !important',
-        top: 'unset !important',
-        transform: 'none !important',
-        willChange: 'none !important',
+        position: 'static',
+        left: 'unset',
+        top: 'unset',
+        transform: 'none',
+        willChange: 'none',
         '& > div': {
-          boxShadow: 'none !important',
+          boxShadow: 'none',
           marginLeft: '1.5rem',
           marginRight: '1.5rem',
-          transition: 'none !important',
-          marginTop: '0px !important',
-          marginBottom: '5px !important',
-          padding: '0px !important',
+          transition: 'none',
+          marginTop: '0px',
+          marginBottom: '5px',
+          padding: '0px',
         },
       },
     },
@@ -50,7 +50,7 @@ const customDropdownStyle = (theme: Theme) =>
     },
     innerManager: {
       '& > div > button,& > div > a': {
-        margin: '0px !important',
+        margin: '0px',
         color: 'inherit !important',
         padding: '10px 20px !important',
         '& > span:first-child': {
@@ -88,7 +88,7 @@ const customDropdownStyle = (theme: Theme) =>
     pooperResponsive: {
       zIndex: 1200,
       [theme.breakpoints.down('sm')]: {
-        zIndex: '1640',
+        zIndex: 1640,
         position: 'static',
         float: 'none',
         width: 'auto',

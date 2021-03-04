@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import { withStyles, WithStyles } from '@material-ui/core/styles';
+import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles';
 
 // @material-ui/icons
 import Dashboard from '@material-ui/icons/Dashboard';
@@ -22,7 +22,7 @@ import CardBody from '@/components/Card/CardBody';
 
 import { cardTitle } from '@/assets/jss/material-dashboard-pro-react';
 
-const styles = {
+const styles = createStyles({
   cardTitle,
   pageSubcategoriesTitle: {
     color: '#3C4858',
@@ -33,9 +33,9 @@ const styles = {
     margin: '0',
     color: '#999999',
   },
-};
+});
 
-class Panels extends React.Component {
+class Panels extends React.Component<WithStyles<typeof styles>> {
   render() {
     const { classes } = this.props;
     return (

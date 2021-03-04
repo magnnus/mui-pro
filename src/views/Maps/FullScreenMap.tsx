@@ -6,7 +6,7 @@ import {
   Marker,
 } from 'react-google-maps';
 
-const CustomSkinMap = withScriptjs(
+const CustomSkinMap = withScriptjs<any>(
   withGoogleMap(props => (
     <GoogleMap
       defaultZoom={13}

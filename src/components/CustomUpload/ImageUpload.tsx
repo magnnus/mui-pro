@@ -7,20 +7,27 @@ import Button from '@/components/CustomButtons/Button';
 import defaultImage from '@/assets/img/image_placeholder.jpg';
 import defaultAvatar from '@/assets/img/placeholder.jpg';
 
-class ImageUpload extends React.Component {
+export interface IImageUploadTypes {
+  avatar?: boolean;
+  addButtonProps: object;
+  changeButtonProps: object;
+  removeButtonProps: object;
+}
+class ImageUpload extends React.Component<
+  IImageUploadTypes,
+  { file: any; imagePreviewUrl: any }
+> {
+  fileInputRef: HTMLInputElement = null;
+
   constructor(props) {
     super(props);
     this.state = {
       file: null,
       imagePreviewUrl: this.props.avatar ? defaultAvatar : defaultImage,
     };
-    this.handleImageChange = this.handleImageChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleRemove = this.handleRemove.bind(this);
   }
 
-  handleImageChange(e) {
+  handleImageChange = e => {
     e.preventDefault();
     const reader = new FileReader();
     const file = e.target.files[0];
@@ -31,26 +38,26 @@ class ImageUpload extends React.Component {
       });
     };
     reader.readAsDataURL(file);
-  }
+  };
 
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault();
     // this.state.file is the file/image uploaded
     // in this function you can save the image (this.state.file) on form submit
     // you have to call it yourself
-  }
+  };
 
-  handleClick() {
-    this.refs.fileInput.click();
-  }
+  handleClick = () => {
+    this.fileInputRef.click();
+  };
 
-  handleRemove() {
+  handleRemove = () => {
     this.setState({
       file: null,
       imagePreviewUrl: this.props.avatar ? defaultAvatar : defaultImage,
     });
-    this.refs.fileInput.value = null;
-  }
+    this.fileInputRef.value = null;
+  };
 
   render() {
     const {
@@ -61,7 +68,13 @@ class ImageUpload extends React.Component {
     } = this.props;
     return (
       <div className="fileinput text-center">
-        <input type="file" onChange={this.handleImageChange} ref="fileInput" />
+        <input
+          type="file"
+          onChange={this.handleImageChange}
+          ref={ref => {
+            this.fileInputRef = ref;
+          }}
+        />
         <div className={`thumbnail${avatar ? ' img-circle' : ''}`}>
           <img src={this.state.imagePreviewUrl} alt="..." />
         </div>
@@ -80,7 +93,8 @@ class ImageUpload extends React.Component {
                 {...removeButtonProps}
                 onClick={() => this.handleRemove()}
               >
-                <i className="fas fa-times" /> Remove
+                <i className="fas fa-times" />
+                Remove
               </Button>
             </span>
           )}
@@ -88,13 +102,6 @@ class ImageUpload extends React.Component {
       </div>
     );
   }
-}
-
-export interface IImageUploadTypes {
-  avatar: boolean;
-  addButtonProps: PropTypes.object;
-  changeButtonProps: PropTypes.object;
-  removeButtonProps: PropTypes.object;
 }
 
 export default ImageUpload;

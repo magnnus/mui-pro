@@ -1,9 +1,9 @@
 import React from 'react';
 
 // mterial-ui components
-import { withStyles, WithStyles } from '@material-ui/core/styles';
+import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles';
 
-const style = {
+const styles = createStyles({
   clearfix: {
     '&:after,&:before': {
       display: 'table',
@@ -13,7 +13,7 @@ const style = {
       clear: 'both',
     },
   },
-};
+});
 
 function Clearfix({ ...props }) {
   const { classes } = props;

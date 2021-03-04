@@ -20,25 +20,20 @@ import CardBody from '@/components/Card/CardBody';
 import CardHeader from '@/components/Card/CardHeader';
 import CardFooter from '@/components/Card/CardFooter';
 
-import loginPageStyle from '@/assets/jss/pro/views/loginPageStyle';
+import styles from '@/assets/jss/pro/views/loginPageStyle';
 
-class LoginPage extends React.Component {
-  constructor(props) {
-    super(props);
-    // we use this to make the card to appear after the page has been rendered
-    this.state = {
-      cardAnimaton: 'cardHidden',
-    };
-  }
+class LoginPage extends React.Component<WithStyles<typeof styles>> {
+  state = {
+    cardAnimaton: 'cardHidden',
+  };
+
+  timeOutFunction: number = null;
 
   componentDidMount() {
     // we add a hidden class to the card and after 700 ms we delete it and the transition appears
-    this.timeOutFunction = setTimeout(
-      function () {
-        this.setState({ cardAnimaton: '' });
-      }.bind(this),
-      700,
-    );
+    this.timeOutFunction = window.setTimeout(() => {
+      this.setState({ cardAnimaton: '' });
+    }, 700);
   }
 
   componentWillUnmount() {

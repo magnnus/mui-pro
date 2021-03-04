@@ -20,9 +20,10 @@ import Button from '@/components/CustomButtons/Button';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import buttonsStyle from '@/assets/jss/pro/views/buttonsStyle';
+import styles from '@/assets/jss/pro/views/buttonsStyle';
 
-class Buttons extends React.Component {
+export interface IButtonsTypes extends WithStyles<typeof styles> {}
+class Buttons extends React.Component<IButtonsTypes> {
   render() {
     const { classes } = this.props;
     return (
@@ -634,7 +635,5 @@ class Buttons extends React.Component {
     );
   }
 }
-
-export interface IButtonsTypes extends WithStyles<typeof styles> {}
 
 export default withStyles(styles)(Buttons);

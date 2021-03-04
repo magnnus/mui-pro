@@ -17,31 +17,38 @@ import FixedPlugin from '@/components/FixedPlugin/FixedPlugin';
 
 import routes from '@/routes';
 
-import appStyle from '@/assets/jss/pro/layouts/adminStyle';
+import styles from '@/assets/jss/pro/layouts/adminStyle';
 
 import image from '@/assets/img/sidebar-2.jpg';
 import logo from '@/assets/img/logo-white.svg';
 
 let ps;
 
-class Dashboard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      mobileOpen: false,
-      miniActive: false,
-      image,
-      color: 'blue',
-      bgColor: 'black',
-      hasImage: true,
-      fixedClasses: 'dropdown',
-    };
-    this.resizeFunction = this.resizeFunction.bind(this);
-  }
+interface IState {
+  mobileOpen: boolean;
+  miniActive: boolean;
+  image: string;
+  color: string;
+  bgColor: string;
+  hasImage: boolean;
+  fixedClasses: string;
+}
+class Dashboard extends React.Component<any, IState> {
+  state: IState = {
+    mobileOpen: false,
+    miniActive: false,
+    image,
+    color: 'blue',
+    bgColor: 'black',
+    hasImage: true,
+    fixedClasses: 'dropdown',
+  };
+
+  mainPanel: HTMLDivElement = null;
 
   componentDidMount() {
     if (navigator.platform.indexOf('Win') > -1) {
-      ps = new PerfectScrollbar(this.refs.mainPanel, {
+      ps = new PerfectScrollbar(this.mainPanel, {
         suppressScrollX: true,
         suppressScrollY: false,
       });
@@ -59,15 +66,16 @@ class Dashboard extends React.Component {
 
   componentDidUpdate(e) {
     if (e.history.location.pathname !== e.location.pathname) {
-      this.refs.mainPanel.scrollTop = 0;
+      this.mainPanel.scrollTop = 0;
       if (this.state.mobileOpen) {
+        // eslint-disable-next-line react/no-did-update-set-state
         this.setState({ mobileOpen: false });
       }
     }
   }
 
-  handleImageClick = image => {
-    this.setState({ image });
+  handleImageClick = img => {
+    this.setState({ image: img });
   };
 
   handleColorClick = color => {
@@ -78,6 +86,8 @@ class Dashboard extends React.Component {
     this.setState({ bgColor });
   };
 
+  handleHasImage = () => {};
+
   handleFixedClick = () => {
     if (this.state.fixedClasses === 'dropdown') {
       this.setState({ fixedClasses: 'dropdown show' });
@@ -87,32 +97,34 @@ class Dashboard extends React.Component {
   };
 
   handleDrawerToggle = () => {
-    this.setState({ mobileOpen: !this.state.mobileOpen });
+    this.setState(preState => ({ mobileOpen: !preState.mobileOpen }));
   };
 
   getRoute() {
     return this.props.location.pathname !== '/admin/full-screen-maps';
   }
 
-  getActiveRoute = routes => {
+  getActiveRoute = (routeList: any[]) => {
     const activeRoute = 'Default Brand Text';
-    for (let i = 0; i < routes.length; i++) {
-      if (routes[i].collapse) {
-        const collapseActiveRoute = this.getActiveRoute(routes[i].views);
+    for (let i = 0; i < routeList.length; i++) {
+      if (routeList[i].collapse) {
+        const collapseActiveRoute = this.getActiveRoute(routeList[i].views);
         if (collapseActiveRoute !== activeRoute) {
           return collapseActiveRoute;
         }
       } else if (
-        window.location.href.indexOf(routes[i].layout + routes[i].path) !== -1
+        window.location.href.indexOf(
+          routeList[i].layout + routeList[i].path,
+        ) !== -1
       ) {
-        return routes[i].name;
+        return routeList[i].name;
       }
     }
     return activeRoute;
   };
 
-  getRoutes = routes => {
-    return routes.map((prop, key) => {
+  getRoutes = routeList => {
+    return routeList.map((prop, key) => {
       if (prop.collapse) {
         return this.getRoutes(prop.views);
       }
@@ -129,15 +141,15 @@ class Dashboard extends React.Component {
     });
   };
 
-  sidebarMinimize() {
-    this.setState({ miniActive: !this.state.miniActive });
-  }
+  sidebarMinimize = () => {
+    this.setState(preState => ({ miniActive: !preState.miniActive }));
+  };
 
-  resizeFunction() {
+  resizeFunction = () => {
     if (window.innerWidth >= 960) {
       this.setState({ mobileOpen: false });
     }
-  }
+  };
 
   render() {
     const { classes, ...rest } = this.props;
@@ -160,9 +172,14 @@ class Dashboard extends React.Component {
           miniActive={this.state.miniActive}
           {...rest}
         />
-        <div className={mainPanel} ref="mainPanel">
+        <div
+          className={mainPanel}
+          ref={ref => {
+            this.mainPanel = ref;
+          }}
+        >
           <AdminNavbar
-            sidebarMinimize={this.sidebarMinimize.bind(this)}
+            sidebarMinimize={this.sidebarMinimize}
             miniActive={this.state.miniActive}
             brandText={this.getActiveRoute(routes)}
             handleDrawerToggle={this.handleDrawerToggle}
@@ -191,7 +208,7 @@ class Dashboard extends React.Component {
             bgImage={this.state.image}
             handleFixedClick={this.handleFixedClick}
             fixedClasses={this.state.fixedClasses}
-            sidebarMinimize={this.sidebarMinimize.bind(this)}
+            sidebarMinimize={this.sidebarMinimize}
             miniActive={this.state.miniActive}
           />
         </div>

@@ -14,20 +14,17 @@ import imagine4 from '@/assets/img/sidebar-4.jpg';
 
 import Button from '@/components/CustomButtons/Button';
 
-class FixedPlugin extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      classes: 'dropdown show',
-      bg_checked: true,
-      bgImage: this.props.bgImage,
-      showImage: true,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick() {
+class FixedPlugin extends Component<any, any> {
+  state = {
+    classes: 'dropdown show',
+    bg_checked: true,
+    bgImage: this.props.bgImage,
+    showImage: true,
+  };
+
+  handleClick = () => {
     this.props.handleFixedClick();
-  }
+  };
   handleChange = name => event => {
     switch (name) {
       case 'miniActive':

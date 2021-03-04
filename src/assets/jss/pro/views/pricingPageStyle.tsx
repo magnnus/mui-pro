@@ -25,6 +25,18 @@ const pricingPageStyle = (theme: Theme) =>
       marginBottom: '30px',
       textAlign: 'center',
     },
+    cardTitle: {
+      ...defaultFont,
+      color: whiteColor,
+      marginTop: '5vh',
+      marginBottom: '30px',
+      textAlign: 'center',
+    },
+    cardDescription: {
+      fontSize: '18px',
+      color: whiteColor,
+      textAlign: 'center',
+    },
     description: {
       fontSize: '18px',
       color: whiteColor,

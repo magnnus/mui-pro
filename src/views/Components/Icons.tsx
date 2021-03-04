@@ -12,7 +12,7 @@ import GridItem from '@/components/Grid/GridItem';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import iconsStyle from '@/assets/jss/pro/views/iconsStyle';
+import styles from '@/assets/jss/pro/views/iconsStyle';
 
 function Icons({ ...props }) {
   return (

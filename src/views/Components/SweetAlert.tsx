@@ -13,23 +13,15 @@ import Button from '@/components/CustomButtons/Button';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import sweetAlertStyle from '@/assets/jss/pro/views/sweetAlertStyle';
+import styles from '@/assets/jss/pro/views/sweetAlertStyle';
 
-class SweetAlertPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      alert: null,
-      show: false,
-    };
-    this.hideAlert = this.hideAlert.bind(this);
-    this.successDelete = this.successDelete.bind(this);
-    this.cancelDetele = this.cancelDetele.bind(this);
-    this.inputConfirmAlert = this.inputConfirmAlert.bind(this);
-    this.inputConfirmAlertNext = this.inputConfirmAlertNext.bind(this);
-  }
+class SweetAlertPage extends React.Component<WithStyles<typeof styles>> {
+  state = {
+    alert: null,
+    show: false,
+  };
 
-  basicAlert() {
+  basicAlert = () => {
     this.setState({
       alert: (
         <SweetAlert
@@ -41,9 +33,9 @@ class SweetAlertPage extends React.Component {
         />
       ),
     });
-  }
+  };
 
-  titleAndTextAlert() {
+  titleAndTextAlert = () => {
     this.setState({
       alert: (
         <SweetAlert
@@ -57,9 +49,9 @@ class SweetAlertPage extends React.Component {
         </SweetAlert>
       ),
     });
-  }
+  };
 
-  successAlert() {
+  successAlert = () => {
     this.setState({
       alert: (
         <SweetAlert
@@ -74,9 +66,9 @@ class SweetAlertPage extends React.Component {
         </SweetAlert>
       ),
     });
-  }
+  };
 
-  htmlAlert() {
+  htmlAlert = () => {
     this.setState({
       alert: (
         <SweetAlert
@@ -91,9 +83,9 @@ class SweetAlertPage extends React.Component {
         </SweetAlert>
       ),
     });
-  }
+  };
 
-  warningWithConfirmMessage() {
+  warningWithConfirmMessage = () => {
     this.setState({
       alert: (
         <SweetAlert
@@ -112,7 +104,7 @@ class SweetAlertPage extends React.Component {
         </SweetAlert>
       ),
     });
-  }
+  };
 
   warningWithConfirmAndCancelMessage() {
     this.setState({
@@ -269,7 +261,7 @@ class SweetAlertPage extends React.Component {
               <CardBody>
                 <div className={classes.center}>
                   <h5>Basic example</h5>
-                  <Button color="rose" onClick={this.basicAlert.bind(this)}>
+                  <Button color="rose" onClick={this.basicAlert}>
                     Try me!
                   </Button>
                 </div>
@@ -281,10 +273,7 @@ class SweetAlertPage extends React.Component {
               <CardBody>
                 <div className={classes.center}>
                   <h5>A title with a text under</h5>
-                  <Button
-                    color="rose"
-                    onClick={this.titleAndTextAlert.bind(this)}
-                  >
+                  <Button color="rose" onClick={this.titleAndTextAlert}>
                     Try me!
                   </Button>
                 </div>
@@ -296,7 +285,7 @@ class SweetAlertPage extends React.Component {
               <CardBody>
                 <div className={classes.center}>
                   <h5>A success message</h5>
-                  <Button color="rose" onClick={this.successAlert.bind(this)}>
+                  <Button color="rose" onClick={this.successAlert}>
                     Try me!
                   </Button>
                 </div>
@@ -308,7 +297,7 @@ class SweetAlertPage extends React.Component {
               <CardBody>
                 <div className={classes.center}>
                   <h5>Custom HTML description</h5>
-                  <Button color="rose" onClick={this.htmlAlert.bind(this)}>
+                  <Button color="rose" onClick={this.htmlAlert}>
                     Try me!
                   </Button>
                 </div>
@@ -323,10 +312,7 @@ class SweetAlertPage extends React.Component {
                     A warning message, with a function attached to the "Confirm"
                     Button...
                   </h5>
-                  <Button
-                    color="rose"
-                    onClick={this.warningWithConfirmMessage.bind(this)}
-                  >
+                  <Button color="rose" onClick={this.warningWithConfirmMessage}>
                     Try me!
                   </Button>
                 </div>
@@ -343,7 +329,7 @@ class SweetAlertPage extends React.Component {
                   </h5>
                   <Button
                     color="rose"
-                    onClick={this.warningWithConfirmAndCancelMessage.bind(this)}
+                    onClick={this.warningWithConfirmAndCancelMessage}
                   >
                     Try me!
                   </Button>
@@ -356,7 +342,7 @@ class SweetAlertPage extends React.Component {
               <CardBody>
                 <div className={classes.center}>
                   <h5>A message with auto close timer set to 2 seconds</h5>
-                  <Button color="rose" onClick={this.autoCloseAlert.bind(this)}>
+                  <Button color="rose" onClick={this.autoCloseAlert}>
                     Try me!
                   </Button>
                 </div>
@@ -368,7 +354,7 @@ class SweetAlertPage extends React.Component {
               <CardBody>
                 <div className={classes.center}>
                   <h5>Modal window with input field</h5>
-                  <Button color="rose" onClick={this.inputAlert.bind(this)}>
+                  <Button color="rose" onClick={this.inputAlert}>
                     Try me!
                   </Button>
                 </div>

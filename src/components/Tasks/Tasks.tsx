@@ -17,7 +17,13 @@ import Check from '@material-ui/icons/Check';
 
 import styles from '@/assets/jss/pro/components/tasksStyle';
 
-class Tasks extends React.Component {
+export interface ITasksTypes extends WithStyles<typeof styles> {
+  tasksIndexes: number[];
+  checkedIndexes: number[];
+  tasks: React.ReactNode[];
+}
+
+class Tasks extends React.Component<ITasksTypes> {
   state = {
     checked: this.props.checkedIndexes,
   };
@@ -99,12 +105,6 @@ class Tasks extends React.Component {
       </Table>
     );
   }
-}
-
-export interface ITasksTypes extends WithStyles<typeof styles> {
-  tasksIndexes: number[];
-  checkedIndexes: number[];
-  tasks: React.ReactNode[];
 }
 
 export default withStyles(styles)(Tasks);

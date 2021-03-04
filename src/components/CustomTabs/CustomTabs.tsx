@@ -14,7 +14,19 @@ import CardHeader from '@/components/Card/CardHeader';
 
 import styles from '@/assets/jss/pro/components/customTabsStyle';
 
-class CustomTabs extends React.Component {
+export interface ICustomTabsTypes extends WithStyles<typeof styles> {
+  headerColor: 'warning' | 'success' | 'danger' | 'info' | 'primary' | 'rose';
+  title: string;
+  tabs?: {
+    tabName: string;
+    tabIcon?: React.ComponentType<any>;
+    tabContent: React.ReactNode;
+  }[];
+  rtlActive?: boolean;
+  plainTabs?: boolean;
+}
+
+class CustomTabs extends React.Component<ICustomTabsTypes> {
   state = {
     value: 0,
   };
@@ -85,18 +97,6 @@ class CustomTabs extends React.Component {
       </Card>
     );
   }
-}
-
-export interface ICustomTabsTypes extends WithStyles<typeof styles> {
-  headerColor: 'warning' | 'success' | 'danger' | 'info' | 'primary' | 'rose';
-  title: string;
-  tabs: {
-    tabName: string;
-    tabIcon?(): void;
-    tabContent: React.ReactNode;
-  }[];
-  rtlActive: boolean;
-  plainTabs: boolean;
 }
 
 export default withStyles(styles)(CustomTabs);

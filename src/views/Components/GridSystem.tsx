@@ -9,9 +9,10 @@ import GridItem from '@/components/Grid/GridItem';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import gridSystemStyle from '@/assets/jss/pro/views/gridSystemStyle';
+import styles from '@/assets/jss/pro/views/gridSystemStyle';
 
-class GridSystem extends React.Component {
+export interface IGridSystemTypes extends WithStyles<typeof styles> {}
+class GridSystem extends React.Component<IGridSystemTypes> {
   render() {
     const { classes } = this.props;
     return (
@@ -314,7 +315,5 @@ class GridSystem extends React.Component {
     );
   }
 }
-
-export interface IGridSystemTypes extends WithStyles<typeof styles> {}
 
 export default withStyles(styles)(GridSystem);

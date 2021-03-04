@@ -19,7 +19,7 @@ const sweetAlertStyle = createStyles({
   left: {
     textAlign: 'left',
   },
-  ...buttonStyle,
+  ...styles,
 });
 
 export default sweetAlertStyle;

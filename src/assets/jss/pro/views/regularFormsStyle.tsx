@@ -9,6 +9,7 @@ import customCheckboxRadioSwitch from '@/assets/jss/pro/customCheckboxRadioSwitc
 
 const regularFormsStyle = createStyles({
   ...customCheckboxRadioSwitch,
+  cardTitle: {},
   cardIconTitle: {
     ...cardTitle,
     marginTop: '15px',

@@ -25,18 +25,16 @@ import InfoArea from '@/components/InfoArea/InfoArea';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import registerPageStyle from '@/assets/jss/pro/views/registerPageStyle';
+import styles from '@/assets/jss/pro/views/registerPageStyle';
 
-class RegisterPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checked: [],
-    };
-    this.handleToggle = this.handleToggle.bind(this);
-  }
+export interface IRegisterPageTypes extends WithStyles<typeof styles> {}
 
-  handleToggle(value) {
+class RegisterPage extends React.Component<IRegisterPageTypes> {
+  state = {
+    checked: [],
+  };
+
+  handleToggle = value => {
     const { checked } = this.state;
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
@@ -50,7 +48,7 @@ class RegisterPage extends React.Component {
     this.setState({
       checked: newChecked,
     });
-  }
+  };
 
   render() {
     const { classes } = this.props;
@@ -191,7 +189,5 @@ class RegisterPage extends React.Component {
     );
   }
 }
-
-export interface IRegisterPageTypes extends WithStyles<typeof styles> {}
 
 export default withStyles(styles)(RegisterPage);

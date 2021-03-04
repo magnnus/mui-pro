@@ -7,9 +7,11 @@ import { withStyles, WithStyles } from '@material-ui/core/styles';
 import GridContainer from '@/components/Grid/GridContainer';
 import GridItem from '@/components/Grid/GridItem';
 
-import errorPageStyles from '@/assets/jss/pro/views/errorPageStyles';
+import styles from '@/assets/jss/pro/views/errorPageStyles';
 
-class ErrorPage extends React.Component {
+export interface IErrorPageTypes extends WithStyles<typeof styles> {}
+
+class ErrorPage extends React.Component<IErrorPageTypes> {
   render() {
     const { classes } = this.props;
     return (
@@ -28,6 +30,4 @@ class ErrorPage extends React.Component {
   }
 }
 
-export interface IErrorPageTypes extends WithStyles<typeof styles> {}
-
-export default withStyles(errorPageStyles)(ErrorPage);
+export default withStyles(styles)(ErrorPage);

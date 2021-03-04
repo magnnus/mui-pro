@@ -92,6 +92,7 @@ const tableStyle = (theme: Theme) =>
     tableStripedRow: {
       backgroundColor: grayColor[12],
     },
+    tableRow: {},
     tableRowHover: {
       '&:hover': {
         backgroundColor: grayColor[13],

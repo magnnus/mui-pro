@@ -6,7 +6,7 @@ import RecordVoiceOver from '@material-ui/icons/RecordVoiceOver';
 import Email from '@material-ui/icons/Email';
 
 // @material-ui/core components
-import { withStyles, WithStyles } from '@material-ui/core/styles';
+import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
 // core components
@@ -15,9 +15,9 @@ import GridItem from '@/components/Grid/GridItem';
 import PictureUpload from '@/components/CustomUpload/PictureUpload';
 import CustomInput from '@/components/CustomInput/CustomInput';
 
-const style = {
+const styles = createStyles({
   infoText: {
-    fontWeight: '300',
+    fontWeight: 300,
     margin: '10px 0 30px',
     textAlign: 'center',
   },
@@ -27,53 +27,50 @@ const style = {
   inputAdornment: {
     position: 'relative',
   },
-};
+});
 
-class Step1 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      firstname: '',
-      firstnameState: '',
-      lastname: '',
-      lastnameState: '',
-      email: '',
-      emailState: '',
-    };
+// function that returns true if value is email, false otherwise
+function verifyEmail(value) {
+  const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (emailRex.test(value)) {
+    return true;
   }
+  return false;
+}
+
+// function that verifies if a string has a given length or not
+function verifyLength(value, length) {
+  if (value.length >= length) {
+    return true;
+  }
+  return false;
+}
+
+class Step1 extends React.Component<WithStyles<typeof styles>> {
+  state = {
+    firstname: '',
+    firstnameState: '',
+    lastname: '',
+    lastnameState: '',
+    email: '',
+    emailState: '',
+  };
 
   sendState() {
     return this.state;
   }
 
-  // function that returns true if value is email, false otherwise
-  verifyEmail(value) {
-    const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (emailRex.test(value)) {
-      return true;
-    }
-    return false;
-  }
-
-  // function that verifies if a string has a given length or not
-  verifyLength(value, length) {
-    if (value.length >= length) {
-      return true;
-    }
-    return false;
-  }
-
-  change(event, stateName, type, stateNameEqualTo) {
+  change(event, stateName, type, stateNameEqualTo?) {
     switch (type) {
       case 'email':
-        if (this.verifyEmail(event.target.value)) {
+        if (verifyEmail(event.target.value)) {
           this.setState({ [`${stateName}State`]: 'success' });
         } else {
           this.setState({ [`${stateName}State`]: 'error' });
         }
         break;
       case 'length':
-        if (this.verifyLength(event.target.value, stateNameEqualTo)) {
+        if (verifyLength(event.target.value, stateNameEqualTo)) {
           this.setState({ [`${stateName}State`]: 'success' });
         } else {
           this.setState({ [`${stateName}State`]: 'error' });

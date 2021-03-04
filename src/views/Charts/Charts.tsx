@@ -29,9 +29,9 @@ import {
   pieChart,
 } from '@/variables/charts';
 
-import chartsStyle from '@/assets/jss/pro/views/chartsStyle';
+import styles from '@/assets/jss/pro/views/chartsStyle';
 
-class Charts extends React.Component {
+class Charts extends React.Component<WithStyles<typeof styles>> {
   render() {
     const { classes } = this.props;
     return (
@@ -78,7 +78,7 @@ class Charts extends React.Component {
                   data={roundedLineChart.data}
                   type="Line"
                   options={roundedLineChart.options}
-                  listener={roundedLineChart.animation}
+                  listener={roundedLineChart.listener}
                 />
               </CardHeader>
               <CardBody>
@@ -95,7 +95,7 @@ class Charts extends React.Component {
                   data={straightLinesChart.data}
                   type="Line"
                   options={straightLinesChart.options}
-                  listener={straightLinesChart.animation}
+                  listener={straightLinesChart.listener}
                 />
               </CardHeader>
               <CardBody>
@@ -113,7 +113,7 @@ class Charts extends React.Component {
                   type="Bar"
                   options={simpleBarChart.options}
                   responsiveOptions={simpleBarChart.responsiveOptions}
-                  listener={simpleBarChart.animation}
+                  listener={simpleBarChart.listener}
                 />
               </CardHeader>
               <CardBody>
@@ -139,7 +139,7 @@ class Charts extends React.Component {
                   data={colouredLineChart.data}
                   type="Line"
                   options={colouredLineChart.options}
-                  listener={colouredLineChart.animation}
+                  listener={colouredLineChart.listener}
                 />
               </CardBody>
             </Card>
@@ -159,7 +159,7 @@ class Charts extends React.Component {
                   data={multipleBarsChart.data}
                   type="Bar"
                   options={multipleBarsChart.options}
-                  listener={multipleBarsChart.animation}
+                  listener={multipleBarsChart.listener}
                 />
               </CardBody>
             </Card>
@@ -181,7 +181,7 @@ class Charts extends React.Component {
                   data={colouredLinesChart.data}
                   type="Line"
                   options={colouredLinesChart.options}
-                  listener={colouredLinesChart.animation}
+                  listener={colouredLinesChart.listener}
                 />
               </CardBody>
             </Card>

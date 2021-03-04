@@ -3,7 +3,7 @@ import React from 'react';
 import ReactTable from 'react-table';
 
 // @material-ui/core components
-import { withStyles, WithStyles } from '@material-ui/core/styles';
+import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles';
 // @material-ui/icons
 import Assignment from '@material-ui/icons/Assignment';
 import Dvr from '@material-ui/icons/Dvr';
@@ -22,89 +22,86 @@ import { dataTable } from '@/variables/general';
 
 import { cardTitle } from '@/assets/jss/material-dashboard-pro-react';
 
-const styles = {
+const styles = createStyles({
   cardIconTitle: {
     ...cardTitle,
     marginTop: '15px',
     marginBottom: '0px',
   },
-};
+});
 
-class ReactTables extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: dataTable.dataRows.map((prop, key) => {
-        return {
-          id: key,
-          name: prop[0],
-          position: prop[1],
-          office: prop[2],
-          age: prop[3],
-          actions: (
-            // we've added some custom button actions
-            <div className="actions-right">
-              {/* use this button to add a like kind of action */}
-              <Button
-                justIcon
-                round
-                simple
-                onClick={() => {
-                  const obj = this.state.data.find(o => o.id === key);
-                  alert(
-                    `You've clicked LIKE button on \n{ \nName: ${obj.name}, \nposition: ${obj.position}, \noffice: ${obj.office}, \nage: ${obj.age}\n}.`,
-                  );
-                }}
-                color="info"
-                className="like"
-              >
-                <Favorite />
-              </Button>{' '}
-              {/* use this button to add a edit kind of action */}
-              <Button
-                justIcon
-                round
-                simple
-                onClick={() => {
-                  const obj = this.state.data.find(o => o.id === key);
-                  alert(
-                    `You've clicked EDIT button on \n{ \nName: ${obj.name}, \nposition: ${obj.position}, \noffice: ${obj.office}, \nage: ${obj.age}\n}.`,
-                  );
-                }}
-                color="warning"
-                className="edit"
-              >
-                <Dvr />
-              </Button>{' '}
-              {/* use this button to remove the data row */}
-              <Button
-                justIcon
-                round
-                simple
-                onClick={() => {
-                  const { data } = this.state;
-                  data.find((o, i) => {
-                    if (o.id === key) {
-                      // here you should add some custom code so you can delete the data
-                      // from this component and from your server as well
-                      data.splice(i, 1);
-                      return true;
-                    }
-                    return false;
-                  });
-                  this.setState({ data });
-                }}
-                color="danger"
-                className="remove"
-              >
-                <Close />
-              </Button>{' '}
-            </div>
-          ),
-        };
-      }),
-    };
-  }
+class ReactTables extends React.Component<WithStyles<typeof styles>> {
+  state = {
+    data: dataTable.dataRows.map((prop, key) => {
+      return {
+        id: key,
+        name: prop[0],
+        position: prop[1],
+        office: prop[2],
+        age: prop[3],
+        actions: (
+          // we've added some custom button actions
+          <div className="actions-right">
+            {/* use this button to add a like kind of action */}
+            <Button
+              justIcon
+              round
+              simple
+              onClick={() => {
+                const obj = this.state.data.find(o => o.id === key);
+                alert(
+                  `You've clicked LIKE button on \n{ \nName: ${obj.name}, \nposition: ${obj.position}, \noffice: ${obj.office}, \nage: ${obj.age}\n}.`,
+                );
+              }}
+              color="info"
+              className="like"
+            >
+              <Favorite />
+            </Button>{' '}
+            {/* use this button to add a edit kind of action */}
+            <Button
+              justIcon
+              round
+              simple
+              onClick={() => {
+                const obj = this.state.data.find(o => o.id === key);
+                alert(
+                  `You've clicked EDIT button on \n{ \nName: ${obj.name}, \nposition: ${obj.position}, \noffice: ${obj.office}, \nage: ${obj.age}\n}.`,
+                );
+              }}
+              color="warning"
+              className="edit"
+            >
+              <Dvr />
+            </Button>{' '}
+            {/* use this button to remove the data row */}
+            <Button
+              justIcon
+              round
+              simple
+              onClick={() => {
+                const { data } = this.state;
+                data.find((o, i) => {
+                  if (o.id === key) {
+                    // here you should add some custom code so you can delete the data
+                    // from this component and from your server as well
+                    data.splice(i, 1);
+                    return true;
+                  }
+                  return false;
+                });
+                this.setState({ data });
+              }}
+              color="danger"
+              className="remove"
+            >
+              <Close />
+            </Button>{' '}
+          </div>
+        ),
+      };
+    }),
+  };
 
   render() {
     const { classes } = this.props;

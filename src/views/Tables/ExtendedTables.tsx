@@ -24,22 +24,23 @@ import CardBody from '@/components/Card/CardBody';
 import CardIcon from '@/components/Card/CardIcon';
 import CardHeader from '@/components/Card/CardHeader';
 
-import extendedTablesStyle from '@/assets/jss/pro/views/extendedTablesStyle';
+import styles from '@/assets/jss/pro/views/extendedTablesStyle';
 
 import product1 from '@/assets/img/product1.jpg';
 import product2 from '@/assets/img/product2.jpg';
 import product3 from '@/assets/img/product3.jpg';
 
-class ExtendedTables extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checked: [],
-    };
-    this.handleToggle = this.handleToggle.bind(this);
+class ExtendedTables extends React.Component<
+  WithStyles<typeof styles>,
+  {
+    checked: any[];
   }
+> {
+  state = {
+    checked: [],
+  };
 
-  handleToggle(value) {
+  handleToggle = value => {
     const { checked } = this.state;
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
@@ -53,7 +54,7 @@ class ExtendedTables extends React.Component {
     this.setState({
       checked: newChecked,
     });
-  }
+  };
 
   render() {
     const { classes } = this.props;

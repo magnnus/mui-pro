@@ -41,7 +41,7 @@ const transition = {
   transition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
 };
 
-const containerFluid = {
+const containerFluid: any = {
   paddingRight: '15px',
   paddingLeft: '15px',
   marginRight: 'auto',
@@ -55,7 +55,7 @@ const containerFluid = {
   },
 };
 
-const container = {
+const container: any = {
   paddingRight: '15px',
   paddingLeft: '15px',
   marginRight: 'auto',
@@ -78,7 +78,7 @@ const container = {
   },
 };
 
-const defaultFont = {
+const defaultFont: any = {
   fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   fontWeight: 300,
   lineHeight: '1.5em',
@@ -156,7 +156,7 @@ const behanceColor = '#1769ff';
 const dribbbleColor = '#ea4c89';
 const redditColor = '#ff4500';
 
-const boxShadow = {
+const boxShadow: any = {
   boxShadow: `0 10px 30px -12px rgba(${hexToRgb(
     blackColor,
   )}, 0.42), 0 4px 25px 0px rgba(${hexToRgb(
@@ -164,63 +164,63 @@ const boxShadow = {
   )}, 0.12), 0 8px 10px -5px rgba(${hexToRgb(blackColor)}, 0.2)`,
 };
 
-const primaryBoxShadow = {
+const primaryBoxShadow: any = {
   boxShadow: `0 4px 20px 0 rgba(${hexToRgb(
     blackColor,
   )},.14), 0 7px 10px -5px rgba(${hexToRgb(primaryColor[0])},.4)`,
 };
-const infoBoxShadow = {
+const infoBoxShadow: any = {
   boxShadow: `0 4px 20px 0 rgba(${hexToRgb(
     blackColor,
   )},.14), 0 7px 10px -5px rgba(${hexToRgb(infoColor[0])},.4)`,
 };
-const successBoxShadow = {
+const successBoxShadow: any = {
   boxShadow: `0 4px 20px 0 rgba(${hexToRgb(
     blackColor,
   )},.14), 0 7px 10px -5px rgba(${hexToRgb(successColor[0])},.4)`,
 };
-const warningBoxShadow = {
+const warningBoxShadow: any = {
   boxShadow: `0 4px 20px 0 rgba(${hexToRgb(
     blackColor,
   )},.14), 0 7px 10px -5px rgba(${hexToRgb(warningColor[0])},.4)`,
 };
-const dangerBoxShadow = {
+const dangerBoxShadow: any = {
   boxShadow: `0 4px 20px 0 rgba(${hexToRgb(
     blackColor,
   )},.14), 0 7px 10px -5px rgba(${hexToRgb(dangerColor[0])},.4)`,
 };
-const roseBoxShadow = {
+const roseBoxShadow: any = {
   boxShadow: `0 4px 20px 0 rgba(${hexToRgb(
     blackColor,
   )},.14), 0 7px 10px -5px rgba(${hexToRgb(roseColor[0])},.4)`,
 };
 
-const warningCardHeader = {
+const warningCardHeader: any = {
   background: `linear-gradient(60deg, ${warningColor[1]}, ${warningColor[2]})`,
   ...warningBoxShadow,
 };
-const successCardHeader = {
+const successCardHeader: any = {
   background: `linear-gradient(60deg, ${successColor[1]}, ${successColor[2]})`,
   ...successBoxShadow,
 };
-const dangerCardHeader = {
+const dangerCardHeader: any = {
   background: `linear-gradient(60deg, ${dangerColor[1]}, ${dangerColor[2]})`,
   ...dangerBoxShadow,
 };
-const infoCardHeader = {
+const infoCardHeader: any = {
   background: `linear-gradient(60deg, ${infoColor[1]}, ${infoColor[2]})`,
   ...infoBoxShadow,
 };
-const primaryCardHeader = {
+const primaryCardHeader: any = {
   background: `linear-gradient(60deg, ${primaryColor[1]}, ${primaryColor[2]})`,
   ...primaryBoxShadow,
 };
-const roseCardHeader = {
+const roseCardHeader: any = {
   background: `linear-gradient(60deg, ${roseColor[1]}, ${roseColor[2]})`,
   ...roseBoxShadow,
 };
 
-const card = {
+const card: any = {
   display: 'inline-block',
   position: 'relative',
   width: '100%',
@@ -231,7 +231,7 @@ const card = {
   background: whiteColor,
 };
 
-const cardActions = {
+const cardActions: any = {
   margin: '0 20px 10px',
   paddingTop: '10px',
   borderTop: `1px solid ${grayColor[8]}`,
@@ -239,13 +239,13 @@ const cardActions = {
   ...defaultFont,
 };
 
-const cardHeader = {
+const cardHeader: any = {
   margin: '-20px 15px 0',
   borderRadius: '3px',
   padding: '15px',
 };
 
-const defaultBoxShadow = {
+const defaultBoxShadow: any = {
   border: '0',
   borderRadius: '3px',
   boxShadow: `0 10px 20px -12px rgba(${hexToRgb(
@@ -257,7 +257,7 @@ const defaultBoxShadow = {
   transition: 'all 150ms ease 0s',
 };
 
-const tooltip = {
+const tooltip: any = {
   padding: '10px 15px',
   minWidth: '130px',
   color: whiteColor,
@@ -287,7 +287,7 @@ const tooltip = {
   lineBreak: 'auto',
 };
 
-const title = {
+const title: any = {
   color: grayColor[2],
   textDecoration: 'none',
   fontWeight: 300,
@@ -303,7 +303,7 @@ const title = {
   },
 };
 
-const cardTitle = {
+const cardTitle: any = {
   ...title,
   marginTop: '0',
   marginBottom: '3px',
@@ -316,11 +316,11 @@ const cardTitle = {
   },
 };
 
-const cardSubtitle = {
+const cardSubtitle: any = {
   marginTop: '-.375rem',
 };
 
-const cardLink = {
+const cardLink: any = {
   '& + $cardLink': {
     marginLeft: '1.25rem',
   },

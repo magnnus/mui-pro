@@ -24,7 +24,7 @@ import Instruction from '@/components/Instruction/Instruction';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-import notificationsStyle from '@/assets/jss/pro/views/notificationsStyle';
+import styles from '@/assets/jss/pro/views/notificationsStyle';
 
 import noticeModal1 from '@/assets/img/card-1.jpeg';
 import noticeModal2 from '@/assets/img/card-2.jpeg';
@@ -33,21 +33,18 @@ function Transition(props) {
   return <Slide direction="down" {...props} />;
 }
 
-class Notifications extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tl: false,
-      tc: false,
-      tr: false,
-      bl: false,
-      bc: false,
-      br: false,
-      classicModal: false,
-      noticeModal: false,
-      smallModal: false,
-    };
-  }
+class Notifications extends React.Component<WithStyles<typeof styles>> {
+  state = {
+    tl: false,
+    tc: false,
+    tr: false,
+    bl: false,
+    bc: false,
+    br: false,
+    classicModal: false,
+    noticeModal: false,
+    smallModal: false,
+  };
   // to stop the warning of calling setState of unmounted component
   componentWillUnmount() {
     var id = window.setTimeout(null, 0);

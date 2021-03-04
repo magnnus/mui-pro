@@ -22,16 +22,19 @@ import { events } from '@/variables/general';
 
 const localizer = BigCalendar.momentLocalizer(moment);
 
-class Calendar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      events,
-      alert: null,
-    };
-    this.hideAlert = this.hideAlert.bind(this);
+class Calendar extends React.Component<
+  WithStyles<typeof styles>,
+  {
+    events: any[];
+    alert: React.ReactNode;
   }
+> {
+  state = {
+    events,
+    alert: null,
+  };
 
+  // eslint-disable-next-line class-methods-use-this
   selectedEvent(event) {
     alert(event.title);
   }
@@ -54,26 +57,30 @@ class Calendar extends React.Component {
   }
 
   addNewEvent(e, slotInfo) {
-    const newEvents = this.state.events;
-    newEvents.push({
-      title: e,
-      start: slotInfo.start,
-      end: slotInfo.end,
-    });
-    this.setState({
-      alert: null,
-      events: newEvents,
-    });
-  }
-
-  hideAlert() {
-    this.setState({
-      alert: null,
+    this.setState(preState => {
+      const newEvents = preState.events;
+      newEvents.push({
+        title: e,
+        start: slotInfo.start,
+        end: slotInfo.end,
+      });
+      return {
+        alert: null,
+        events: newEvents,
+      };
     });
   }
 
+  hideAlert = () => {
+    this.setState({
+      alert: null,
+    });
+  };
+
+  // eslint-disable-next-line class-methods-use-this
   eventColors(event, start, end, isSelected) {
     let backgroundColor = 'event-';
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     event.color
       ? (backgroundColor += event.color)
       : (backgroundColor += 'default');

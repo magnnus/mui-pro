@@ -9,7 +9,7 @@ import styles from '@/assets/jss/pro/components/customDropdownStyle';
 
 const adminNavbarLinksStyle = (theme: Theme) =>
   createStyles({
-    ...customDropdownStyle(theme),
+    ...styles(theme),
     search: {
       margin: '0',
       paddingTop: '7px',

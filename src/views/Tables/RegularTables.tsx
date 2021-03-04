@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import { withStyles, WithStyles } from '@material-ui/core/styles';
+import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles';
 
 // material-ui icons
 import Assignment from '@material-ui/icons/Assignment';
@@ -17,7 +17,7 @@ import CardBody from '@/components/Card/CardBody';
 
 import { cardTitle } from '@/assets/jss/material-dashboard-pro-react';
 
-const style = {
+const styles = createStyles({
   customCardContentClass: {
     paddingLeft: '0',
     paddingRight: '0',
@@ -27,10 +27,9 @@ const style = {
     marginTop: '15px',
     marginBottom: '0px',
   },
-};
+});
 
-function RegularTables({ ...props }) {
-  const { classes } = props;
+const RegularTables: React.FC<WithStyles<typeof styles>> = ({ classes }) => {
   return (
     <GridContainer>
       <GridItem xs={12}>
@@ -167,6 +166,6 @@ function RegularTables({ ...props }) {
       </GridItem>
     </GridContainer>
   );
-}
+};
 
 export default withStyles(styles)(RegularTables);

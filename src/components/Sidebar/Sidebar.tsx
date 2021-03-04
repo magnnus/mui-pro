@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import React from 'react';
 
 // javascript plugin used to create scrollbars on windows
@@ -28,10 +29,17 @@ let ps;
 // This was necessary so that we could initialize PerfectScrollbar on the links.
 // There might be something with the Hidden component from material-ui, and we didn't have access to
 // the links, and couldn't initialize the plugin.
-class SidebarWrapper extends React.Component {
+class SidebarWrapper extends React.Component<{
+  className: string;
+  user?: any;
+  headerLinks?: any;
+  links?: any;
+}> {
+  sidebarWrapper: HTMLDivElement = null;
+
   componentDidMount() {
     if (navigator.platform.indexOf('Win') > -1) {
-      ps = new PerfectScrollbar(this.refs.sidebarWrapper, {
+      ps = new PerfectScrollbar(this.sidebarWrapper, {
         suppressScrollX: true,
         suppressScrollY: false,
       });
@@ -47,7 +55,12 @@ class SidebarWrapper extends React.Component {
   render() {
     const { className, user, headerLinks, links } = this.props;
     return (
-      <div className={className} ref="sidebarWrapper">
+      <div
+        className={className}
+        ref={ref => {
+          this.sidebarWrapper = ref;
+        }}
+      >
         {user}
         {headerLinks}
         {links}
@@ -56,7 +69,33 @@ class SidebarWrapper extends React.Component {
   }
 }
 
-class Sidebar extends React.Component {
+export interface ISidebarTypes extends WithStyles<typeof styles> {
+  bgColor: 'white' | 'black' | 'blue';
+  rtlActive: boolean;
+  color: 'white' | 'red' | 'orange' | 'green' | 'blue' | 'purple' | 'rose';
+  logo: string;
+  logoText: string;
+  image: string;
+  routes: object[];
+  location?: Location;
+  miniActive?: boolean;
+  open?: boolean;
+  handleDrawerToggle?(...rest: any[]): void;
+}
+
+class Sidebar extends React.Component<
+  ISidebarTypes,
+  {
+    openAvatar: boolean;
+    miniActive: boolean;
+  }
+> {
+  static defaultProps = {
+    bgColor: 'blue',
+  };
+
+  mainPanel: HTMLDivElement = null;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -397,10 +436,10 @@ class Sidebar extends React.Component {
     })}`;
     const brand = (
       <div className={logoClasses}>
-        <a href="" className={logoMini}>
+        <a href="###" className={logoMini}>
           <img src={logo} alt="logo" className={classes.img} />
         </a>
-        <a href="" className={logoNormal}>
+        <a href="###" className={logoNormal}>
           {logoText}
         </a>
       </div>
@@ -415,7 +454,11 @@ class Sidebar extends React.Component {
         navigator.platform.indexOf('Win') > -1,
     })}`;
     return (
-      <div ref="mainPanel">
+      <div
+        ref={ref => {
+          this.mainPanel = ref;
+        }}
+      >
         <Hidden mdUp implementation="css">
           <Drawer
             variant="temporary"
@@ -472,20 +515,6 @@ class Sidebar extends React.Component {
       </div>
     );
   }
-}
-
-Sidebar.defaultProps = {
-  bgColor: 'blue',
-};
-
-export interface ISidebarTypes extends WithStyles<typeof styles> {
-  bgColor: 'white' | 'black' | 'blue';
-  rtlActive: boolean;
-  color: 'white' | 'red' | 'orange' | 'green' | 'blue' | 'purple' | 'rose';
-  logo: string;
-  logoText: string;
-  image: string;
-  routes: object[];
 }
 
 export default withStyles(styles)(Sidebar);

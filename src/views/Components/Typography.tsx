@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material-ui/core components
-import { withStyles, WithStyles } from '@material-ui/core/styles';
+import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles';
 
 // core components
 import Quote from '@/components/Typography/Quote';
@@ -15,7 +15,7 @@ import Heading from '@/components/Heading/Heading';
 import Card from '@/components/Card/Card';
 import CardBody from '@/components/Card/CardBody';
 
-const style = {
+const styles = createStyles({
   typo: {
     paddingLeft: '25%',
     marginBottom: '40px',
@@ -26,7 +26,7 @@ const style = {
     bottom: '10px',
     color: '#c0c1c2',
     display: 'block',
-    fontWeight: '400',
+    fontWeight: 400,
     fontSize: '13px',
     lineHeight: '13px',
     left: '0',
@@ -34,7 +34,10 @@ const style = {
     position: 'absolute',
     width: '260px',
   },
-};
+});
+
+export interface ITypographyTypes extends WithStyles<typeof styles> {}
+
 function Typography({ ...props }) {
   return (
     <div>
@@ -141,7 +144,5 @@ function Typography({ ...props }) {
     </div>
   );
 }
-
-export interface ITypographyTypes extends WithStyles<typeof styles> {}
 
 export default withStyles(styles)(Typography);

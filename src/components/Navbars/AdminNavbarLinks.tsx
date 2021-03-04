@@ -25,13 +25,22 @@ import Button from '@/components/CustomButtons/Button';
 
 import styles from '@/assets/jss/pro/components/adminNavbarLinksStyle';
 
-class HeaderLinks extends React.Component {
+export interface IHeaderLinksTypes extends WithStyles<typeof styles> {
+  rtlActive: boolean;
+}
+
+class HeaderLinks extends React.Component<
+  IHeaderLinksTypes,
+  { open: boolean }
+> {
   state = {
     open: false,
   };
 
+  anchorEl: null;
+
   handleClick = () => {
-    this.setState({ open: !this.state.open });
+    this.setState(preState => ({ open: !preState.open }));
   };
 
   handleClose = () => {
@@ -147,7 +156,7 @@ class HeaderLinks extends React.Component {
             {({ TransitionProps, placement }) => (
               <Grow
                 {...TransitionProps}
-                id="menu-list"
+                // id="menu-list"
                 style={{ transformOrigin: '0 0 0' }}
               >
                 <Paper className={classes.dropdown}>
@@ -219,10 +228,6 @@ class HeaderLinks extends React.Component {
       </div>
     );
   }
-}
-
-export interface IHeaderLinksTypes extends WithStyles<typeof styles> {
-  rtlActive: boolean;
 }
 
 export default withStyles(styles)(HeaderLinks);

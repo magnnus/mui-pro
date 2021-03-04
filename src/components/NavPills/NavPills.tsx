@@ -16,13 +16,40 @@ import GridItem from '@/components/Grid/GridItem';
 
 import styles from '@/assets/jss/pro/components/navPillsStyle';
 
-class NavPills extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: props.active,
+export interface INavPillsTypes extends WithStyles<typeof styles> {
+  // index of the default active pill
+  active?: number;
+  tabs?: {
+    tabButton: string;
+    tabIcon?: React.ComponentType<any>;
+    tabContent: React.ReactNode;
+  }[];
+  color?: 'primary' | 'warning' | 'danger' | 'success' | 'info' | 'rose';
+  direction?: string;
+  horizontal?: {
+    tabsGrid: {
+      [key: string]: any;
     };
+    contentGrid: {
+      [key: string]: any;
+    };
+  };
+  alignCenter?: boolean;
+}
+class NavPills extends React.Component<
+  INavPillsTypes,
+  {
+    active: number;
   }
+> {
+  static defaultProps: Partial<INavPillsTypes> = {
+    active: 0,
+    color: 'primary',
+  };
+
+  state = {
+    active: this.props.active,
+  };
 
   handleChange = (event, active) => {
     this.setState({ active });
@@ -58,7 +85,7 @@ class NavPills extends React.Component {
         centered={alignCenter}
       >
         {tabs.map((prop, key) => {
-          const icon = {};
+          const icon: any = {};
           if (prop.tabIcon !== undefined) {
             icon.icon = <prop.tabIcon className={classes.tabIcon} />;
           }
@@ -113,28 +140,6 @@ class NavPills extends React.Component {
       </div>
     );
   }
-}
-
-NavPills.defaultProps = {
-  active: 0,
-  color: 'primary',
-};
-
-export interface INavPillsTypes extends WithStyles<typeof styles> {
-  // index of the default active pill
-  active?: number;
-  tabs: {
-    tabButton: string;
-    tabIcon?(): void;
-    tabContent: React.ReactNode;
-  }[];
-  color: 'primary' | 'warning' | 'danger' | 'success' | 'info' | 'rose';
-  direction: string;
-  horizontal?: {
-    tabsGrid: object;
-    contentGrid: object;
-  }[];
-  alignCenter: boolean;
 }
 
 export default withStyles(styles)(NavPills);

@@ -18,14 +18,16 @@ import FixedPlugin from '@/components/FixedPlugin/FixedPlugin';
 
 import routes from '@/routes';
 
-import rtlStyle from '@/assets/jss/pro/layouts/rtlStyle';
+import styles from '@/assets/jss/pro/layouts/rtlStyle';
 
 import image from '@/assets/img/sidebar-2.jpg';
 import logo from '@/assets/img/logo-white.svg';
 
 var ps;
 
-class RTL extends React.Component {
+export interface IRTLTypes extends WithStyles<typeof styles> {}
+
+class RTL extends React.Component<IRTLTypes> {
   state = {
     mobileOpen: false,
     miniActive: false,
@@ -35,6 +37,8 @@ class RTL extends React.Component {
     hasImage: true,
     fixedClasses: 'dropdown',
   };
+
+  mainPanel: HTMLDivElement = null;
   handleImageClick = image => {
     this.setState({ image: image });
   };
@@ -56,7 +60,7 @@ class RTL extends React.Component {
   };
   componentDidMount() {
     if (navigator.platform.indexOf('Win') > -1) {
-      ps = new PerfectScrollbar(this.refs.mainPanel, {
+      ps = new PerfectScrollbar(this.mainPanel, {
         suppressScrollX: true,
         suppressScrollY: false,
       });
@@ -64,13 +68,13 @@ class RTL extends React.Component {
   }
   componentDidUpdate(e) {
     if (e.history.location.pathname !== e.location.pathname) {
-      this.refs.mainPanel.scrollTop = 0;
+      this.mainPanel.scrollTop = 0;
       if (this.state.mobileOpen) {
         this.setState({ mobileOpen: false });
       }
     }
     if (navigator.platform.indexOf('Win') > -1) {
-      ps = new PerfectScrollbar(this.refs.mainPanel, {
+      ps = new PerfectScrollbar(this.mainPanel, {
         suppressScrollX: true,
         suppressScrollY: false,
       });
@@ -115,6 +119,9 @@ class RTL extends React.Component {
       }
     });
   };
+
+  handleHasImage = () => {};
+
   render() {
     const { classes, ...rest } = this.props;
     const mainPanel =
@@ -138,7 +145,12 @@ class RTL extends React.Component {
           rtlActive
           {...rest}
         />
-        <div className={mainPanel} ref="mainPanel">
+        <div
+          className={mainPanel}
+          ref={ref => {
+            this.mainPanel = ref;
+          }}
+        >
           <AdminNavbar
             rtlActive
             sidebarMinimize={this.sidebarMinimize.bind(this)}
@@ -170,7 +182,5 @@ class RTL extends React.Component {
     );
   }
 }
-
-export interface IRTLTypes extends WithStyles<typeof styles> {}
 
 export default withStyles(styles)(RTL);
