@@ -9,7 +9,7 @@ import {
   blackColor,
   grayColor,
   hexToRgb,
-} from '@/assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/mui-pro';
 import { createStyles } from '@material-ui/core/styles';
 
 const wizardStyle = createStyles({

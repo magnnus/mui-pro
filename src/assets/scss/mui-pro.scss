@@ -1,0 +1,20 @@
+// variables and mixins
+@import 'mui-pro/variables';
+@import 'mui-pro/mixins';
+@import 'mui-pro/shadows';
+
+// plugin css
+@import 'mui-pro/plugins/plugin-nouislider';
+@import 'mui-pro/plugins/plugin-perfect-scrollbar';
+@import 'mui-pro/plugins/plugin-react-datetime';
+@import 'mui-pro/plugins/plugin-react-bootstrap-sweetalert';
+@import 'mui-pro/plugins/plugin-react-chartist';
+@import 'mui-pro/plugins/plugin-react-big-calendar';
+@import 'mui-pro/plugins/plugin-react-jvectormap';
+@import 'mui-pro/plugins/plugin-react-table';
+@import 'mui-pro/plugins/plugin-react-tagsinput';
+
+// Core CSS
+@import 'mui-pro/misc';
+@import 'mui-pro/fileupload';
+@import 'mui-pro/fixed-plugin';

@@ -7,7 +7,7 @@ import AuthLayout from '@/layouts/Auth';
 import RtlLayout from '@/layouts/RTL';
 import AdminLayout from '@/layouts/Admin';
 
-import '@/assets/scss/material-dashboard-pro-react.scss?v=1.5.0';
+import '@/assets/scss/mui-pro.scss?v=1.5.0';
 
 const hist = createBrowserHistory();
 

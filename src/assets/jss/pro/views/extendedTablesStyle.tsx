@@ -1,9 +1,6 @@
 import buttonGroupStyle from '@/assets/jss/pro/buttonGroupStyle';
 import customCheckboxRadioSwitch from '@/assets/jss/pro/customCheckboxRadioSwitch';
-import {
-  cardTitle,
-  grayColor,
-} from '@/assets/jss/material-dashboard-pro-react';
+import { cardTitle, grayColor } from '@/assets/jss/mui-pro';
 import { createStyles } from '@material-ui/core/styles';
 
 const extendedTablesStyle = createStyles({

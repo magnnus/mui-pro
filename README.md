@@ -1,10 +1,15 @@
 # Material Dashboard PRO React
 
-![Product Gif](./src/assets/github/material-dashboard-pro-react.gif)
+![Product Gif](./src/assets/github/mui-pro.gif)
 
-Material Dashboard PRO React comes with 7 color filter choices for the links of the Sidebar (`blue`, `green`, `orange`, `red`, `purple`, `rose`, `white`), 3 filter color choices for background of the Sidebar (`white`, `blue`, `black`), an option to have a background image on the Sidebar and 6 color filter choices the card headers (`blue`, `green`, `orange`, `red`, `purple`, `rose`).
+侧边栏：  
+【链接】包含 7 个颜色选项 (`blue`, `green`, `orange`, `red`, `purple`, `rose`, `white`) 【背景色】包含 3 个选择项 (`white`, `blue`, `black`)  
+【背景图】切换选项 1 个
 
-基于 [create-react-app](https://github.com/facebook/create-react-app) 构建，并使用 [Material-UI](https://github.com/mui-org/material-ui) 建造 UI 骨骼。
+卡片头：  
+有 6 个颜色选项 (`blue`, `green`, `orange`, `red`, `purple`, `rose`)
+
+基于 [create-react-app](https://github.com/facebook/create-react-app) 构建，并使用 [Material-UI](https://github.com/mui-org/material-ui) 建造 UI 骨骼。同时使用 TypeScript 来约束接口类型。
 
 #### 特别致谢
 

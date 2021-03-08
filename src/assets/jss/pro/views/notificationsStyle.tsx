@@ -1,7 +1,4 @@
-import {
-  defaultFont,
-  grayColor,
-} from '@/assets/jss/material-dashboard-pro-react';
+import { defaultFont, grayColor } from '@/assets/jss/mui-pro';
 import { createStyles, Theme } from '@material-ui/core/styles';
 
 import modalStyle from '@/assets/jss/pro/modalStyle';

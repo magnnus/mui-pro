@@ -20,7 +20,7 @@ import CardHeader from '@/components/Card/CardHeader';
 
 import { dataTable } from '@/variables/general';
 
-import { cardTitle } from '@/assets/jss/material-dashboard-pro-react';
+import { cardTitle } from '@/assets/jss/mui-pro';
 
 const styles = createStyles({
   cardIconTitle: {

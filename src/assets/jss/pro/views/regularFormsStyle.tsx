@@ -1,8 +1,4 @@
-import {
-  cardTitle,
-  successColor,
-  dangerColor,
-} from '@/assets/jss/material-dashboard-pro-react';
+import { cardTitle, successColor, dangerColor } from '@/assets/jss/mui-pro';
 import { createStyles } from '@material-ui/core/styles';
 
 import customCheckboxRadioSwitch from '@/assets/jss/pro/customCheckboxRadioSwitch';

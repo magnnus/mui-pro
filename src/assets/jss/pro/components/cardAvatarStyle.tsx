@@ -1,7 +1,4 @@
-import {
-  blackColor,
-  hexToRgb,
-} from '@/assets/jss/material-dashboard-pro-react';
+import { blackColor, hexToRgb } from '@/assets/jss/mui-pro';
 import { createStyles } from '@material-ui/core/styles';
 
 const cardAvatarStyle = createStyles({

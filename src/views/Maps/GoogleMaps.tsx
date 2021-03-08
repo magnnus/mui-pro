@@ -22,7 +22,7 @@ import CardBody from '@/components/Card/CardBody';
 import CardIcon from '@/components/Card/CardIcon';
 import CardHeader from '@/components/Card/CardHeader';
 
-import { cardTitle } from '@/assets/jss/material-dashboard-pro-react';
+import { cardTitle } from '@/assets/jss/mui-pro';
 
 const styles = createStyles({
   cardIconTitle: {

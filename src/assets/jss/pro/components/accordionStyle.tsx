@@ -1,7 +1,4 @@
-import {
-  primaryColor,
-  grayColor,
-} from '@/assets/jss/material-dashboard-pro-react';
+import { primaryColor, grayColor } from '@/assets/jss/mui-pro';
 import { createStyles, Theme } from '@material-ui/core/styles';
 
 const accordionStyle = (theme: Theme) =>

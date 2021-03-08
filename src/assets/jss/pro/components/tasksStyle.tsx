@@ -4,7 +4,7 @@ import {
   dangerColor,
   grayColor,
   tooltip,
-} from '@/assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/mui-pro';
 import { createStyles } from '@material-ui/core/styles';
 
 import customCheckboxRadioSwitch from '@/assets/jss/pro/customCheckboxRadioSwitch';

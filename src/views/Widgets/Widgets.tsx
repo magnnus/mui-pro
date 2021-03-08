@@ -28,11 +28,7 @@ import { widgetStories, bugs, website, server } from '@/variables/general';
 
 import image from '@/assets/img/faces/card-profile1-square.jpg';
 
-import {
-  cardTitle,
-  roseColor,
-  whiteColor,
-} from '@/assets/jss/material-dashboard-pro-react';
+import { cardTitle, roseColor, whiteColor } from '@/assets/jss/mui-pro';
 
 const styles = createStyles({
   cardTitle,

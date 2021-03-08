@@ -15,7 +15,7 @@ import CardHeader from '@/components/Card/CardHeader';
 import CardIcon from '@/components/Card/CardIcon';
 import CardBody from '@/components/Card/CardBody';
 
-import { cardTitle } from '@/assets/jss/material-dashboard-pro-react';
+import { cardTitle } from '@/assets/jss/mui-pro';
 
 const styles = createStyles({
   customCardContentClass: {

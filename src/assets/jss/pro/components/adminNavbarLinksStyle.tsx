@@ -1,8 +1,4 @@
-import {
-  defaultFont,
-  dangerColor,
-  whiteColor,
-} from '@/assets/jss/material-dashboard-pro-react';
+import { defaultFont, dangerColor, whiteColor } from '@/assets/jss/mui-pro';
 import { createStyles, Theme } from '@material-ui/core/styles';
 
 import styles from '@/assets/jss/pro/components/customDropdownStyle';

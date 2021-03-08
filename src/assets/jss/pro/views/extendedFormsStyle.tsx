@@ -1,8 +1,4 @@
-import {
-  cardTitle,
-  blackColor,
-  hexToRgb,
-} from '@/assets/jss/material-dashboard-pro-react';
+import { cardTitle, blackColor, hexToRgb } from '@/assets/jss/mui-pro';
 import { createStyles } from '@material-ui/core/styles';
 
 import customSelectStyle from '@/assets/jss/pro/customSelectStyle';

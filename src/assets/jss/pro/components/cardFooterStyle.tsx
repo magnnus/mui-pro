@@ -1,4 +1,4 @@
-import { grayColor } from '@/assets/jss/material-dashboard-pro-react';
+import { grayColor } from '@/assets/jss/mui-pro';
 import { createStyles } from '@material-ui/core/styles';
 
 const cardFooterStyle = createStyles({

@@ -3,7 +3,7 @@ import {
   tooltip,
   cardTitle,
   grayColor,
-} from '@/assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/mui-pro';
 import { createStyles } from '@material-ui/core/styles';
 
 import hoverCardStyle from '@/assets/jss/pro/hoverCardStyle';

@@ -3,7 +3,7 @@ import {
   cardTitle,
   whiteColor,
   grayColor,
-} from '@/assets/jss/material-dashboard-pro-react';
+} from '@/assets/jss/mui-pro';
 import { createStyles, Theme } from '@material-ui/core/styles';
 
 const loginPageStyle = (theme: Theme) =>
