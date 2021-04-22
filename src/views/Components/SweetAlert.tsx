@@ -100,13 +100,13 @@ class SweetAlertPage extends React.Component<WithStyles<typeof styles>> {
           cancelBtnText="Cancel"
           showCancel
         >
-          You will not be able to recover this imaginary file!
+          You will not be able to recover this imaginary file!111
         </SweetAlert>
       ),
     });
   };
 
-  warningWithConfirmAndCancelMessage() {
+  warningWithConfirmAndCancelMessage = () => {
     this.setState({
       alert: (
         <SweetAlert
@@ -121,13 +121,13 @@ class SweetAlertPage extends React.Component<WithStyles<typeof styles>> {
           cancelBtnText="Cancel"
           showCancel
         >
-          You will not be able to recover this imaginary file!
+          You will not be able to recover this imaginary file!22
         </SweetAlert>
       ),
     });
-  }
+  };
 
-  autoCloseAlert() {
+  autoCloseAlert = () => {
     this.setState({
       alert: (
         <SweetAlert
@@ -141,9 +141,9 @@ class SweetAlertPage extends React.Component<WithStyles<typeof styles>> {
       ),
     });
     setTimeout(this.hideAlert, 2000);
-  }
+  };
 
-  inputAlert() {
+  inputAlert = () => {
     this.setState({
       alert: (
         <SweetAlert
@@ -158,14 +158,14 @@ class SweetAlertPage extends React.Component<WithStyles<typeof styles>> {
         />
       ),
     });
-  }
+  };
 
-  inputConfirmAlert(e) {
+  inputConfirmAlert = e => {
     this.setState({ alert: e });
     setTimeout(this.inputConfirmAlertNext, 200);
-  }
+  };
 
-  inputConfirmAlertNext() {
+  inputConfirmAlertNext = () => {
     const inputValue = this.state.alert;
     this.setState({
       alert: (
@@ -182,9 +182,9 @@ class SweetAlertPage extends React.Component<WithStyles<typeof styles>> {
         />
       ),
     });
-  }
+  };
 
-  successDelete() {
+  successDelete = () => {
     this.setState({
       alert: (
         <SweetAlert
@@ -199,9 +199,9 @@ class SweetAlertPage extends React.Component<WithStyles<typeof styles>> {
         </SweetAlert>
       ),
     });
-  }
+  };
 
-  cancelDetele() {
+  cancelDetele = () => {
     this.setState({
       alert: (
         <SweetAlert
@@ -216,13 +216,13 @@ class SweetAlertPage extends React.Component<WithStyles<typeof styles>> {
         </SweetAlert>
       ),
     });
-  }
+  };
 
-  hideAlert() {
+  hideAlert = () => {
     this.setState({
       alert: null,
     });
-  }
+  };
 
   render() {
     const { classes } = this.props;
